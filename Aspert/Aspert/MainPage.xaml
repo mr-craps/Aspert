@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aspert.MainPage">
+    <Grid BackgroundColor="#C5F8FF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="55*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="1" Grid.Row="1" 
+               Source="logo.png"/>
+        <Label Grid.Column="1" Grid.Row="3" 
+               Text="aspert" 
+               TextColor="#3D51A9"
+               FontAttributes="Bold"
+               FontFamily="sensei"
+               FontSize="Large"/>
+        <Label Grid.Column="1" Grid.Row="4" 
+               Text="expertos en asperger" 
+               TextColor="#47525E"
+               FontAttributes="Bold"
+               FontFamily="sensei"
+               FontSize="Small"/>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Aspert.ViewModels" 
+             x:Class="Aspert.LoginPage"
+             x:DataType="vm:LoginPageViewModel">
+    <Grid BackgroundColor="White">
+        <Grid.BindingContext>
+            <vm:LoginPageViewModel/>
+        </Grid.BindingContext>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Image Source="logo.png"/>
+        <Label Grid.Column="1" 
+               Grid.Row="2" 
+               HorizontalTextAlignment="Center"
+               FontAttributes="Bold"
+               FontFamily="sensei"
+               FontSize="Title"
+               Text="aspert"
+               TextColor="#3D51A9"/>
+        <Image Source="perfil.png"/>
+        <Entry Grid.Column="1"
+               Grid.Row="4" 
+               Placeholder="Usuario o Correo"
+               TextColor="Black"
+               Text="{Binding Usuario}"/>
+        <Entry Grid.Column="1" 
+               Grid.Row="5" 
+               IsPassword="True" 
+               Placeholder="Contraseña"
+               TextColor="Black"
+               Text="{Binding Contraseña}"/>
+        <Button Grid.Column="1" 
+                Grid.Row="6"
+                BackgroundColor="#3D51A9"
+                Command="{Binding Login}"
+                FontFamily="sensei"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="ENTRA O REGÍSTRATE"
+                TextColor="White"/>
+        <Label Grid.Column="1"
+               Grid.Row="7"
+               HorizontalTextAlignment="Center"
+               Text="O"
+               TextColor="#47525E"/>
+        <Button Grid.Column="1" 
+                Grid.Row="8" 
+                BackgroundColor="#C0CCDA"
+                FontFamily="sensei"
+                Text="INGRESA CON TU CUENTA GOOGLE"
+                TextColor="White"/>
+    </Grid>
+</ContentPage>

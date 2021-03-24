@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Aspert.ViewModels" 
+             x:Class="Aspert.WelcomePage"
+             x:DataType="vm:WelcomePageViewModel">
+    <Grid BackgroundColor="#C5F8FF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" 
+               Grid.Row="1" 
+               FontAttributes="Bold"
+               FontFamily="sensei"
+               FontSize="Title"
+               Margin="-10"
+               Text="{Binding Usuario, StringFormat='¡Bienvenid@, {0}!'}"
+               TextColor="#3D51A9"/>
+        <Label Grid.Column="1" 
+               Grid.Row="2" 
+               FontAttributes="Bold"
+               FontFamily="sensei"
+               FontSize="Title"
+               Text="ASPERT"
+               TextColor="#3D51A9"/>
+        <Label Grid.Column="1" 
+               Grid.Row="3" 
+               Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperguer."/>
+        <Button Grid.Column="1" 
+                Grid.Row="4" 
+                BackgroundColor="#C5F8FF"
+                HorizontalOptions="End"
+                Text="OK"
+                TextColor="#47525E"/>
+        <Image Grid.Column="1" 
+               Grid.Row="5" 
+               Source="logo.png"/>
+    </Grid>
+</ContentPage>
