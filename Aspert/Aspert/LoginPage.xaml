@@ -34,7 +34,9 @@
                FontSize="Title"
                Text="aspert"
                TextColor="#3D51A9"/>
-        <Image Source="perfil.png"/>
+        <Image Grid.Column="1" 
+               Grid.Row="3" 
+               Source="logo.png"/>
         <Entry Grid.Column="1"
                Grid.Row="4" 
                Placeholder="Usuario o Correo"

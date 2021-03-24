@@ -46,6 +46,6 @@
                 TextColor="#47525E"/>
         <Image Grid.Column="1" 
                Grid.Row="5" 
-               Source="logo.png"/>
+               Source="Logo.png"/>
     </Grid>
 </ContentPage>
