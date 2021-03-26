@@ -93,7 +93,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aspert\Aspert.csproj">
       <Project>{1C9A32EA-473D-45A7-BD54-1D175DD3D6E6}</Project>

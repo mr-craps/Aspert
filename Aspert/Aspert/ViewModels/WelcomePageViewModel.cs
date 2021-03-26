@@ -1,4 +1,7 @@
-﻿namespace Aspert.ViewModels
+﻿using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace Aspert.ViewModels
 {
     public class WelcomePageViewModel : ViewModel
     {
@@ -9,9 +12,12 @@
             set => SetValue(ref _usuario, value);
         }
 
+        public ICommand Ok { get; }
+
         public WelcomePageViewModel(string usuario)
         {
             Usuario = usuario;
+            Ok = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new MenuPage()));
         }
     }
 }

@@ -2,32 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Aspert.MainPage">
-    <Grid BackgroundColor="#C5F8FF">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="15*"/>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="55*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="20*"/>
-        </Grid.RowDefinitions>
-        <Image Grid.Column="1" Grid.Row="1" 
+    <Grid BackgroundColor="White" 
+          ColumnDefinitions="*,*,15*" 
+          RowDefinitions="*,*,*,30,30,100">
+        <Image Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Grid.Row="1" 
                Source="logo.png"/>
-        <Label Grid.Column="1" Grid.Row="3" 
+        <Label Grid.Column="1" 
+               Grid.ColumnSpan="2"
+               Grid.Row="3" 
+               Padding="20,0,0,0"
                Text="aspert" 
                TextColor="#3D51A9"
                FontAttributes="Bold"
-               FontFamily="sensei"
                FontSize="Large"/>
-        <Label Grid.Column="1" Grid.Row="4" 
+        <Label Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Grid.Row="4" 
+               Padding="20,0,0,0"
                Text="expertos en asperger" 
                TextColor="#47525E"
                FontAttributes="Bold"
-               FontFamily="sensei"
                FontSize="Small"/>
     </Grid>
 

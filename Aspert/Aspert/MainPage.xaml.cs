@@ -13,7 +13,6 @@ namespace Aspert
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
             await Task.Delay(1000);
             await Navigation.PushModalAsync(new LoginPage());
         }
