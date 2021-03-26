@@ -17,7 +17,7 @@ namespace Aspert.ViewModels
         public WelcomePageViewModel(string usuario)
         {
             Usuario = usuario;
-            Ok = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new MenuPage()));
+            //Ok = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new MenuPage()));
         }
     }
 }

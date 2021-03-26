@@ -22,7 +22,7 @@
                TextColor="#3D51A9"/>
         <Label Grid.Column="1" 
                Grid.Row="3" 
-               Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperguer."/>
+               Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperger."/>
         <Button Grid.Column="1" 
                 Grid.Row="4" 
                 Command="{Binding Ok}"
