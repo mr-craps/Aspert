@@ -7,10 +7,10 @@ namespace Aspert
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WelcomePage : ContentPage
     {
-        public WelcomePage(string usuario)
+        public WelcomePage()
         {
             InitializeComponent();
-            BindingContext = new WelcomePageViewModel(usuario);
+            BindingContext = new WelcomePageViewModel();
         }
     }
 }

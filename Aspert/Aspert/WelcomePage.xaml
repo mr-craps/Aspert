@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:vm="clr-namespace:Aspert.ViewModels" 
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:db="clr-namespace:Aspert.Database"
              x:Class="Aspert.WelcomePage"
              x:DataType="vm:WelcomePageViewModel">
     <Grid BackgroundColor="White" ColumnDefinitions="*,9*,9" RowDefinitions="*,*,*,*,*,*,*,*">
@@ -11,7 +12,7 @@
                FontFamily="Sensei"
                FontSize="Title"
                Margin="-10"
-               Text="{Binding Usuario, StringFormat='¡Bienvenid@, {0}!'}"
+               Text="{Binding Source={Static db:SQLiteDB.Usuario}, StringFormat='¡Bienvenid@, {0}!'}"
                TextColor="#3D51A9"/>
         <Label Grid.Column="1" 
                Grid.Row="2" 

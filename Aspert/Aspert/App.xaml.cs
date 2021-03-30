@@ -10,7 +10,7 @@ namespace Aspert
         {
             UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new InitPage();
 
         }
 

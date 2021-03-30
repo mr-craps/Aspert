@@ -1,12 +1,13 @@
-﻿using Xamarin.Forms;
+﻿using Aspert.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Aspert
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class ConfigurationPage : ContentPage
     {
-        public MainPage()
+        public ConfigurationPage()
         {
             InitializeComponent();
         }

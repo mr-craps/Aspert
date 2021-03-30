@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             x:Class="Aspert.ConfigurationPage"
+             x:DataType="vm:ConfigurationPageViewModel">
+    <Grid BackgroundColor="#e9f0f0" 
+          ColumnDefinitions="*" 
+          RowDefinitions="50,*,50">
+        <Button Grid.Row="0"
+                BackgroundColor="#e9f0f0"
+                Command="{Binding Menu}"
+                HorizontalOptions="Start"
+                Text="[ - ]"/>
+        <Image Grid.Row="1"
+               Aspect="AspectFill"
+               Source="background.png"/>
+        <Button Grid.Row="2"
+                HeightRequest="50"
+                BackgroundColor="#e9f0f0"
+                Command="{Binding Back}"
+                Text="&lt;" 
+                HorizontalOptions="Start"/>
+    </Grid>
+</ContentPage>
