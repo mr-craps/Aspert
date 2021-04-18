@@ -7,11 +7,14 @@
     <Grid BackgroundColor="#e9f0f0" 
           ColumnDefinitions="*" 
           RowDefinitions="50,2*,*,3*,50">
+        <Grid.BindingContext>
+            <vm:MainPageViewModel/>
+        </Grid.BindingContext>
         <Button Grid.Row="0"
-                BackgroundColor="#e9f0f0"
-                Command="{Binding Menu}"
-                HorizontalOptions="Start"
-                Text="[ - ]"/>
+            BackgroundColor="#e9f0f0"
+            Command="{Binding Menu}"
+            HorizontalOptions="Start"
+            Text="[ - ]"/>
         <Image Grid.Row="1"
                Grid.RowSpan="3"
                Aspect="AspectFill"

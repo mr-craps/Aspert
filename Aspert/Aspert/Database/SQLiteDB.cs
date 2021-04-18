@@ -9,6 +9,7 @@ namespace Aspert.Database
     public static class SQLiteDB
     {
         private static readonly Task _creationTask;
+        private static User _usuario;
         private static readonly SQLiteAsyncConnection Connection
             = new SQLiteAsyncConnection(
                 Path.Combine(
@@ -17,12 +18,19 @@ namespace Aspert.Database
                     "aspertDB.db3"),
                 SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
 
-        public static User Usuario { get; set; }
+        public static User Usuario 
+        {
+            get => _usuario;
+            set => _usuario = value;
+        }
 
         static SQLiteDB()
         {
             _creationTask = Connection.CreateTableAsync<User>();
         }
+
+        public static async void UpdateCurrentUser()
+            => await Connection.UpdateAsync(Usuario);
 
         public static async Task<User> GetUserAsync(string usuario, string contraseña)
         {
@@ -58,5 +66,8 @@ namespace Aspert.Database
             await Connection.InsertAsync(user);
             return user;
         }
+
+        internal static async Task DeleteAccountAsync()
+            => await Connection.DeleteAsync<User>(Usuario.Id);
     }
 }

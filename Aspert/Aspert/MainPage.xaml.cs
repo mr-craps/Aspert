@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Aspert.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Aspert
@@ -10,5 +12,8 @@ namespace Aspert
         {
             InitializeComponent();
         }
+
+        protected override bool OnBackButtonPressed()
+            => true;
     }
 }

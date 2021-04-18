@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:vm="clr-namespace:Aspert.ViewModels" 
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.ConfigurationPage"
              x:DataType="vm:ConfigurationPageViewModel">
-    <Grid BackgroundColor="#e9f0f0" 
+    <Grid BackgroundColor="#e9f0f0"
+          BindingContext="{x:Type vm:ConfigurationPageViewModel}"
           ColumnDefinitions="*" 
           RowDefinitions="50,*,50">
         <Button Grid.Row="0"
@@ -15,11 +17,101 @@
         <Image Grid.Row="1"
                Aspect="AspectFill"
                Source="background.png"/>
+        <StackLayout Grid.Row="1">
+            <Image Source="profile.png"/>
+            <aspert:EditableLabel 
+                HorizontalOptions="Center" 
+                Text="{Binding Usuario}" 
+                FontAttributes="Bold" 
+                FontSize="Title"/>
+            <Grid BackgroundColor="White" 
+                  ColumnDefinitions="30,50,*,*,30" 
+                  RowDefinitions="30,30,30,30,40,40">
+                <Label Grid.ColumnSpan="3"
+                       Margin="15,0"
+                       FontSize="Medium"
+                       Text="Configuración General"/>
+                <!-- Uso de Datos Móviles -->
+                <Image Grid.Column="1" 
+                       Grid.Row="1"
+                       Source="data.png"
+                       HorizontalOptions="Start"/>
+                <Label Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="1"
+                       Text="Uso de Datos Móviles"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="sUsoDeDatosMoviles" 
+                        Grid.Column="3"
+                        Grid.Row="1"
+                        Toggled="SwitchToggled"/>
+                <!-- Sincronización -->
+                <Image Grid.Column="1" 
+                       Grid.Row="2"
+                       Source="synchro.png"
+                       HorizontalOptions="Start"/>
+                <Label Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="2"
+                       Text="Sincronización"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="sSincronizacion" 
+                        Grid.Column="3"
+                        Grid.Row="2"
+                        Toggled="SwitchToggled"/>
+                <!-- Notifiaciones -->
+                <Image Grid.Column="1" 
+                       Grid.Row="3"
+                       Source="volume.png"
+                       HorizontalOptions="Start"/>
+                <Label Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="3"
+                       Text="Sincronización"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="sNotificaciones" 
+                        Grid.Column="3"
+                        Grid.Row="3"
+                        Toggled="SwitchToggled"/>
+                <!-- El resto -->
+                <ImageButton Grid.Column="1" 
+                             Grid.Row="4"
+                             Source="close.png"
+                             HorizontalOptions="Start"
+                             BackgroundColor="White"
+                             Command="{Binding Logout}"
+                             Pressed="ImageButton_Pressed"
+                             x:Name="btnClose"/>
+                <Label Grid.Column="2"
+                       Grid.Row="4"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Text="Cerrar Sesión"/>
+                <ImageButton Grid.Column="1" 
+                             Grid.Row="5"
+                             Source="trashcan.png"
+                             HorizontalOptions="Start"
+                             BackgroundColor="White"
+                             Command="{Binding DeleteAccount}"                       
+                             Pressed="ImageButton_Pressed"
+                             x:Name="btnDelete"/>
+                <Label Grid.Column="2"
+                       Grid.Row="5"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Text="Eliminar Cuenta"/>
+            </Grid>
+        </StackLayout>
+        <!--
         <Button Grid.Row="2"
                 HeightRequest="50"
                 BackgroundColor="#e9f0f0"
                 Command="{Binding Back}"
                 Text="&lt;" 
                 HorizontalOptions="Start"/>
+        -->
     </Grid>
 </ContentPage>

@@ -1,10 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aspert.MenuPage">
-    <Grid BackgroundColor="#3D51A9"
-          ColumnDefinitions="*,3*,*"
-          RowDefinitions="*,8*,*">
-
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             x:Class="Aspert.MenuPage"
+             x:DataType="vm:MenuPageViewModel">
+    <Grid BackgroundColor="#e9f0f0" 
+          ColumnDefinitions="*" 
+          RowDefinitions="50,2*,*,3*,50">
+        <Button Grid.Row="0"
+                BackgroundColor="#e9f0f0"
+                Command="{Binding Menu}"
+                HorizontalOptions="Start"
+                Text="[ - ]"/>
+        <Image Grid.Row="1"
+               Grid.RowSpan="3"
+               Aspect="AspectFill"
+               Source="background.png"/>
+        <Image Grid.Row="2"
+               Source="logo.png"/>
+        <Label Grid.Row="3"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Text="ASPERT" 
+               TextColor="#3d51a9"/>
+        <Button Grid.Row="4"
+                HeightRequest="50"
+                BackgroundColor="#e9f0f0"
+                Command="{Binding Back}"
+                Text="&lt;"
+                HorizontalOptions="End"/>
     </Grid>
 </ContentPage>

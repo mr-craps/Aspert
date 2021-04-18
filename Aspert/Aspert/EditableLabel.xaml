@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Aspert" 
+             x:Class="Aspert.EditableLabel"
+             x:DataType="local:EditableLabel"
+             x:Name="thisEditableLabel">
+    <ContentView.Triggers>
+        <DataTrigger Binding="{Binding IsFocusedMode, Source={x:Reference thisEditableLabel}}" 
+                     Value="False" 
+                     TargetType="{x:Type ContentView}">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Label x:Name="MainLabel" 
+                           FontAttributes="{Binding FontAttributes, Source={x:Reference thisEditableLabel}}" 
+                           FontFamily="{Binding FontFamily, Source={x:Reference thisEditableLabel}}"
+                           Text="{Binding Text, Source={x:Reference thisEditableLabel}, Mode=TwoWay}" 
+                           TextColor="{Binding TextColor, Source={x:Reference thisEditableLabel}}"
+                           FontSize="{Binding FontSize, Source={x:Reference thisEditableLabel}}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Setter.Value>
+            </Setter>
+        </DataTrigger>
+        <DataTrigger Binding="{Binding IsFocusedMode, Source={x:Reference thisEditableLabel}}" 
+                     Value="True" 
+                     TargetType="{x:Type local:EditableLabel}">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Entry Placeholder="{Binding PlaceHolder, Source={x:Reference thisEditableLabel}}" 
+                           FontAttributes="{Binding FontAttributes, Source={x:Reference thisEditableLabel}}"
+                           x:Name="MainEntry" 
+                           TextColor="{Binding TextColor, Source={x:Reference thisEditableLabel}}"
+                           Text="{Binding Text, Source={x:Reference thisEditableLabel}, Mode=TwoWay}"
+                           FontSize="{Binding FontSize, Source={x:Reference thisEditableLabel}}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ContentChanged" Value="True" />
+        </DataTrigger>
+        <DataTrigger TargetType="{x:Type local:EditableLabel}" 
+                     Binding="{Binding IsFocused, Source={x:Reference MainEntry}}" 
+                     Value="False">
+            <Setter Property="IsFocusedMode" Value="False"/>
+        </DataTrigger>
+    </ContentView.Triggers>
+</ContentView>
