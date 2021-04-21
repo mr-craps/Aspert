@@ -13,7 +13,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.UsarDatos = value;
-                SQLiteDB.UpdateCurrentUser();
+                SQLiteDB.UpdateCurrentUser().RunSynchronously();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Sincronizar = value;
-                SQLiteDB.UpdateCurrentUser();
+                SQLiteDB.UpdateCurrentUser().RunSynchronously();
             }
         }
 
@@ -35,18 +35,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Notificaciones = value;
-                SQLiteDB.UpdateCurrentUser();
-            }
-        }
-
-        public string Usuario
-        {
-            get => SQLiteDB.Usuario.Nombre;
-            set
-            {
-                SetValue(ref value, value);
-                SQLiteDB.Usuario.Nombre = value;
-                SQLiteDB.UpdateCurrentUser();
+                SQLiteDB.UpdateCurrentUser().RunSynchronously();
             }
         }
 

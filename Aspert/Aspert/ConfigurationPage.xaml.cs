@@ -37,7 +37,7 @@ namespace Aspert
                 context.UseData = value;
         }
 
-        private void ImageButton_Pressed(object sender, System.EventArgs e)
+        private async void ImageButton_Pressed(object sender, System.EventArgs e)
         {
             var context = (ConfigurationPageViewModel)BindingContext;
             var button = (ImageButton)sender;
@@ -46,6 +46,14 @@ namespace Aspert
                 context.Logout.Execute(null);
             else if (button == btnDelete)
                 context.DeleteAccount.Execute(null);
+            else if (button == btnEdit)
+            {
+                var nombre = await DisplayPromptAsync("Introduzca su nombre", "Introduzca su nombre", cancel: "Cancelar");
+                
+                SQLiteDB.Usuario.Nombre = nombre;
+                await SQLiteDB.UpdateCurrentUser();
+                lbName.Text = SQLiteDB.Usuario.Nombre;
+            }
         }
     }
 }

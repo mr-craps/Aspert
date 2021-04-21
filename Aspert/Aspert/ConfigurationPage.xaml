@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels" 
-             xmlns:aspert="clr-namespace:Aspert"
+             xmlns:db="clr-namespace:Aspert.Database"
              x:Class="Aspert.ConfigurationPage"
              x:DataType="vm:ConfigurationPageViewModel">
     <Grid BackgroundColor="#e9f0f0"
@@ -19,14 +19,14 @@
                Source="background.png"/>
         <StackLayout Grid.Row="1">
             <Image Source="profile.png"/>
-            <aspert:EditableLabel 
-                HorizontalOptions="Center" 
-                Text="{Binding Usuario}" 
-                FontAttributes="Bold" 
-                FontSize="Title"/>
+            <Label HorizontalOptions="Center" 
+                   Text="{Binding Source={Static db:SQLiteDB.Usuario}}" 
+                   FontAttributes="Bold" 
+                   FontSize="Title"
+                   x:Name="lbName"/>
             <Grid BackgroundColor="White" 
                   ColumnDefinitions="30,50,*,*,30" 
-                  RowDefinitions="30,30,30,30,40,40">
+                  RowDefinitions="30,30,30,30,30,40,40">
                 <Label Grid.ColumnSpan="3"
                        Margin="15,0"
                        FontSize="Medium"
@@ -77,8 +77,20 @@
                         Grid.Row="3"
                         Toggled="SwitchToggled"/>
                 <!-- El resto -->
-                <ImageButton Grid.Column="1" 
+                <ImageButton Grid.Column="1"
                              Grid.Row="4"
+                             Source="logo.png"
+                             HorizontalOptions="Start"
+                             BackgroundColor="White"
+                             Pressed="ImageButton_Pressed"
+                             x:Name="btnEdit"/>
+                <Label Grid.Column="2"
+                       Grid.Row="4"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
+                       Text="Editar nombre"/>
+                <ImageButton Grid.Column="1" 
+                             Grid.Row="5"
                              Source="close.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
@@ -86,12 +98,12 @@
                              Pressed="ImageButton_Pressed"
                              x:Name="btnClose"/>
                 <Label Grid.Column="2"
-                       Grid.Row="4"
+                       Grid.Row="5"
                        HorizontalOptions="StartAndExpand"
                        VerticalOptions="Center"
                        Text="Cerrar Sesión"/>
                 <ImageButton Grid.Column="1" 
-                             Grid.Row="5"
+                             Grid.Row="6"
                              Source="trashcan.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
@@ -99,7 +111,7 @@
                              Pressed="ImageButton_Pressed"
                              x:Name="btnDelete"/>
                 <Label Grid.Column="2"
-                       Grid.Row="5"
+                       Grid.Row="6"
                        HorizontalOptions="StartAndExpand"
                        VerticalOptions="Center"
                        Text="Eliminar Cuenta"/>
