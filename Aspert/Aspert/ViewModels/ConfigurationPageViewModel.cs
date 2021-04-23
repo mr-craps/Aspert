@@ -13,7 +13,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.UsarDatos = value;
-                SQLiteDB.UpdateCurrentUser().RunSynchronously();
+                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Sincronizar = value;
-                SQLiteDB.UpdateCurrentUser().RunSynchronously();
+                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
             }
         }
 
@@ -35,7 +35,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Notificaciones = value;
-                SQLiteDB.UpdateCurrentUser().RunSynchronously();
+                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
             }
         }
 
