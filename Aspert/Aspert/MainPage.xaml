@@ -4,23 +4,23 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.MainPage"
              x:DataType="vm:MainPageViewModel">
-    <Grid BackgroundColor="#e9f0f0" 
+    <Grid BackgroundColor="#c0ccda" 
           ColumnDefinitions="*" 
-          RowDefinitions="50,2*,*,3*,50">
+          RowDefinitions="50,3*,*,3*,50">
         <Grid.BindingContext>
             <vm:MainPageViewModel/>
         </Grid.BindingContext>
-        <Button Grid.Row="0"
-            BackgroundColor="#e9f0f0"
+        <ImageButton Grid.Row="0"
+            BackgroundColor="#c0ccda"
             Command="{Binding Menu}"
             HorizontalOptions="Start"
-            Text="[ - ]"/>
+            Source="menug_aspert.png"/>
         <Image Grid.Row="1"
                Grid.RowSpan="3"
                Aspect="AspectFill"
-               Source="background.png"/>
+               Source="bg3_aspert.png"/>
         <Image Grid.Row="2"
-               Source="logo.png"/>
+               Source="nuevologo_aspert.png"/>
         <Label Grid.Row="3"
                FontAttributes="Bold"
                HorizontalOptions="Center"
@@ -28,9 +28,9 @@
                TextColor="#3d51a9"/>
         <ImageButton Grid.Row="4"
                      HeightRequest="50"
-                     BackgroundColor="#e9f0f0"
+                     BackgroundColor="#c0ccda"
                      Command="{Binding Configuration}"
-                     Source="profile.png" 
+                     Source="user_aspert.png" 
                      HorizontalOptions="End"/>
     </Grid>
 </ContentPage>

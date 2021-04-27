@@ -6,27 +6,34 @@
              x:Class="Aspert.ConfigurationPage"
              x:DataType="vm:ConfigurationPageViewModel">
     <Grid BackgroundColor="#e9f0f0"
-          BindingContext="{x:Type vm:ConfigurationPageViewModel}"
           ColumnDefinitions="*" 
-          RowDefinitions="50,*,50">
-        <Button Grid.Row="0"
-                BackgroundColor="#e9f0f0"
-                Command="{Binding Menu}"
-                HorizontalOptions="Start"
-                Text="[ - ]"/>
+          RowDefinitions="50,50,*,20,30,20,3*">
+        <Grid.BindingContext>
+            <vm:ConfigurationPageViewModel/>
+        </Grid.BindingContext>
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="#e9f0f0"
+                     Command="{Binding Menu}"
+                     HorizontalOptions="Start"
+                     Source="menug_aspert.png"/>
         <Image Grid.Row="1"
+               Grid.RowSpan="6"
                Aspect="AspectFill"
-               Source="background.png"/>
-        <StackLayout Grid.Row="1">
-            <Image Source="profile.png"/>
-            <Label HorizontalOptions="Center" 
-                   Text="{Binding Source={Static db:SQLiteDB.Usuario}}" 
-                   FontAttributes="Bold" 
-                   FontSize="Title"
-                   x:Name="lbName"/>
+               Source="bg4_aspert.png"/>
+        <Image Grid.Row="2"
+               Source="user_aspert.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        <Label Grid.Row="4" 
+               HorizontalOptions="Center" 
+               Text="{Binding Source={Static db:SQLiteDB.Usuario}}" 
+               FontAttributes="Bold" 
+               FontSize="Title"
+               x:Name="lbName"/>
+        <StackLayout Grid.Row="5">
             <Grid BackgroundColor="White" 
                   ColumnDefinitions="30,50,*,*,30" 
-                  RowDefinitions="30,30,30,30,30,40,40">
+                  RowDefinitions="40,40,40,40,40,40,40">
                 <Label Grid.ColumnSpan="3"
                        Margin="15,0"
                        FontSize="Medium"
@@ -34,7 +41,7 @@
                 <!-- Uso de Datos Móviles -->
                 <Image Grid.Column="1" 
                        Grid.Row="1"
-                       Source="data.png"
+                       Source="data_aspert.png"
                        HorizontalOptions="Start"/>
                 <Label Grid.Column="2"
                        Grid.ColumnSpan="2"
@@ -49,7 +56,7 @@
                 <!-- Sincronización -->
                 <Image Grid.Column="1" 
                        Grid.Row="2"
-                       Source="synchro.png"
+                       Source="sync_aspert.png"
                        HorizontalOptions="Start"/>
                 <Label Grid.Column="2"
                        Grid.ColumnSpan="2"
@@ -64,12 +71,12 @@
                 <!-- Notifiaciones -->
                 <Image Grid.Column="1" 
                        Grid.Row="3"
-                       Source="volume.png"
+                       Source="notifications_aspert.png"
                        HorizontalOptions="Start"/>
                 <Label Grid.Column="2"
                        Grid.ColumnSpan="2"
                        Grid.Row="3"
-                       Text="Sincronización"
+                       Text="Notificaciones"
                        HorizontalOptions="StartAndExpand"
                        VerticalOptions="Center"/>
                 <Switch x:Name="sNotificaciones" 
@@ -79,7 +86,7 @@
                 <!-- El resto -->
                 <ImageButton Grid.Column="1"
                              Grid.Row="4"
-                             Source="logo.png"
+                             Source="edit_aspert.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
                              Pressed="ImageButton_Pressed"
@@ -91,7 +98,7 @@
                        Text="Editar nombre"/>
                 <ImageButton Grid.Column="1" 
                              Grid.Row="5"
-                             Source="close.png"
+                             Source="close_aspert.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
                              Command="{Binding Logout}"
@@ -104,7 +111,7 @@
                        Text="Cerrar Sesión"/>
                 <ImageButton Grid.Column="1" 
                              Grid.Row="6"
-                             Source="trashcan.png"
+                             Source="trashcan_aspert.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
                              Command="{Binding DeleteAccount}"                       
@@ -117,13 +124,5 @@
                        Text="Eliminar Cuenta"/>
             </Grid>
         </StackLayout>
-        <!--
-        <Button Grid.Row="2"
-                HeightRequest="50"
-                BackgroundColor="#e9f0f0"
-                Command="{Binding Back}"
-                Text="&lt;" 
-                HorizontalOptions="Start"/>
-        -->
     </Grid>
 </ContentPage>

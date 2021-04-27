@@ -4,30 +4,46 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.MenuPage"
              x:DataType="vm:MenuPageViewModel">
-    <Grid BackgroundColor="#e9f0f0" 
+    <Grid BackgroundColor="#c0ccda" 
           ColumnDefinitions="*" 
-          RowDefinitions="50,2*,*,3*,50">
-        <Button Grid.Row="0"
-                BackgroundColor="#e9f0f0"
-                Command="{Binding Menu}"
-                HorizontalOptions="Start"
-                Text="[ - ]"/>
+          RowDefinitions="50,50,*,50,*,50,*,50,50">
+        <Grid.BindingContext>
+            <vm:MenuPageViewModel/>
+        </Grid.BindingContext>
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Source="menub_aspert.png"/>
         <Image Grid.Row="1"
-               Grid.RowSpan="3"
+               Grid.RowSpan="7"
                Aspect="AspectFill"
-               Source="background.png"/>
-        <Image Grid.Row="2"
-               Source="logo.png"/>
-        <Label Grid.Row="3"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Text="ASPERT" 
-               TextColor="#3d51a9"/>
-        <Button Grid.Row="4"
-                HeightRequest="50"
-                BackgroundColor="#e9f0f0"
-                Command="{Binding Back}"
-                Text="&lt;"
-                HorizontalOptions="End"/>
+               Source="bg3_aspert.png"/>
+        <Button x:Name="OpenAbc" Grid.Row="2"               
+                WidthRequest="150"
+                BackgroundColor="#FFC82C"
+                Text="ASPERGER ABC"
+                FontAttributes="Bold"
+                TextColor="#fff"
+                HorizontalOptions="Center"/>
+        <Button x:Name="OpenBook" Grid.Row="4"             
+                WidthRequest="150"              
+                BackgroundColor="#FF2C66"
+                Text="LIBROS Y PELÍCULAS"
+                FontAttributes="Bold"
+                TextColor="#fff"
+                HorizontalOptions="Center"/>
+        <Button x:Name="OpenNews" Grid.Row="6"              
+                WidthRequest="150"                
+                BackgroundColor="#3ff090"
+                Text="ÚLTIMAS NOTICIAS"
+                FontAttributes="Bold"
+                TextColor="#fff"
+                HorizontalOptions="Center"/>
+        <ImageButton Grid.Row="8"             
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Configuration}"
+                     HorizontalOptions="End"
+                     Source="user_aspert.png"/>
     </Grid>
 </ContentPage>

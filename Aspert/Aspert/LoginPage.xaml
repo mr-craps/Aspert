@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         <Image Grid.Column="1" 
                Grid.Row="1" 
-               Source="logo.png"/>
+               Source="nuevologo_aspert.png"/>
         <Label Grid.Column="1" 
                Grid.Row="2" 
                HorizontalTextAlignment="Center"
