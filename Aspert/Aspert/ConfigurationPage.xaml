@@ -30,7 +30,7 @@
                FontAttributes="Bold" 
                FontSize="Title"
                x:Name="lbName"/>
-        <StackLayout Grid.Row="5">
+        <StackLayout Grid.Row="6">
             <Grid BackgroundColor="White" 
                   ColumnDefinitions="30,50,*,*,30" 
                   RowDefinitions="40,40,40,40,40,40,40">
@@ -101,7 +101,6 @@
                              Source="close_aspert.png"
                              HorizontalOptions="Start"
                              BackgroundColor="White"
-                             Command="{Binding Logout}"
                              Pressed="ImageButton_Pressed"
                              x:Name="btnClose"/>
                 <Label Grid.Column="2"
@@ -113,8 +112,7 @@
                              Grid.Row="6"
                              Source="trashcan_aspert.png"
                              HorizontalOptions="Start"
-                             BackgroundColor="White"
-                             Command="{Binding DeleteAccount}"                       
+                             BackgroundColor="White"                   
                              Pressed="ImageButton_Pressed"
                              x:Name="btnDelete"/>
                 <Label Grid.Column="2"
