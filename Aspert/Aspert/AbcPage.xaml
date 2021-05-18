@@ -1,12 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.AbcPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid BackgroundColor="#c0ccda"
+          RowDefinitions="50,*,50">
+        <Grid.BindingContext>
+            <vm:PageViewModel/>
+        </Grid.BindingContext>
+        <!-- Menú -->
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Source="menub_aspert.png"/>
+        <!-- Fondo -->
+        <Image Grid.Row="1"
+               Aspect="Fill"
+               Source="bg4_aspert.png"/>
+        <!-- Contenido -->
+        <ScrollView Grid.Row="1">
+            <Grid Padding="20" 
+                  RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+                <Button Grid.Row="0" 
+                        WidthRequest="110"
+                        BackgroundColor="#FFC82C"
+                        Text="ASPERGER ABC"
+                        TextColor="White"
+                        FontSize="10"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"/>
+                <Label Grid.Row="2" 
+                       Text="DEFINICIÓN"
+                       TextColor="#FFC82C"
+                       FontAttributes="Bold"
+                       FontSize="Title"/>
+                <Label Grid.Row="3" 
+                       Text="texto aquí..."
+                       TextColor="#8492A6"/>
+                <Label Grid.Row="5" 
+                       Text="SÍNTOMAS"
+                       TextColor="#FFC82C"
+                       FontAttributes="Bold"
+                       FontSize="Title"/>
+                <Label Grid.Row="6" 
+                       Text="texto aquí..."
+                       TextColor="#8492A6"/>
+                <Label Grid.Row="8" 
+                       Text="DIAGNÓSTICO"
+                       TextColor="#FFC82C"
+                       FontAttributes="Bold"
+                       FontSize="Title"/>
+                <Label Grid.Row="9" 
+                       Text="texto aquí..."
+                       TextColor="#8492A6"/>
+                <Label Grid.Row="11" 
+                       Text="¿CÓMO AYUDAR?"
+                       TextColor="#FFC82C"
+                       FontAttributes="Bold"
+                       FontSize="Title"/>
+                <Label Grid.Row="12" 
+                       Text="texto aquí..."
+                       TextColor="#8492A6"/>
+            </Grid>
+        </ScrollView>
+        <!-- Configuración -->
+        <ImageButton Grid.Row="2"             
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Configuration}"
+                     HorizontalOptions="End"
+                     Source="user_aspert.png"/>
+    </Grid>
 </ContentPage>
