@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             x:Class="Aspert.TestPage">
+    <Grid BackgroundColor="#c0ccda"
+          RowDefinitions="50,*,50">
+        <Grid.BindingContext>
+            <vm:PageViewModel/>
+        </Grid.BindingContext>
+        <!-- Menú -->
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Source="menub_aspert.png"/>
+        <!-- Fondo -->
+        <Image Grid.Row="1"
+               Aspect="Fill"
+               Source="bg4_aspert.png"/>
+        <!-- Contenido -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Margin="20">
+                <Label x:Name="lbl" 
+                       LineBreakMode="WordWrap"
+                       Text="Mucho texto"/>
+                <Button x:Name="btn" 
+                        Clicked="OnBtnClicked"
+                        Text="Empezar Test"/>
+            </StackLayout>
+        </ScrollView>
+        <!-- Configuración -->
+        <ImageButton Grid.Row="2"             
+                     BackgroundColor="#c0ccda"
+                     Command="{Binding Configuration}"
+                     HorizontalOptions="End"
+                     Source="user_aspert.png"/>
+    </Grid>
+</ContentPage>

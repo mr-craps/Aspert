@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:vm="clr-namespace:Aspert.ViewModels" xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.AbcPage">
     <Grid BackgroundColor="#c0ccda"
           RowDefinitions="50,*,50">
@@ -13,6 +13,7 @@
                      BackgroundColor="#c0ccda"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
+                     Padding="10"
                      Source="menub_aspert.png"/>
         <!-- Fondo -->
         <Image Grid.Row="1"
@@ -35,33 +36,44 @@
                        TextColor="#FFC82C"
                        FontAttributes="Bold"
                        FontSize="Title"/>
-                <Label Grid.Row="3" 
-                       Text="texto aquí..."
-                       TextColor="#8492A6"/>
+                <aspert:JustifiedLabel 
+                    Grid.Row="3" 
+                    Text="     El síndrome de Asperger es un trastorno del desarrollo que se incluye dentro del espectro autista y que afecta la interacción social recíproca, la comunicación verbal y no verbal, una resistencia para aceptar el cambio y la inflexibilidad del pensamiento. Las personas con este síndrome son, generalmente, extremadamente buenos en las habilidades de memoria (hechos, figuras, fechas, épocas, etc.), así como en matemáticas y ciencia. &#10; &#10;
+    Las características esenciales del trastorno de Asperger son una alteración grave y persistente de la interacción social y el desarrollo de patrones del comportamiento, intereses y actividades restrictivas y repetitivas. El síndrome puede dar lugar a un deterioro clínicamente significativo social, laboral o de otras áreas importantes de la actividad del individuo. "
+                    TextColor="#8492A6"/>
                 <Label Grid.Row="5" 
                        Text="SÍNTOMAS"
                        TextColor="#FFC82C"
                        FontAttributes="Bold"
                        FontSize="Title"/>
-                <Label Grid.Row="6" 
-                       Text="texto aquí..."
-                       TextColor="#8492A6"/>
+                <aspert:JustifiedLabel 
+                    Grid.Row="6"  
+                    Text="    Las deficiencias en la interacción social pueden ponerse de manifiesto en el contexto de la vida escolar. Durante esta época es cuando pueden aparecer o reconocerse como tales los peculiares intereses circunscritos o idiosincrásicos (p. ej., fascinación por los horarios de trenes). En la vida adulta, los individuos con este síndrome pueden experimentar problemas relacionados con la empatía y la modulación de la interacción social. Este trastorno sigue un curso continuo y, en la mayor parte de los casos, se prolonga durante toda la vida. No hay retraso general del lenguaje clínicamente significativo. En otro orden de ideas, no hay retraso general del lenguaje clínicamente significativo (a los 2 años de edad utiliza palabras sencillas, a los 3 años de edad utiliza frases comunicativas), y no hay retraso clínicamente significativo del desarrollo cognoscitivo ni del desarrollo de habilidades de autoayuda propias de la edad, comportamiento adaptativo (distinto de la interacción social) y curiosidad acerca del ambiente durante la infancia. "
+                    TextColor="#8492A6"/>
                 <Label Grid.Row="8" 
                        Text="DIAGNÓSTICO"
                        TextColor="#FFC82C"
                        FontAttributes="Bold"
                        FontSize="Title"/>
-                <Label Grid.Row="9" 
-                       Text="texto aquí..."
-                       TextColor="#8492A6"/>
+                <aspert:JustifiedLabel 
+                    Grid.Row="9"  
+                    Text="    El síndrome de Asperger puede ser muy difícil de diagnosticar. Los niños con síndrome de Asperger se desempeñan normalmente en la mayoría de los aspectos de su vida; por lo tanto, resulta común atribuir sus comportamientos extraños al hecho de que simplemente son ''diferentes''. &#10; &#10;
+    Los expertos afirman que, tanto en el aspecto educativo como en el social, es muy importante una intervención precoz, mientras el cerebro del niño con síndrome de Asperger aún se está desarrollando. El especialista hará una minuciosa evaluación''psicosocial'' del infante. Esto incluye un historial detallado del momento en el que se notaron los síntomas por primera vez, el desarrollo de la motricidad y el lenguaje, así como otros aspectos de la personalidad y el comportamiento del niño (actividades favoritas, hábitos inusuales, preocupaciones, etc.). &#10; &#10;
+    Se pondrá especial énfasis en el desarrollo social, lo cual incluye problemas pasados y presentes de interacción social y desarrollo de amistades. En general, se realiza una evaluación psicológica de las habilidades de comunicación para identificar las áreas con dificultades."
+                    TextColor="#8492A6"/>
                 <Label Grid.Row="11" 
                        Text="¿CÓMO AYUDAR?"
                        TextColor="#FFC82C"
                        FontAttributes="Bold"
                        FontSize="Title"/>
-                <Label Grid.Row="12" 
-                       Text="texto aquí..."
-                       TextColor="#8492A6"/>
+                <aspert:JustifiedLabel 
+                    Grid.Row="12" 
+                    Text="   El síndrome de Asperger presenta desafíos tanto para los niños como para sus padres, pero usted puede ayudar a su niño a adaptarse y ofrecerle apoyo de muchas maneras:
+√  Enséñele al niño habilidades de autoayuda. Esto los ayuda a alcanzar mayor independencia. &#10; &#10;
+√  Como no siempre es evidente que un infante tiene síndrome de Asperger, explíqueles a las personas sus necesidades especiales. Como familiar o representante, tal vez tenga que transformarse en educador cuando trate con los maestros, el personal médico y otras personas encargadas de cuidar al niño. &#10; &#10;
+√  Recuerde que el niño forma parte de una familia y que sus necesidades se deben equilibrar con las de los demás integrantes de la familia. &#10; &#10;
+√  Busque un programa de tratamiento o de intervención específico para los problemas o las áreas en las que el niño presenta más 'deficiencias' . La Sociedad Americana de Autismo (ASA, por sus siglas en inglés) recomienda hablar con el director del programa para asegurarse de que pueda satisfacer las necesidades de su hijo."
+                    TextColor="#8492A6"/>
             </Grid>
         </ScrollView>
         <!-- Configuración -->
@@ -69,6 +81,7 @@
                      BackgroundColor="#c0ccda"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
+                     Margin="5,5,5,5"
                      Source="user_aspert.png"/>
     </Grid>
 </ContentPage>

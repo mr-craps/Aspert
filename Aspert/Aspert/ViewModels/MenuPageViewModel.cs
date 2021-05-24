@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Aspert.ViewModels
@@ -9,9 +10,10 @@ namespace Aspert.ViewModels
         public ICommand AbcPage { get; }
         public ICommand BookPage { get; }
 
+        [Obsolete("Recuerda cambiar test -> news")]
         public MenuPageViewModel()
         {
-            NewsPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new NewsPage()));
+            NewsPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new TestPage()));
             AbcPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new AbcPage()));
             BookPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new BookPage()));
         }
