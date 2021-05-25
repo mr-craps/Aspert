@@ -4,49 +4,63 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.MenuPage"
              x:DataType="vm:MenuPageViewModel">
-    <Grid BackgroundColor="#c0ccda" 
-          ColumnDefinitions="*" 
-          RowDefinitions="50,50,*,50,*,50,*,50,50">
+    <Grid BackgroundColor="{StaticResource LightGray}"
+          ColumnDefinitions="*"
+          RowDefinitions="*,16*,*">
         <Grid.BindingContext>
             <vm:MenuPageViewModel/>
         </Grid.BindingContext>
         <ImageButton Grid.Row="0"
-                     BackgroundColor="#c0ccda"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
-                     Source="menub_aspert.png"/>
+                     Source="menub_aspert.png"
+                     Padding="10"/>
         <Image Grid.Row="1"
-               Grid.RowSpan="7"
-               Aspect="AspectFill"
-               Source="bg3_aspert.png"/>
-        <Button x:Name="OpenAbc" Grid.Row="2"
-                Command="{Binding AbcPage}"
-                WidthRequest="150"
-                BackgroundColor="#FFC82C"
-                Text="ASPERGER ABC"
-                FontAttributes="Bold"
-                TextColor="#fff"
-                HorizontalOptions="Center"/>
-        <Button x:Name="OpenBook" Grid.Row="4"
-                Command="{Binding BookPage}"
-                WidthRequest="150"              
-                BackgroundColor="#FF2C66"
-                Text="LIBROS Y PELÍCULAS"
-                FontAttributes="Bold"
-                TextColor="#fff"
-                HorizontalOptions="Center"/>
-        <Button x:Name="OpenNews" Grid.Row="6"
-                Command="{Binding NewsPage}"
-                WidthRequest="150"                
-                BackgroundColor="#3ff090"
-                Text="ÚLTIMAS NOTICIAS"
-                FontAttributes="Bold"
-                TextColor="#fff"
-                HorizontalOptions="Center"/>
-        <ImageButton Grid.Row="8"             
-                     BackgroundColor="#c0ccda"
+               Aspect="Fill"
+               Source="bg4_aspert.png"/>
+        <ImageButton Grid.Row="2"   
+                     BackgroundColor="Transparent"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
-                     Source="user_aspert.png"/>
+                     Margin="5,0,5,5"
+                     Source="user_aspert.png"
+                     VerticalOptions="Center"/>
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto,20,Auto,*"
+              RowDefinitions="*,Auto,20,Auto,*">
+            <Grid.Resources>
+                <Style TargetType="{Type Button}">
+                    <Setter Property="FontAttributes"
+                            Value="Bold"/>
+                    <Setter Property="TextColor"
+                            Value="White"/>
+                    <Setter Property="HeightRequest"
+                            Value="120"/>
+                    <Setter Property="WidthRequest"
+                            Value="120"/>
+                </Style>
+            </Grid.Resources>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource Yellow}"
+                    Command="{Binding AbcPage}"
+                    Text="ASPERGER ABC"/>
+            <Button Grid.Column="3"
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource Red}"
+                    Command="{Binding BookPage}"
+                    Text="LIBROS Y PELÍCULAS"/>
+            <Button Grid.Column="1"
+                    Grid.Row="3"
+                    BackgroundColor="{StaticResource Lime}"
+                    Command="{Binding NewsPage}"
+                    Text="ÚLTIMAS NOTICIAS"/>
+            <Button Grid.Column="3"
+                    Grid.Row="3"
+                    BackgroundColor="{StaticResource Purple}"
+                    Command="{Binding TestPage}"
+                    Text="TEST"/>
+        </Grid>
     </Grid>
 </ContentPage>

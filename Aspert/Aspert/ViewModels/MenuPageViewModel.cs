@@ -9,13 +9,14 @@ namespace Aspert.ViewModels
         public ICommand NewsPage { get; }
         public ICommand AbcPage { get; }
         public ICommand BookPage { get; }
+        public ICommand TestPage { get; }
 
-        [Obsolete("Recuerda cambiar test -> news")]
         public MenuPageViewModel()
         {
-            NewsPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new TestPage()));
+            NewsPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new NewsPage()));
             AbcPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new AbcPage()));
             BookPage = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new BookPage()));
+            TestPage = new Command(async() => await Application.Current.MainPage.Navigation.PushModalAsync(new TestPage()));
         }
     }
 }

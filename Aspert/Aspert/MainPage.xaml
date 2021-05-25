@@ -4,33 +4,26 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.MainPage"
              x:DataType="vm:MainPageViewModel">
-    <Grid BackgroundColor="#c0ccda" 
+    <Grid BackgroundColor="{StaticResource LightGray}" 
           ColumnDefinitions="*" 
-          RowDefinitions="50,3*,*,3*,50">
+          RowDefinitions="*,16*,*">
         <Grid.BindingContext>
             <vm:MainPageViewModel/>
         </Grid.BindingContext>
         <ImageButton Grid.Row="0"
-            BackgroundColor="#c0ccda"
-            Command="{Binding Menu}"
-            HorizontalOptions="Start"
-            Source="menug_aspert.png"/>
+                     BackgroundColor="{StaticResource LightGray}"
+                     Command="{Binding Menu}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="menug_aspert.png"/>
         <Image Grid.Row="1"
-               Grid.RowSpan="3"
-               Aspect="AspectFill"
-               Source="bg3_aspert.png"/>
-        <Image Grid.Row="2"
-               Source="nuevologo_aspert.png"/>
-        <Label Grid.Row="3"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Text="ASPERT" 
-               TextColor="#3d51a9"/>
-        <ImageButton Grid.Row="4"
-                     HeightRequest="50"
-                     BackgroundColor="#c0ccda"
+               Aspect="Fill"
+               Source="bg3newicon_aspert.png"/>
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="{StaticResource LightGray}"
                      Command="{Binding Configuration}"
-                     Source="user_aspert.png" 
-                     HorizontalOptions="End"/>
+                     HorizontalOptions="End"
+                     Margin="5,0,5,5"
+                     Source="user_aspert.png" />
     </Grid>
 </ContentPage>

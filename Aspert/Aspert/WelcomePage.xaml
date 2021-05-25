@@ -5,7 +5,9 @@
              xmlns:db="clr-namespace:Aspert.Database"
              x:Class="Aspert.WelcomePage"
              x:DataType="vm:WelcomePageViewModel">
-    <Grid BackgroundColor="White" ColumnDefinitions="*,9*,9" RowDefinitions="*,*,*,*,*,*,*,*">
+    <Grid BackgroundColor="White" 
+          ColumnDefinitions="*,9*,9" 
+          RowDefinitions="*,*,*,*,*,*,*,*">
         <Label Grid.Column="1" 
                Grid.Row="1" 
                FontAttributes="Bold"

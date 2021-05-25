@@ -4,25 +4,12 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels" 
              x:Class="Aspert.LoginPage"
              x:DataType="vm:LoginPageViewModel">
-    <Grid BackgroundColor="White">
+    <Grid BackgroundColor="White"
+          ColumnDefinitions="5*,90*,5*"
+          RowDefinitions="*,2*,*,*,*,*,*,100">
         <Grid.BindingContext>
             <vm:LoginPageViewModel/>
         </Grid.BindingContext>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="90*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
         <Image Grid.Column="1" 
                Grid.Row="1" 
                Source="nuevologo_aspert.png"/>
@@ -36,7 +23,7 @@
                TextColor="#3D51A9"/>
         <Image Grid.Column="1"
                Grid.Row="3"
-               Source="profile.png"/>
+               Source="user_aspert.png"/>
         <Entry Grid.Column="1"
                Grid.Row="4" 
                Placeholder="Usuario o Correo"
