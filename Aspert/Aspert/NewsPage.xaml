@@ -64,7 +64,7 @@
                      BackgroundColor="#c0ccda"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
-                     Margin="5,5,5,5"
+                     Margin="5,0,5,5"
                      Source="user_aspert.png"/>
 
 
