@@ -6,7 +6,7 @@
              x:DataType="vm:MenuPageViewModel">
     <Grid BackgroundColor="{StaticResource LightGray}"
           ColumnDefinitions="*"
-          RowDefinitions="*,16*,*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:MenuPageViewModel/>
         </Grid.BindingContext>

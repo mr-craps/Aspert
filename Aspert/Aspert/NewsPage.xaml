@@ -5,7 +5,7 @@
              x:Class="Aspert.NewsPage"
              x:DataType="vm:PageViewModel">
     <Grid BackgroundColor="#c0ccda"
-        RowDefinitions="50,*,50">
+        RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:PageViewModel/>
         </Grid.BindingContext>

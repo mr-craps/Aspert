@@ -3,37 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.TestPage">
-    <Grid BackgroundColor="#c0ccda"
-          RowDefinitions="50,*,50">
+    <Grid BackgroundColor="{StaticResource LightGray}"
+          RowDefinitions="*,12*,*"
+          ColumnDefinitions="*">
+
         <Grid.BindingContext>
             <vm:PageViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
-                     BackgroundColor="#c0ccda"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
+                     Padding="10"
                      Source="menub_aspert.png"/>
+
         <!-- Fondo -->
         <Image Grid.Row="1"
                Aspect="Fill"
                Source="bg4_aspert.png"/>
         <!-- Contenido -->
+        
         <ScrollView Grid.Row="1">
             <StackLayout Margin="20">
-                <Label x:Name="lbl" 
+                <Frame BorderColor="gray" 
+                       BackgroundColor="#EFEDED"
+                       CornerRadius="5">
+                    <Label x:Name="lbl" 
                        LineBreakMode="WordWrap"
+                       Padding="25"
+                       FontSize="Small"
+
+                       FontFamily="Comin Sans MS"
                        Text="Mucho texto"/>
-                <Button x:Name="btn" 
+                </Frame>
+                <Grid Grid.Row="3"
+              ColumnDefinitions="*,Auto,20,Auto,*"
+              RowDefinitions="*,Auto,20,Auto,*">
+                    <Grid.Resources>
+                        <Style TargetType="{Type Button}">
+                            <Setter Property="FontAttributes"
+                            Value="Bold"/>
+                            <Setter Property="TextColor"
+                            Value="White"/>
+                            <Setter Property="HeightRequest"
+                            Value="120"/>
+                            <Setter Property="WidthRequest"
+                            Value="120"/>
+                        </Style>
+                    </Grid.Resources>
+
+                    <Button x:Name="btn" 
                         Clicked="OnBtnClicked"
-                        Text="Empezar Test"/>
+                        Text="Empezar Test"
+                        Grid.Row="4"
+                        BackgroundColor="#3ff090"
+                        Grid.Column="1"/>
+
+                    <Button x:Name="btn2" 
+                        Clicked="OnBtnClicked"
+                        Text="NO"
+                        BackgroundColor="#ff2c66"
+                        Grid.Row="4"
+                        Grid.Column="3"/>
+
+                </Grid>
+
+
             </StackLayout>
         </ScrollView>
+
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
-                     BackgroundColor="#c0ccda"
+                     BackgroundColor="Transparent"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
+                     Margin="5,0,5,5"
                      Source="user_aspert.png"/>
+
     </Grid>
 </ContentPage>

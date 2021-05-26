@@ -5,8 +5,8 @@
              x:Class="Aspert.LoginPage"
              x:DataType="vm:LoginPageViewModel">
     <Grid BackgroundColor="White"
-          ColumnDefinitions="5*,90*,5*"
-          RowDefinitions="*,2*,*,*,*,*,*,100">
+          ColumnDefinitions="*,18*,*"
+          RowDefinitions="*,*,*,*,0.5*,0.5*,0.6*,*">
         <Grid.BindingContext>
             <vm:LoginPageViewModel/>
         </Grid.BindingContext>
@@ -17,7 +17,6 @@
                Grid.Row="2" 
                HorizontalTextAlignment="Center"
                FontAttributes="Bold"
-               FontFamily="sensei"
                FontSize="Title"
                Text="aspert"
                TextColor="#3D51A9"/>

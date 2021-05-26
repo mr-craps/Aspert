@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels" xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.AbcPage">
     <Grid BackgroundColor="{StaticResource LightGray}"
-          RowDefinitions="*,16*,*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:PageViewModel/>
         </Grid.BindingContext>

@@ -6,12 +6,11 @@
              x:DataType="vm:MainPageViewModel">
     <Grid BackgroundColor="{StaticResource LightGray}" 
           ColumnDefinitions="*" 
-          RowDefinitions="*,16*,*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:MainPageViewModel/>
         </Grid.BindingContext>
-        <ImageButton Grid.Row="0"
-                     BackgroundColor="{StaticResource LightGray}"
+        <ImageButton BackgroundColor="{StaticResource LightGray}"
                      Command="{Binding Menu}"
                      HorizontalOptions="Start"
                      Padding="10"

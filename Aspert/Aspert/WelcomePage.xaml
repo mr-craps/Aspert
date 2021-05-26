@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
-             xmlns:db="clr-namespace:Aspert.Database"
+             xmlns:db="clr-namespace:Aspert.Database" xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.WelcomePage"
              x:DataType="vm:WelcomePageViewModel">
     <Grid BackgroundColor="White" 
-          ColumnDefinitions="*,9*,9" 
-          RowDefinitions="*,*,*,*,*,*,*,*">
+          ColumnDefinitions="*,9*,*" 
+          RowDefinitions="*,*,Auto,Auto,2*,*,*,*">
+        <Image Grid.ColumnSpan="3"
+               Grid.RowSpan="8"
+               Aspect="Fill"
+               Source="bg1_aspert.png"/>
         <Label Grid.Column="1" 
                Grid.Row="1" 
                FontAttributes="Bold"
                FontFamily="Sensei"
                FontSize="Title"
-               Margin="-10"
                Text="{Binding Source={Static db:SQLiteDB.Usuario}, StringFormat='¡Bienvenid@, {0}!'}"
                TextColor="#3D51A9"/>
         <Label Grid.Column="1" 
@@ -22,19 +25,22 @@
                FontFamily="Sensei"
                FontSize="Title"
                Text="ASPERT"
-               TextColor="#3D51A9"/>
-        <Label Grid.Column="1" 
-               Grid.Row="3" 
-               Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperger."/>
+               TextColor="#3D51A9"
+               Padding="10"/>
+        <aspert:JustifiedLabel 
+            Grid.Column="1" 
+            Grid.Row="3" 
+            Padding="10"
+            Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperger."/>
         <Button Grid.Column="1" 
                 Grid.Row="4" 
                 Command="{Binding Ok}"
-                BackgroundColor="White"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 Text="OK"
                 TextColor="#47525E"/>
         <Image Grid.Column="1" 
                Grid.Row="5" 
-               Source="Logo.png"/>
+               Source="nuevologo_aspert.png"/>
     </Grid>
 </ContentPage>
