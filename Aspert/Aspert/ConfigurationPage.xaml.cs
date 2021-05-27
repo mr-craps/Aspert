@@ -20,21 +20,27 @@ namespace Aspert
             eventOn = true;
         }
 
-        private void SwitchToggled(object sender, ToggledEventArgs e)
+        private async void SwitchToggled(object sender, ToggledEventArgs e)
         {
             if (!eventOn)
                 return;
+            try
+            {
+                var @switch = (Switch)sender;
+                var context = (ConfigurationPageViewModel)BindingContext;
+                var value = e.Value;
 
-            var @switch = (Switch)sender;
-            var context = (ConfigurationPageViewModel)BindingContext;
-            var value = e.Value;
-
-            if (@switch == sNotificaciones)
-                context.Notify = value;
-            else if (@switch == sSincronizacion)
-                context.Synchronize = value;
-            else if (@switch == sUsoDeDatosMoviles)
-                context.UseData = value;
+                if (@switch == sNotificaciones)
+                    context.Notify = value;
+                else if (@switch == sSincronizacion)
+                    context.Synchronize = value;
+                else if (@switch == sUsoDeDatosMoviles)
+                    context.UseData = value;
+            }
+            catch (System.Exception ex)
+            {
+                await DisplayAlert("ERROR", ex.ToString(), "Cancelar");
+            }
         }
 
         private async void ImageButton_Pressed(object sender, System.EventArgs e)

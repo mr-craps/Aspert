@@ -92,7 +92,7 @@
                                  Grid.Row="4"
                                  Source="edit_aspert.png"
                                  HorizontalOptions="Start"
-                                 BackgroundColor="White"
+                                 BackgroundColor="Transparent"
                                  Pressed="ImageButton_Pressed"/>
                     <Label Grid.Column="2"
                            Grid.Row="4"
@@ -104,7 +104,7 @@
                                  Grid.Row="5"
                                  Source="close_aspert.png"
                                  HorizontalOptions="Start"
-                                 BackgroundColor="White"
+                                 BackgroundColor="Transparent"
                                  Pressed="ImageButton_Pressed"/>
                     <Label Grid.Column="2"
                            Grid.Row="5"
@@ -116,7 +116,7 @@
                                  Grid.Row="6"
                                  Source="trashcan_aspert.png"
                                  HorizontalOptions="Start"
-                                 BackgroundColor="White"                   
+                                 BackgroundColor="Transparent"                   
                                  Pressed="ImageButton_Pressed"/>
                     <Label Grid.Column="2"
                            Grid.Row="6"

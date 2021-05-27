@@ -10,7 +10,7 @@
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
-                     BackgroundColor="{StaticResource LightGray}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="10"
@@ -77,7 +77,7 @@
         </ScrollView>
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
-                     BackgroundColor="{StaticResource LightGray}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"

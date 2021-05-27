@@ -10,7 +10,7 @@
         <Grid.BindingContext>
             <vm:MainPageViewModel/>
         </Grid.BindingContext>
-        <ImageButton BackgroundColor="{StaticResource LightGray}"
+        <ImageButton BackgroundColor="Transparent"
                      Command="{Binding Menu}"
                      HorizontalOptions="Start"
                      Padding="10"
@@ -19,7 +19,7 @@
                Aspect="Fill"
                Source="bg3newicon_aspert.png"/>
         <ImageButton Grid.Row="2"
-                     BackgroundColor="{StaticResource LightGray}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Configuration}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
