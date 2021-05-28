@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Aspert.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Aspert

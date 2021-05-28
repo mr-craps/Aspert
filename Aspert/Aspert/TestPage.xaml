@@ -23,55 +23,52 @@
                Aspect="Fill"
                Source="bg4_aspert.png"/>
         <!-- Contenido -->
-        
-        <ScrollView Grid.Row="1">
-            <StackLayout Margin="20">
-                <Frame BorderColor="gray" 
+
+        <StackLayout Grid.Row="1" 
+                     Margin="20">
+            <Frame BorderColor="gray" 
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
-                    <Label x:Name="lbl" 
+                <Label x:Name="lbl" 
                        LineBreakMode="WordWrap"
                        Padding="25"
                        FontSize="Small"
-
-                       FontFamily="Comin Sans MS"
                        Text="Mucho texto"/>
-                </Frame>
-                <Grid Grid.Row="3"
+            </Frame>
+            <Grid Grid.Row="3"
               ColumnDefinitions="*,Auto,20,Auto,*"
               RowDefinitions="*,Auto,20,Auto,*">
-                    <Grid.Resources>
-                        <Style TargetType="{Type Button}">
-                            <Setter Property="FontAttributes"
+                <Grid.Resources>
+                    <Style TargetType="{Type Button}">
+                        <Setter Property="FontAttributes"
                             Value="Bold"/>
-                            <Setter Property="TextColor"
+                        <Setter Property="TextColor"
                             Value="White"/>
-                            <Setter Property="HeightRequest"
+                        <Setter Property="HeightRequest"
                             Value="120"/>
-                            <Setter Property="WidthRequest"
+                        <Setter Property="WidthRequest"
                             Value="120"/>
-                        </Style>
-                    </Grid.Resources>
+                    </Style>
+                </Grid.Resources>
 
-                    <Button x:Name="btn" 
+                <Button x:Name="btn" 
                         Clicked="OnBtnClicked"
                         Text="Empezar Test"
                         Grid.Row="4"
                         BackgroundColor="#3ff090"
                         Grid.Column="1"/>
 
-                    <Button x:Name="btn2" 
+                <Button x:Name="btn2" 
                         Clicked="OnBtnClicked"
                         Text="NO"
                         BackgroundColor="#ff2c66"
                         Grid.Row="4"
                         Grid.Column="3"/>
 
-                </Grid>
+            </Grid>
 
 
-            </StackLayout>
-        </ScrollView>
+        </StackLayout>
 
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             

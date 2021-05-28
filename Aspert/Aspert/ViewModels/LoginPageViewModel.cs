@@ -20,7 +20,7 @@ namespace Aspert.ViewModels
                     await Application.Current.MainPage.Navigation.PushModalAsync(new WelcomePage());
                 }
                 else
-                    await Application.Current.MainPage.DisplayAlert("Contraseña inválida", "La contraseña introducida no coincide con la contraseña registrada. Por favor intente nuevamente.", "Ok");
+                    await Application.Current.MainPage.DisplayAlert("Contraseña inválida", "La contraseña introducida no coincide con la contraseña registrada, por favor intente nuevamente. Recuerde que el usuario y contraseña deben tener al menos 4 caracteres.", "Ok");
             });
         }
     }
