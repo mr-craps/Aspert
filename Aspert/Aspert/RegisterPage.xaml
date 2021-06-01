@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels" 
-             x:Class="Aspert.LoginPage"
-             x:DataType="vm:LoginPageViewModel">
+             x:Class="Aspert.RegisterPage"
+             x:DataType="vm:RegisterPageViewModel">
     <Grid BackgroundColor="White"
           ColumnDefinitions="*,18*,*"
-          RowDefinitions="*,2*,*,2*,*,*,*,0.25*,*">
+          RowDefinitions="*,2*,*,2*,*,*,*">
         <Grid.BindingContext>
-            <vm:LoginPageViewModel/>
+            <vm:RegisterPageViewModel/>
         </Grid.BindingContext>
         <Image Grid.Column="1" 
                Grid.Row="1" 
@@ -40,20 +40,7 @@
                 Command="{Binding Login}"
                 FontAttributes="Bold"
                 FontSize="Large"
-                Text="ENTRA"
-                TextColor="White"/>
-        <Label Grid.Column="1" 
-               Grid.Row="7" 
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"
-               Text="O"/>
-        <Button Grid.Column="1" 
-                Grid.Row="8"
-                BackgroundColor="#3D51A9"
-                Command="{Binding Register}"
-                FontAttributes="Bold"
-                FontSize="Large"
-                Text="REGÍSTRATE AQUÍ"
+                Text="ACEPTAR E INGRESAR"
                 TextColor="White"/>
     </Grid>
 </ContentPage>

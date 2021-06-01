@@ -28,7 +28,7 @@
                      VerticalOptions="Center"/>
         <Grid Grid.Row="1"
               ColumnDefinitions="*,Auto,20,Auto,*"
-              RowDefinitions="*,Auto,20,Auto,*">
+              RowDefinitions="*,Auto,20,Auto,20,Auto,*">
             <Grid.Resources>
                 <Style TargetType="{Type Button}">
                     <Setter Property="FontAttributes"
@@ -61,6 +61,16 @@
                     BackgroundColor="{StaticResource Purple}"
                     Command="{Binding TestPage}"
                     Text="TEST"/>
+            <Button Grid.Column="1"
+                    Grid.Row="5"
+                    BackgroundColor="{StaticResource Orange}"
+                    Command="{Binding PlayPage}"
+                    Text="JUEGA"/>
+            <Button Grid.Column="3"
+                    Grid.Row="5"
+                    BackgroundColor="{StaticResource Cyan}"
+                    Command="{Binding AboutPage}"
+                    Text="ACERCA DE"/>
         </Grid>
     </Grid>
 </ContentPage>

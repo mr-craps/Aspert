@@ -37,19 +37,11 @@ namespace Aspert.Database
 
             if (string.IsNullOrWhiteSpace(contraseña))
                 return null;
-#if !DEBUG
-            if (usuario.Length < 4 || contraseña.Length < 4)
-                return null;
-#endif
-            var user = (await Connection.Table<User>().ToArrayAsync()).FirstOrDefault(x => x.Usuario.Equals(usuario, StringComparison.InvariantCultureIgnoreCase));
 
-            if (user is null)
-                return await RegisterAsync(usuario, contraseña);
-
-            if (!user.Contraseña.Equals(contraseña))
+            if (usuario.Length < 4 || usuario.Length > 12 || contraseña.Length < 4 || contraseña.Length > 12)
                 return null;
 
-            return user;
+            return (await Connection.Table<User>().ToArrayAsync()).FirstOrDefault(x => x.Usuario.Equals(usuario, StringComparison.InvariantCultureIgnoreCase) && x.Contraseña.Equals(contraseña));
         }
 
         public static async Task<User> RegisterAsync(string usuario, string contraseña)

@@ -9,5 +9,7 @@
         <Color x:Key="Red">#FF2C66</Color>
         <Color x:Key="Lime">#3FF090</Color>
         <Color x:Key="Purple">#802D92</Color>
+        <Color x:Key="Orange">#F57D00</Color>
+        <Color x:Key="Cyan">#3790DE</Color>
     </Application.Resources>
 </Application>

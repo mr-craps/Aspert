@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Aspert.ViewModels
 {
@@ -16,5 +20,8 @@ namespace Aspert.ViewModels
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        protected Task AlertAsync(string title, string message, string cancel)
+            => Application.Current.MainPage.DisplayAlert(title, message, cancel);
     }
 }
