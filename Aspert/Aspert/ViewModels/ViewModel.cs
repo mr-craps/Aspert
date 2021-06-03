@@ -23,5 +23,8 @@ namespace Aspert.ViewModels
 
         protected Task AlertAsync(string title, string message, string cancel)
             => Application.Current.MainPage.DisplayAlert(title, message, cancel);
+
+        protected ICommand Push<T>() where T : Page, new()
+            => new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new T()));
     }
 }

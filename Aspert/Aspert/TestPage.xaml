@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
-             x:Class="Aspert.TestPage">
+             x:Class="Aspert.TestPage"
+             x:DataType="vm:TestPageViewModel">
     <Grid BackgroundColor="{StaticResource LightGray}"
           RowDefinitions="*,12*,*"
           ColumnDefinitions="*">
 
         <Grid.BindingContext>
-            <vm:PageViewModel/>
+            <vm:TestPageViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
@@ -52,11 +53,11 @@
                 </Grid.Resources>
 
                 <Button x:Name="btn" 
-                        Clicked="OnBtnClicked"
-                        Text="Empezar Test"
+                        Grid.Column="1"
                         Grid.Row="4"
                         BackgroundColor="#3ff090"
-                        Grid.Column="1"/>
+                        Command="{Binding StartTest}"
+                        Text="Empezar Test"/>
 
                 <Button x:Name="btn2" 
                         Clicked="OnBtnClicked"
