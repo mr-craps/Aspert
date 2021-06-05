@@ -7,24 +7,27 @@
     <Grid BackgroundColor="{StaticResource LightGray}"
           RowDefinitions="*,12*,*"
           ColumnDefinitions="*">
-
         <Grid.BindingContext>
             <vm:TestPageViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
+                     Command="{Binding Main}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="menub_aspert.png"/>
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="10"
                      Source="menub_aspert.png"/>
-
         <!-- Fondo -->
         <Image Grid.Row="1"
                Aspect="Fill"
                Source="bg4_aspert.png"/>
         <!-- Contenido -->
-
         <StackLayout Grid.Row="1" 
                      Margin="20">
             <Frame BorderColor="gray" 
@@ -51,26 +54,20 @@
                             Value="120"/>
                     </Style>
                 </Grid.Resources>
-
                 <Button x:Name="btn" 
                         Grid.Column="1"
                         Grid.Row="4"
                         BackgroundColor="#3ff090"
                         Command="{Binding StartTest}"
                         Text="Empezar Test"/>
-
                 <Button x:Name="btn2" 
                         Clicked="OnBtnClicked"
                         Text="NO"
                         BackgroundColor="#ff2c66"
                         Grid.Row="4"
                         Grid.Column="3"/>
-
             </Grid>
-
-
         </StackLayout>
-
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
                      BackgroundColor="Transparent"
@@ -78,6 +75,5 @@
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>
-
     </Grid>
 </ContentPage>

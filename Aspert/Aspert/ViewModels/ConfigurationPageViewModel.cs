@@ -39,13 +39,15 @@ namespace Aspert.ViewModels
             }
         }
 
+        public ICommand Back { get; }
         public ICommand Menu { get; }
         public ICommand Logout { get; }
         public ICommand DeleteAccount { get; }
 
         public ConfigurationPageViewModel()
         {
-            Menu = new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new MenuPage()));
+            Back = GoBack();
+            Menu = Push<MenuPage>();
             Logout = new Command(async () =>
             {
                 if (await Application.Current.MainPage.DisplayAlert("Cerrar sesión", "¿Deseas cerrar sesión?", "Aceptar", "Cancelar"))

@@ -16,7 +16,7 @@ namespace Aspert.ViewModels
             {
                 if (await SQLiteDB.GetUserAsync(Usuario, Contraseña) is User)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Usuario duplicado", "El usuario que intenta registrar ya existe en la base de datos.", "Ok");
+                    await Application.Current.MainPage.DisplayAlert("Usuario no disponible", "El usuario que intenta registrar ya existe en la base de datos.", "Ok");
                 }
                 else
                 {

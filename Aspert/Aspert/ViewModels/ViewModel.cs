@@ -26,5 +26,11 @@ namespace Aspert.ViewModels
 
         protected ICommand Push<T>() where T : Page, new()
             => new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new T()));
+
+        protected ICommand Push(Type pageType)
+            => new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync((Page)Activator.CreateInstance(pageType)));
+
+        protected ICommand GoBack()
+            => Push(Application.Current.MainPage.Navigation.ModalStack[Application.Current.MainPage.Navigation.ModalStack.Count - 1].GetType());
     }
 }

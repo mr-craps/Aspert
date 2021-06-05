@@ -6,7 +6,7 @@
              x:DataType="vm:RegisterPageViewModel">
     <Grid BackgroundColor="White"
           ColumnDefinitions="*,18*,*"
-          RowDefinitions="*,2*,*,2*,*,*,*">
+          RowDefinitions="*,2*,*,2*,*,*,0.5*,0.75*,0.5*">
         <Grid.BindingContext>
             <vm:RegisterPageViewModel/>
         </Grid.BindingContext>
@@ -25,7 +25,7 @@
                Source="user_aspert.png"/>
         <Entry Grid.Column="1"
                Grid.Row="4" 
-               Placeholder="Usuario o Correo"
+               Placeholder="Usuario"
                TextColor="Black"
                Text="{Binding Usuario}"/>
         <Entry Grid.Column="1" 
@@ -35,7 +35,7 @@
                TextColor="Black"
                Text="{Binding Contraseña}"/>
         <Button Grid.Column="1" 
-                Grid.Row="6"
+                Grid.Row="7"
                 BackgroundColor="#3D51A9"
                 Command="{Binding Login}"
                 FontAttributes="Bold"

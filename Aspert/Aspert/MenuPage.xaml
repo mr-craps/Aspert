@@ -12,7 +12,7 @@
         </Grid.BindingContext>
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Command="{Binding Back}"
+                     Command="{Binding Main}"
                      HorizontalOptions="Start"
                      Source="menub_aspert.png"
                      Padding="10"/>

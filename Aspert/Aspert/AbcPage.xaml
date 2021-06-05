@@ -11,6 +11,12 @@
         <!-- Menú -->
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
+                     Command="{Binding Main}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="menub_aspert.png"/>
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="10"
