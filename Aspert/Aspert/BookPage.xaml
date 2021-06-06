@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              x:Class="Aspert.BookPage"
              x:DataType="vm:PageViewModel">
-    <Grid BackgroundColor="#c0ccda"
+    <Grid BackgroundColor="{StaticResource LightGray}"
         RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:PageViewModel/>
@@ -21,7 +21,7 @@
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="10"
-                     Source="menub_aspert.png"/>
+                     Source="back_aspert.png"/>
         <!-- Fondo -->
         <Image Grid.Row="1"
                Aspect="Fill"

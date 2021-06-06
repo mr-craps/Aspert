@@ -21,7 +21,7 @@
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="10"
-                     Source="menub_aspert.png"/>
+                     Source="back_aspert.png"/>
         <!-- Fondo -->
         <Image Grid.Row="1"
                Aspect="Fill"

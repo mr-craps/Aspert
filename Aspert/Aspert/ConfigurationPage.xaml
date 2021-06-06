@@ -20,7 +20,8 @@
                      BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
-                     Source="sync_aspert.png"/>
+                     Source="back_aspert.png"
+                     Padding="10"/>
         <Image Grid.Row="1"
                Aspect="Fill"
                Source="bg4_aspert.png"/>
