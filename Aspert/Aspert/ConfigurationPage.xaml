@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels" 
              xmlns:db="clr-namespace:Aspert.Database"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.ConfigurationPage"
-             x:DataType="vm:ConfigurationPageViewModel">
+             x:DataType="{x:Type vm:ConfigurationPageViewModel}">
     <Grid BackgroundColor="{StaticResource LightGray}"
           ColumnDefinitions="*" 
           RowDefinitions="*,12*,*">
@@ -12,7 +13,8 @@
             <vm:ConfigurationPageViewModel/>
         </Grid.BindingContext>
         <ImageButton BackgroundColor="Transparent"
-                     Command="{Binding Menu}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
                      Source="menug_aspert.png"
                      Padding="10"/>

@@ -2,16 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.MainPage"
-             x:DataType="vm:MainPageViewModel">
+             x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource LightGray}" 
           ColumnDefinitions="*" 
           RowDefinitions="*,12*,*">
         <Grid.BindingContext>
-            <vm:MainPageViewModel/>
+            <vm:ViewModel/>
         </Grid.BindingContext>
         <ImageButton BackgroundColor="Transparent"
-                     Command="{Binding Menu}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
                      Padding="10"
                      Source="menug_aspert.png"/>
@@ -20,7 +22,8 @@
                Source="bg3newicon_aspert.png"/>
         <ImageButton Grid.Row="2"
                      BackgroundColor="Transparent"
-                     Command="{Binding Configuration}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png" />

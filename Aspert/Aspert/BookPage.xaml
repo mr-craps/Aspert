@@ -2,17 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.BookPage"
-             x:DataType="vm:PageViewModel">
+             x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource LightGray}"
         RowDefinitions="*,12*,*">
         <Grid.BindingContext>
-            <vm:PageViewModel/>
+            <vm:ViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Command="{Binding Main}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MainPage}"
                      HorizontalOptions="Start"
                      Padding="10"
                      Source="menub_aspert.png"/>
@@ -32,7 +34,7 @@
                   RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
                 <Button Grid.Row="0" 
                         WidthRequest="110"
-                        BackgroundColor="#ff2c66"
+                        BackgroundColor="{StaticResource Red}"
                         Text="LIBROS Y PELICULAS"
                         TextColor="White"
                         FontSize="16"
@@ -40,35 +42,36 @@
                         HorizontalOptions="Start"/>
                 <Label Grid.Row="2" 
                        Text="ALGO AQUI"
-                       TextColor="#ff2c66"
+                       TextColor="{StaticResource Red}"
                        FontAttributes="Bold"
                        FontSize="Title"/>
                 <Label Grid.Row="3" 
                        Text=" text here "
-                       TextColor="#8492A6"/>
+                       TextColor="{StaticResource Gray}"/>
                 <Label Grid.Row="5" 
                        Text="ALGO AQUI 2"
-                       TextColor="#ff2c66"
+                       TextColor="{StaticResource Red}"
                        FontAttributes="Bold"
                        FontSize="Title"/>
                 <Label Grid.Row="6" 
                        Text="TEXT HERE "
-                       TextColor="#8492A6"/>
+                       TextColor="{StaticResource Gray}"/>
                 <Label Grid.Row="8" 
                        Text="ALGO AQUI 3"
-                       TextColor="#ff2c66"
+                       TextColor="{StaticResource Red}"
                        FontAttributes="Bold"
                        FontSize="Title"/>
                 <Label Grid.Row="9" 
                        Text="TEXT HERE "
-                       TextColor="#8492A6"/>
+                       TextColor="{StaticResource Gray}"/>
 
             </Grid>
         </ScrollView>
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
                      BackgroundColor="Transparent"
-                     Command="{Binding Configuration}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>

@@ -2,17 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.MenuPage"
-             x:DataType="vm:MenuPageViewModel">
+             x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource LightGray}"
           ColumnDefinitions="*"
           RowDefinitions="*,12*,*">
         <Grid.BindingContext>
-            <vm:MenuPageViewModel/>
+            <vm:ViewModel/>
         </Grid.BindingContext>
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Command="{Binding Main}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MainPage}"
                      HorizontalOptions="Start"
                      Source="menub_aspert.png"
                      Padding="10"/>
@@ -21,7 +23,8 @@
                Source="bg4_aspert.png"/>
         <ImageButton Grid.Row="2"   
                      BackgroundColor="Transparent"
-                     Command="{Binding Configuration}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"
@@ -44,32 +47,38 @@
             <Button Grid.Column="1"
                     Grid.Row="1"
                     BackgroundColor="{StaticResource Yellow}"
-                    Command="{Binding AbcPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:AbcPage}"
                     Text="ASPERGER ABC"/>
             <Button Grid.Column="3"
                     Grid.Row="1"
                     BackgroundColor="{StaticResource Red}"
-                    Command="{Binding BookPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:BookPage}"
                     Text="LIBROS Y PELÍCULAS"/>
             <Button Grid.Column="1"
                     Grid.Row="3"
                     BackgroundColor="{StaticResource Lime}"
-                    Command="{Binding NewsPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:NewsPage}"
                     Text="ÚLTIMAS NOTICIAS"/>
             <Button Grid.Column="3"
                     Grid.Row="3"
                     BackgroundColor="{StaticResource Purple}"
-                    Command="{Binding TestPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:TestPage}"
                     Text="TEST"/>
             <Button Grid.Column="1"
                     Grid.Row="5"
                     BackgroundColor="{StaticResource Orange}"
-                    Command="{Binding PlayPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:PlayPage}"
                     Text="JUEGA"/>
             <Button Grid.Column="3"
                     Grid.Row="5"
                     BackgroundColor="{StaticResource Cyan}"
-                    Command="{Binding AboutPage}"
+                    Command="{Binding Push}"
+                    CommandParameter="{Type aspert:AboutPage}"
                     Text="ACERCA DE"/>
         </Grid>
     </Grid>

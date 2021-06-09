@@ -2,76 +2,84 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.TestPage"
-             x:DataType="vm:TestPageViewModel">
+             x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource LightGray}"
-          RowDefinitions="*,12*,*"
-          ColumnDefinitions="*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
-            <vm:TestPageViewModel/>
+            <vm:ViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Main}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="menub_aspert.png"/>
-        <ImageButton Grid.Row="2"
-                     BackgroundColor="Transparent"
+                     BackgroundColor="{StaticResource LightGray}"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
-                     Padding="10"
-                     Source="back_aspert.png"/>
+                     Padding="5"
+                     Source="menub_aspert.png"/>
         <!-- Fondo -->
         <Image Grid.Row="1"
                Aspect="Fill"
                Source="bg4_aspert.png"/>
         <!-- Contenido -->
-        <StackLayout Grid.Row="1" 
-                     Margin="20">
-            <Frame BorderColor="gray" 
+        <ScrollView Grid.Row="1">
+            <StackLayout Margin="20">
+                <!-- cuadrito maldito -->
+                <Frame BackgroundColor="{StaticResource Purple}"
+                      WidthRequest="100">
+                    <Label HorizontalTextAlignment="Center"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Text="INFO">
+                    </Label>
+                </Frame>
+                <!-- Fin del cuadrito maldito -->
+                <Frame BorderColor="{StaticResource Purple}" 
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
-                <Label x:Name="lbl" 
-                       LineBreakMode="WordWrap"
-                       Padding="25"
-                       FontSize="Small"
-                       Text="Mucho texto"/>
-            </Frame>
-            <Grid Grid.Row="3"
-              ColumnDefinitions="*,Auto,20,Auto,*"
-              RowDefinitions="*,Auto,20,Auto,*">
-                <Grid.Resources>
-                    <Style TargetType="{Type Button}">
-                        <Setter Property="FontAttributes"
-                            Value="Bold"/>
-                        <Setter Property="TextColor"
-                            Value="White"/>
-                        <Setter Property="HeightRequest"
-                            Value="120"/>
-                        <Setter Property="WidthRequest"
-                            Value="120"/>
-                    </Style>
-                </Grid.Resources>
-                <Button x:Name="btn" 
-                        Grid.Column="1"
-                        Grid.Row="4"
-                        BackgroundColor="#3ff090"
-                        Command="{Binding StartTest}"
-                        Text="Empezar Test"/>
-                <Button x:Name="btn2" 
-                        Clicked="OnBtnClicked"
-                        Text="NO"
-                        BackgroundColor="#ff2c66"
-                        Grid.Row="4"
-                        Grid.Column="3"/>
-            </Grid>
-        </StackLayout>
+                    <Label x:Name="lbl" 
+                           LineBreakMode="WordWrap"
+                           Padding="25"
+                           FontSize="Small"
+                           Text="El Test Infantil del Síndrome de Asperger ha demostrado ser útil en la identificación temprana de niños, entre edades comprendidas entre los cuatro y los once años, cuyos comportamientos sugieren un alto riesgo de presencia de un síndrome de Asperger. Cada pregunta puede proporcionar 0 o 1 puntos, pero hay seis preguntas que no puntuan. Por tanto, la puntuación máxima posible es de 31 puntos. Una puntuación total de 15 o superior sería indicativa de la presencia de comportamientos que justificarían realizar una valoración diagnóstica por parte de un profesional de la salud."/>
+                </Frame>
+                <!-- Botones y columnas -->
+                <Grid Grid.Row="3"
+                      ColumnDefinitions="*,Auto,50,Auto,*" 
+                      RowDefinitions="*,Auto,5,Auto,*">
+                    <Grid.Resources>
+                        <Style TargetType="{Type Button}">
+                            <Setter Property="FontAttributes"
+                                    Value="Bold"/>
+                            <Setter Property="TextColor"
+                                    Value="White"/>
+                            <Setter Property="HeightRequest"
+                                    Value="70"/>
+                            <Setter Property="WidthRequest"
+                                    Value="100"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Button x:Name="btn" 
+                            Grid.Column="1"
+                            Grid.Row="4"  
+                            BackgroundColor="{StaticResource Purple}"
+                            Clicked="OnBtnClicked"
+                            Text="Empezar Test"/>
+                    <Button x:Name="btn2" 
+                            Grid.Column="3"
+                            Grid.Row="4"
+                            BackgroundColor="{StaticResource Purple}"
+                            Clicked="OnBtnClicked"
+                            Text="CANCELAR"/>
+                </Grid>
+                <!-- Fin Botones y columnas -->
+            </StackLayout>
+        </ScrollView>
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
-                     BackgroundColor="Transparent"
-                     Command="{Binding Configuration}"
+                     BackgroundColor="{StaticResource LightGray}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>

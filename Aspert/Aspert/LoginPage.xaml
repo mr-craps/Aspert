@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels" 
              x:Class="Aspert.LoginPage"
-             x:DataType="vm:LoginPageViewModel">
+             x:DataType="{x:Type vm:LoginPageViewModel}">
     <Grid BackgroundColor="White"
           ColumnDefinitions="*,18*,*"
           RowDefinitions="*,2*,*,2*,*,*,0.75*,0.25*,0.75*">
@@ -19,7 +19,7 @@
                FontAttributes="Bold"
                FontSize="Title"
                Text="aspert"
-               TextColor="#3D51A9"/>
+               TextColor="{StaticResource Blue}"/>
         <Image Grid.Column="1"
                Grid.Row="3"
                Source="user_aspert.png"/>
@@ -36,7 +36,7 @@
                Text="{Binding Contraseña}"/>
         <Button Grid.Column="1" 
                 Grid.Row="6"
-                BackgroundColor="#3D51A9"
+                BackgroundColor="{StaticResource Blue}"
                 Command="{Binding Login}"
                 FontAttributes="Bold"
                 FontSize="Large"
@@ -49,7 +49,7 @@
                Text="O"/>
         <Button Grid.Column="1" 
                 Grid.Row="8"
-                BackgroundColor="#3D51A9"
+                BackgroundColor="{StaticResource Blue}"
                 Command="{Binding Register}"
                 FontAttributes="Bold"
                 FontSize="Large"

@@ -11,5 +11,6 @@
         <Color x:Key="Purple">#802D92</Color>
         <Color x:Key="Orange">#F57D00</Color>
         <Color x:Key="Cyan">#3790DE</Color>
+        <Color x:Key="Blue">#3D51A9</Color>
     </Application.Resources>
 </Application>

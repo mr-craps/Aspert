@@ -39,28 +39,22 @@ namespace Aspert.ViewModels
             }
         }
 
-        public ICommand Back { get; }
-        public ICommand Menu { get; }
         public ICommand Logout { get; }
         public ICommand DeleteAccount { get; }
 
         public ConfigurationPageViewModel()
         {
-            Back = GoBack();
-            Menu = Push<MenuPage>();
             Logout = new Command(async () =>
             {
-                if (await Application.Current.MainPage.DisplayAlert("Cerrar sesión", "¿Deseas cerrar sesión?", "Aceptar", "Cancelar"))
-                {
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
-                }
+                if (await AlertAsync("Cerrar sesión", "¿Deseas cerrar sesión?", "Aceptar", "Cancelar"))
+                    Push.Execute(typeof(LoginPage));
             });
             DeleteAccount = new Command(async () =>
             {
-                if (await Application.Current.MainPage.DisplayAlert("Borrar cuenta", "¿Deseas BORRAR PERMANENTEMENTE tu cuenta?", "SÍ", "NO!!!"))
+                if (await AlertAsync("Borrar cuenta", "¿Deseas BORRAR PERMANENTEMENTE tu cuenta?", "SÍ", "NO!!!"))
                 {
                     await SQLiteDB.DeleteAccountAsync();
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
+                    Push.Execute(typeof(LoginPage));
                 }
             });
         }

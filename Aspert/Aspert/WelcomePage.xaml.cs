@@ -10,7 +10,6 @@ namespace Aspert
         public WelcomePage()
         {
             InitializeComponent();
-            BindingContext = new WelcomePageViewModel();
         }
     }
 }

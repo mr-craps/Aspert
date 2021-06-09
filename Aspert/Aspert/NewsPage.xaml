@@ -2,17 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.NewsPage"
-             x:DataType="vm:PageViewModel">
-    <Grid BackgroundColor="#c0ccda"
-        RowDefinitions="*,12*,*">
+             x:DataType="{x:Type vm:NewsPageViewModel}">
+    <Grid BackgroundColor="{StaticResource LightGray}"
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
-            <vm:PageViewModel/>
+            <vm:NewsPageViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Command="{Binding Main}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
                      Padding="10"
                      Source="menub_aspert.png"/>
@@ -28,8 +30,24 @@
                Source="bg4_aspert.png"/>
         <!-- Contenido -->
         <ScrollView Grid.Row="1">
-            <Grid Padding="20" 
-                  RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+            <Grid Padding="20">
+                <!--
+                  RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto"
+                -->
+                <CollectionView ItemsSource="{Binding Feeds, Source={Static vm:NewsPageViewModel.Instance}}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type vm:Feed}">
+                            <StackLayout>
+                                <Label Text="{Binding Title}"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Summary}"
+                                       TextColor="Black"
+                                       TextType="Html"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!--
                 <Button Grid.Row="0" 
                         WidthRequest="110"
                         BackgroundColor="#3ff090"
@@ -62,13 +80,14 @@
                 <Label Grid.Row="9" 
                        Text="TEXT HERE "
                        TextColor="#8492A6"/>
-
+                -->
             </Grid>
         </ScrollView>
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
                      BackgroundColor="Transparent"
-                     Command="{Binding Configuration}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>

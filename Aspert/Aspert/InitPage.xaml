@@ -15,7 +15,7 @@
                Grid.Row="3" 
                Padding="20,0,0,0"
                Text="aspert" 
-               TextColor="#3D51A9"
+               TextColor="{StaticResource Blue}"
                FontAttributes="Bold"
                FontSize="Large"/>
         <Label Grid.Column="1"

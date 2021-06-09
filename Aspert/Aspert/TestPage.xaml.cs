@@ -61,12 +61,9 @@ namespace Aspert
 
             lbl.Text = _questions[_question++];
 
-            if (_question < _questions.Length)
-                btn.Text = "Siguiente";
-            else
-            {
-                btn.Text = "Finalizar tests";
-            }
+            btn.Text = _question < _questions.Length 
+                ? "Siguiente" 
+                : "Finalizar tests";
         }
     }
 }

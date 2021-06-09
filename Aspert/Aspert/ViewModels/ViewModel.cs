@@ -8,9 +8,22 @@ using Xamarin.Forms;
 
 namespace Aspert.ViewModels
 {
-    public abstract class ViewModel : INotifyPropertyChanged
+    public class ViewModel : INotifyPropertyChanged
     {
+        protected static readonly INavigation _navigation = Application.Current.MainPage.Navigation;
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand Push { get; }
+        public ICommand Back { get; }
+
+        public ViewModel()
+        {
+            Push = new Command<Type>(async pageType => await _navigation.PushModalAsync((Page)Activator.CreateInstance(pageType)));
+            Back = new Command(async () => await _navigation.PushModalAsync(
+                (Page)Activator.CreateInstance(
+                    _navigation.ModalStack[_navigation.ModalStack.Count - 1].GetType())));
+        }
 
         protected void SetValue<T>(ref T field, T value, [CallerMemberName]string propertyName = "")
         {
@@ -24,13 +37,7 @@ namespace Aspert.ViewModels
         protected Task AlertAsync(string title, string message, string cancel)
             => Application.Current.MainPage.DisplayAlert(title, message, cancel);
 
-        protected ICommand Push<T>() where T : Page, new()
-            => new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync(new T()));
-
-        protected ICommand Push(Type pageType)
-            => new Command(async () => await Application.Current.MainPage.Navigation.PushModalAsync((Page)Activator.CreateInstance(pageType)));
-
-        protected ICommand GoBack()
-            => Push(Application.Current.MainPage.Navigation.ModalStack[Application.Current.MainPage.Navigation.ModalStack.Count - 1].GetType());
+        protected Task<bool> AlertAsync(string title, string message, string accept, string cancel)
+            => Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
     }
 }

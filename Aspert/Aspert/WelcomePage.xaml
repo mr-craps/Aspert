@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
-             xmlns:db="clr-namespace:Aspert.Database" xmlns:aspert="clr-namespace:Aspert"
+             xmlns:db="clr-namespace:Aspert.Database" 
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.WelcomePage"
-             x:DataType="vm:WelcomePageViewModel">
+             x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="White" 
           ColumnDefinitions="*,9*,*" 
           RowDefinitions="*,*,Auto,Auto,2*,*,*,*">
+        <Grid.BindingContext>
+            <vm:ViewModel/>
+        </Grid.BindingContext>
         <Image Grid.ColumnSpan="3"
                Grid.RowSpan="8"
                Aspect="Fill"
@@ -18,14 +22,14 @@
                FontFamily="Sensei"
                FontSize="Title"
                Text="{Binding Source={Static db:SQLiteDB.Usuario}, StringFormat='¡Bienvenid@, {0}!'}"
-               TextColor="#3D51A9"/>
+               TextColor="{StaticResource Blue}"/>
         <Label Grid.Column="1" 
                Grid.Row="2" 
                FontAttributes="Bold"
                FontFamily="Sensei"
                FontSize="Title"
                Text="ASPERT"
-               TextColor="#3D51A9"
+               TextColor="{StaticResource Blue}"
                Padding="10"/>
         <aspert:JustifiedLabel 
             Grid.Column="1" 
@@ -34,7 +38,8 @@
             Text="ASPERT es una app desarrollada de forma gratuita para brindar información y colaboración a las personas y familias relacionadas con niños con síndrome de Asperger."/>
         <Button Grid.Column="1" 
                 Grid.Row="4" 
-                Command="{Binding Ok}"
+                Command="{Binding Push}"
+                CommandParameter="{Type aspert:MainPage}"
                 BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 Text="OK"
