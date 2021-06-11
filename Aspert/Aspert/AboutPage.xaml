@@ -5,7 +5,7 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.AboutPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource LightGray}"
+    <Grid BackgroundColor="{StaticResource Cyan}"
           RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
@@ -32,15 +32,19 @@
         <!-- Hay que jugar con los grids para hacer ese cuadrito de mierda -->
         <ScrollView Grid.Row="1">
             <Grid Padding="20" 
-                  RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
-                <Button Grid.Row="0" 
-                        WidthRequest="110"
-                        BackgroundColor="{StaticResource Cyan}"
-                        Text="ACERCA DE"
-                        TextColor="White"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        HorizontalOptions="Start"/>
+                  RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+                <Grid ColumnDefinitions="120">
+                    <Frame BackgroundColor="{StaticResource Cyan}">
+                        <Label FontAttributes="Bold" 
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="ACERCA DE"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                </Grid>
                 <Label Grid.Row="2" 
                        Text="¿QUIÉNES SOMOS?"
                        TextColor="{StaticResource Cyan}"

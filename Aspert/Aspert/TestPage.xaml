@@ -5,14 +5,14 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.TestPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource LightGray}"
+    <Grid BackgroundColor="{StaticResource Purple}"
           RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
         </Grid.BindingContext>
         <!-- Menú -->
         <ImageButton Grid.Row="0"
-                     BackgroundColor="{StaticResource LightGray}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Back}"
                      HorizontalOptions="Start"
                      Padding="5"
@@ -75,9 +75,15 @@
                 <!-- Fin Botones y columnas -->
             </StackLayout>
         </ScrollView>
-        <!-- Configuración -->
+        <!-- Footer -->
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="back_aspert.png"/>
         <ImageButton Grid.Row="2"             
-                     BackgroundColor="{StaticResource LightGray}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Push}"
                      CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"

@@ -29,7 +29,7 @@ namespace Aspert.ViewModels
 
                 reader.Close();
 
-                foreach (var item in feed.Items.Take(3))
+                foreach (var item in feed.Items.Take(10))
                     Instance.Feeds.Add(new Feed(item));
             });
         }

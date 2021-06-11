@@ -5,7 +5,7 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.AbcPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource LightGray}"
+    <Grid BackgroundColor="{StaticResource Yellow}"
           RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
@@ -47,14 +47,18 @@
                                 Value="{StaticResource Gray}"/>
                     </Style>
                 </Grid.Resources>
-                <Button Grid.Row="0" 
-                        WidthRequest="120"
-                        BackgroundColor="{StaticResource Yellow}"
-                        Text="ASPERGER ABC"
-                        TextColor="White"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        HorizontalOptions="Start"/>
+                <Grid ColumnDefinitions="120">
+                    <Frame BackgroundColor="{StaticResource Yellow}">
+                        <Label FontAttributes="Bold" 
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="ASPERGER ABC"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                </Grid>
                 <Label Grid.Row="2" 
                        Text="DEFINICIÓN"/>
                 <aspert:JustifiedLabel 

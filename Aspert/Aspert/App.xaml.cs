@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Aspert
 {
@@ -8,7 +6,6 @@ namespace Aspert
     {
         public App()
         {
-            UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
             MainPage = new InitPage();
 

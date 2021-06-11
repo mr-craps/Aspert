@@ -5,7 +5,7 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.BookPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource LightGray}"
+    <Grid BackgroundColor="{StaticResource Red}"
         RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
@@ -31,15 +31,19 @@
         <!-- Contenido -->
         <ScrollView Grid.Row="1">
             <Grid Padding="20" 
-                  RowDefinitions="110,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
-                <Button Grid.Row="0" 
-                        WidthRequest="110"
-                        BackgroundColor="{StaticResource Red}"
-                        Text="LIBROS Y PELICULAS"
-                        TextColor="White"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        HorizontalOptions="Start"/>
+                  RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+                <Grid ColumnDefinitions="120">
+                    <Frame BackgroundColor="{StaticResource Red}">
+                        <Label FontAttributes="Bold" 
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="LIBROS Y PELÍCULAS"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                </Grid>
                 <Label Grid.Row="2" 
                        Text="ALGO AQUI"
                        TextColor="{StaticResource Red}"
@@ -75,7 +79,5 @@
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>
-
-
     </Grid>
 </ContentPage>

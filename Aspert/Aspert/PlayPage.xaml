@@ -5,19 +5,17 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.PlayPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <ContentPage.Content>
-        <Grid>
-            <Grid.BindingContext>
-                <vm:ViewModel/>
-            </Grid.BindingContext>
-            <Label Text="Welcome to Xamarin.Forms!"
+    <Grid>
+        <Grid.BindingContext>
+            <vm:ViewModel/>
+        </Grid.BindingContext>
+        <Label Text="Welcome to Xamarin.Forms!"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
-            <Button Command="{Binding Push}" 
+        <Button Command="{Binding Push}" 
                     CommandParameter="{Type aspert:GamePage}"
                     Text="Empezar Juego"/>
-            <ImageButton Command="{Binding Back}"
+        <ImageButton Command="{Binding Back}"
                          Source="back_aspert.png"/>
-        </Grid>
-    </ContentPage.Content>
+    </Grid>
 </ContentPage>
