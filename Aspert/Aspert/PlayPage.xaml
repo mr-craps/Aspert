@@ -1,21 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.PlayPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <Grid>
+    <Grid BackgroundColor="{StaticResource Orange}"
+          RowDefinitions="*,12*,*"
+          ColumnDefinitions="*">
         <Grid.BindingContext>
             <vm:ViewModel/>
         </Grid.BindingContext>
-        <Label Text="Welcome to Xamarin.Forms!"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
-        <Button Command="{Binding Push}" 
-                    CommandParameter="{Type aspert:GamePage}"
-                    Text="Empezar Juego"/>
-        <ImageButton Command="{Binding Back}"
-                         Source="back_aspert.png"/>
+        <!-- Menú -->
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="menub_aspert.png"/>
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="back_aspert.png"/>
+        <!-- Fondo -->
+        <Image Grid.Row="1"
+               Aspect="Fill"
+               Source="bg4_aspert.png"/>
+        <!-- Contenido -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Margin="20">
+                <!-- Cuadro de juega-->
+                <Frame BackgroundColor="{StaticResource Orange}"
+                       WidthRequest="100">
+                    <Label HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           Text="JUEGA">
+                    </Label>
+                </Frame>
+                <!-- Cuadro de texto -->
+                <Frame BorderColor="{StaticResource Orange}" 
+                       BackgroundColor="#EFEDED"
+                       CornerRadius="5">
+                    <Label x:Name="lblp" 
+                           LineBreakMode="WordWrap"
+                           Padding="25"
+                           FontSize="Small"
+                           Text="Los juegos de construcción son divertidísimos ¿verdad? 
+ 
+En 
+esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!. "/>
+                </Frame>
+                <!-- Botones y columnas -->
+                <Grid Grid.Row="3"
+                      ColumnDefinitions="*,Auto,50,Auto,*"
+                      RowDefinitions="*,Auto,5,Auto,*">
+                    <Grid.Resources>
+                        <Style TargetType="{Type Button}">
+                            <Setter Property="FontAttributes"
+                                    Value="Bold"/>
+                            <Setter Property="TextColor"
+                                    Value="White"/>
+                            <Setter Property="HeightRequest"
+                                    Value="70"/>
+                            <Setter Property="WidthRequest"
+                                    Value="100"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Button x:Name="btnp1" 
+                            Grid.Column="1"
+                            Grid.Row="4"
+                            BackgroundColor="{StaticResource Orange}"
+                            Text="CANCELAR"/>
+                    <Button x:Name="btnp2" 
+                            Grid.Column="3"
+                            Grid.Row="4"
+                            BackgroundColor="{StaticResource Orange}"
+                            Text="JUGAR"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <!-- Configuración -->
+        <ImageButton Grid.Row="2"             
+                     BackgroundColor="{StaticResource Orange}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
+                     HorizontalOptions="End"
+                     Margin="5,5,5,5"
+                     Source="user_aspert.png"/>
+
     </Grid>
 </ContentPage>

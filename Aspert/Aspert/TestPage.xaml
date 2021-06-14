@@ -13,9 +13,10 @@
         <!-- Menú -->
         <ImageButton Grid.Row="0"
                      BackgroundColor="Transparent"
-                     Command="{Binding Back}"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
-                     Padding="5"
+                     Padding="10"
                      Source="menub_aspert.png"/>
         <!-- Fondo -->
         <Image Grid.Row="1"

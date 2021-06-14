@@ -32,6 +32,16 @@ namespace Aspert.Database
             if (!_creationTask.IsCompleted)
                 await _creationTask;
 
+#if DEBUG
+            if (string.IsNullOrWhiteSpace(usuario) && string.IsNullOrWhiteSpace(contraseña))
+                return new User
+                {
+                    Usuario = "Admin",
+                    Contraseña = "admin",
+                    Nombre = "Admin"
+                };
+#endif
+
             if (string.IsNullOrWhiteSpace(usuario))
                 return null;
 

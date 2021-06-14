@@ -6,7 +6,7 @@
              x:Class="Aspert.BookPage"
              x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource Red}"
-        RowDefinitions="*,12*,*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
         </Grid.BindingContext>
