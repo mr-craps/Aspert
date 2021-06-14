@@ -59,9 +59,8 @@
                                VerticalTextAlignment="Center"/>
                     </Frame>
                 </Grid>
-                <aspert:Hyperlink Grid.Row="2" 
-                       Text="DEFINICIÓN"
-                                  Link="https://www.google.com/"/>
+                <Label Grid.Row="2" 
+                       Text="DEFINICIÓN"/>
                 <aspert:JustifiedLabel 
                     Grid.Row="3" 
                     Text="     El síndrome de Asperger es un trastorno del desarrollo que se incluye dentro del espectro autista y que afecta la interacción social recíproca, la comunicación verbal y no verbal, una resistencia para aceptar el cambio y la inflexibilidad del pensamiento. Las personas con este síndrome son, generalmente, extremadamente buenos en las habilidades de memoria (hechos, figuras, fechas, épocas, etc.), así como en matemáticas y ciencia. 
