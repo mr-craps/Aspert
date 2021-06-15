@@ -45,13 +45,11 @@
                 <Frame BorderColor="{StaticResource Orange}" 
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
-                    <Label x:Name="lblp" 
-                           LineBreakMode="WordWrap"
-                           Padding="25"
-                           FontSize="Small"
-                           Text="Los juegos de construcción son divertidísimos ¿verdad? 
- 
-En 
+                    <aspert:JustifiedLabel 
+                        x:Name="lblp" 
+                        FontSize="Small"
+                        Padding="25"
+                        Text="Los juegos de construcción son divertidísimos ¿verdad? &#10; &#10;En 
 esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!. "/>
                 </Frame>
                 <!-- Botones y columnas -->
@@ -85,11 +83,11 @@ esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las
         </ScrollView>
         <!-- Configuración -->
         <ImageButton Grid.Row="2"             
-                     BackgroundColor="{StaticResource Orange}"
+                     BackgroundColor="Transparent"
                      Command="{Binding Push}"
                      CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
-                     Margin="5,5,5,5"
+                     Margin="5,0,5,5"
                      Source="user_aspert.png"/>
 
     </Grid>
