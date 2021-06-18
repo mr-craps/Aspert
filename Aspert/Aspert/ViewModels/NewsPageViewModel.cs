@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using System.ServiceModel.Syndication;
 using System.Xml;
 using System.Linq;
+using Aspert.Database;
+using System;
+using Xamarin.Forms;
 
 namespace Aspert.ViewModels
 {
@@ -18,40 +21,46 @@ namespace Aspert.ViewModels
 
         static NewsPageViewModel()
         {
-            _ = Task.Run(() =>
+            _ = Task.Run(async () =>
             {
                 const string url = "https://www.aspergerparaasperger.org/blog/rss";
-                var reader = XmlReader.Create(url, new XmlReaderSettings
+
+                if (SQLiteDB.Usuario.UsarDatos && SQLiteDB.Usuario.Sincronizar)
                 {
-                    DtdProcessing = DtdProcessing.Parse
-                });
-                var feed = SyndicationFeed.Load(reader);
+                    var reader = XmlReader.Create(url, new XmlReaderSettings
+                    {
+                        DtdProcessing = DtdProcessing.Parse
+                    });
+                    var feed = SyndicationFeed.Load(reader);
 
-                reader.Close();
+                    reader.Close();
 
-                foreach (var item in feed.Items.Take(10))
-                    Instance.Feeds.Add(new Feed(item));
+                    foreach (var item in feed.Items.Take(10))
+                        Instance.Feeds.Add(new Feed(item));
+                }
+
+                while (SQLiteDB.Usuario.UsarDatos && SQLiteDB.Usuario.Sincronizar)
+                {
+                    await Task.Delay(TimeSpan.FromHours(1));
+
+                    var reader = XmlReader.Create(url, new XmlReaderSettings
+                    {
+                        DtdProcessing = DtdProcessing.Parse
+                    });
+                    var feed = SyndicationFeed.Load(reader);
+
+                    reader.Close();
+
+                    if (!feed.Items.First().Equals(Instance.Feeds.First()))
+                    {
+                        Instance.Feeds.Remove(Instance.Feeds.Last());
+                        Instance.Feeds.Add(new Feed(feed.Items.First()));
+                    }
+
+                    if (SQLiteDB.Usuario.Notificaciones)
+                        await Application.Current.MainPage.DisplayAlert("Actualización!", "Hay una nueva actualización en la página de noticias.", "Ok");
+                }
             });
         }
-    }
-
-    public class Feed
-    {
-        public string Title { get; }
-        public string Summary { get; }
-
-        public Feed(SyndicationItem item)
-        {
-            Title = item.Title.Text;
-            Summary = item.Summary.Text;
-        }
-
-        public override bool Equals(object obj)
-            => obj is Feed feed
-            && Title == feed.Title
-            && Summary == feed.Summary;
-
-        public override int GetHashCode()
-            => base.GetHashCode();
     }
 }

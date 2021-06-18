@@ -6,8 +6,7 @@
              x:Class="Aspert.PlayPage"
              x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource Orange}"
-          RowDefinitions="*,12*,*"
-          ColumnDefinitions="*">
+          RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
         </Grid.BindingContext>
@@ -35,10 +34,10 @@
                 <!-- Cuadro de juega-->
                 <Frame BackgroundColor="{StaticResource Orange}"
                        WidthRequest="100">
-                    <Label HorizontalTextAlignment="Center"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           Text="JUEGA">
+                    <Label FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           Text="JUEGA"
+                           TextColor="White">
                     </Label>
                 </Frame>
                 <!-- Cuadro de texto -->
@@ -46,7 +45,6 @@
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
                     <aspert:JustifiedLabel 
-                        x:Name="lblp" 
                         FontSize="Small"
                         Padding="25"
                         Text="Los juegos de construcción son divertidísimos ¿verdad? &#10; &#10;En 
@@ -56,28 +54,14 @@ esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las
                 <Grid Grid.Row="3"
                       ColumnDefinitions="*,Auto,50,Auto,*"
                       RowDefinitions="*,Auto,5,Auto,*">
-                    <Grid.Resources>
-                        <Style TargetType="{Type Button}">
-                            <Setter Property="FontAttributes"
-                                    Value="Bold"/>
-                            <Setter Property="TextColor"
-                                    Value="White"/>
-                            <Setter Property="HeightRequest"
-                                    Value="70"/>
-                            <Setter Property="WidthRequest"
-                                    Value="100"/>
-                        </Style>
-                    </Grid.Resources>
-                    <Button x:Name="btnp1" 
-                            Grid.Column="1"
+                    <Button Grid.Column="3"
                             Grid.Row="4"
                             BackgroundColor="{StaticResource Orange}"
-                            Text="CANCELAR"/>
-                    <Button x:Name="btnp2" 
-                            Grid.Column="3"
-                            Grid.Row="4"
-                            BackgroundColor="{StaticResource Orange}"
-                            Text="JUGAR"/>
+                            Command="{Binding Push}"
+                            CommandParameter="{Type aspert:GamePage}"
+                            FontAttributes="Bold"
+                            Text="JUGAR"
+                            TextColor="White"/>
                 </Grid>
             </StackLayout>
         </ScrollView>
@@ -89,6 +73,5 @@ esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
                      Source="user_aspert.png"/>
-
     </Grid>
 </ContentPage>

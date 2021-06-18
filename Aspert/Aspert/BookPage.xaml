@@ -6,7 +6,7 @@
              x:Class="Aspert.BookPage"
              x:DataType="{x:Type vm:ViewModel}">
     <Grid BackgroundColor="{StaticResource Red}"
-          RowDefinitions="*,12*,*">
+        RowDefinitions="*,12*,*">
         <Grid.BindingContext>
             <vm:ViewModel/>
         </Grid.BindingContext>
@@ -31,7 +31,9 @@
         <!-- Contenido -->
         <ScrollView Grid.Row="1">
             <Grid Padding="20" 
-                  RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+                  RowDefinitions="120,50,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50">
+                <!--60 Grid-->
+                <!--13-->
                 <Grid ColumnDefinitions="120">
                     <Frame BackgroundColor="{StaticResource Red}">
                         <Label FontAttributes="Bold" 
@@ -44,29 +46,214 @@
                                VerticalTextAlignment="Center"/>
                     </Frame>
                 </Grid>
+                <!--Libros-->
                 <Label Grid.Row="2" 
-                       Text="ALGO AQUI"
+                       Text="LIBROS"
                        TextColor="{StaticResource Red}"
                        FontAttributes="Bold"
                        FontSize="Title"/>
                 <Label Grid.Row="3" 
-                       Text=" text here "
-                       TextColor="{StaticResource Gray}"/>
+                       Text="El síndrome de Asperger: Intervenciones psicoeducativas (Carmen Cobo, Eva Morán)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink 
+                    Grid.Row="4" 
+                    Link="https://drive.google.com/file/d/1UHBSdFV-t9lOTTsaP0VDhBoeH6chSSh4/view?usp=sharing"
+                    TextColor="{StaticResource Gray}"/>
+
                 <Label Grid.Row="5" 
-                       Text="ALGO AQUI 2"
-                       TextColor="{StaticResource Red}"
-                       FontAttributes="Bold"
-                       FontSize="Title"/>
-                <Label Grid.Row="6" 
-                       Text="TEXT HERE "
+                       Text="Síndrome de Asperguer: Guía para padres y educadores (Gena P. Barnhill)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink Grid.Row="6" 
+                       Link="https://drive.google.com/file/d/1pvmIO5ayBeU_9CY2WHkt79KYqeAx5PL2/view?usp=sharing"
                        TextColor="{StaticResource Gray}"/>
-                <Label Grid.Row="8" 
-                       Text="ALGO AQUI 3"
+
+                <Label Grid.Row="7" 
+                       Text="Ecucando niños con Síndrome de Asperger: 200 consejos y estrategias (Brenda Boyd)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink Grid.Row="8" 
+                       Link="https://drive.google.com/file/d/1R3abeUs3rAMdafZiiITmPbqJT7CgBLvC/view?usp=sharing"
+                       TextColor="{StaticResource Gray}"/>
+
+                <Label Grid.Row="9" 
+                       Text="Personas con Síndrome de Asperger: funcionamiento, detección y necesidades (María Sotillo, Juana Hernández, Mercedes Belinchón)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink Grid.Row="10" 
+                       Link="https://drive.google.com/file/d/13ljOfnTSedyO_bkgoGPdzGCg8ZV734uT/view?usp=sharing"
+                       TextColor="{StaticResource Gray}"/>
+
+                <Label Grid.Row="11" 
+                       Text="El Síndrome de Asperguer: Estrategias para prácticas para el aula (George Thomas)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink Grid.Row="12" 
+                       Link="https://drive.google.com/file/d/1i34MWaC2UMLf69zfHF0vE8jUkSxFoS3a/view?usp=sharing"
+                       TextColor="{StaticResource Gray}"/>
+
+                <Label Grid.Row="13" 
+                       Text="Descubrir el Asperguer (Ramón Cererols)"
+                       TextColor="{StaticResource Red}"/>
+                <aspert:Hyperlink Grid.Row="14" 
+                       Link="https://drive.google.com/file/d/1X4_3HTYk0USkOeaQ2a6mGqG3HvHDJykU/view?usp=sharing"
+                       TextColor="{StaticResource Gray}"/>
+
+
+
+
+
+
+
+
+
+                <!-- Películas-->
+                <Label Grid.Row="15" 
+                       Text="PELÍCULAS"
                        TextColor="{StaticResource Red}"
                        FontAttributes="Bold"
                        FontSize="Title"/>
-                <Label Grid.Row="9" 
-                       Text="TEXT HERE "
+                <!-- Khan-->
+                <Label Grid.Row="16" 
+                       Text="Mi nombre es Khan (Karan Johar, 2010)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="17"
+                       
+               Source="Khan_movie.jpg"/>
+                <Label Grid.Row="18" 
+                       Text="Es una película india de 2010 dirigida y escrita por Karan Johar, protagonizada por Shahrukh Khan y Kajol. Narra la historia de un hombre musulmán con Síndrome de Asperger con su esposa después de los atentados del 11 de septiembre de 2001."
+                       TextColor="{StaticResource Gray}"/>
+                <aspert:Hyperlink Grid.Row="19" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-175624/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Radio-->
+                <Label Grid.Row="20" 
+                       Text="Me llaman Radio(Michael Tollin, 2003)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="21"
+             
+               Source="Radio_movie.jpg"/>
+                <Label Grid.Row="22" 
+                       Text="La película está basada en la historia real sobre el entrenador de fútbol americano Harold Jones (Ed Harris), del Instituto T.L. Hanna High School, y un joven con discapacidad intelectual, James Robert 'Radio' Kennedy (Cuba Gooding, Jr.).  &#10; &#10;Radio 
+pasa desapercibido entre las demás personas, hasta que el entrenador del equipo de fútbol se fija en él y trata de ayudarlo e integrarlo en el equipo, en la escuela y en general en la vida. La película se desenvuelve con un grado de ternura por parte del entrenador y con un grado de inocencia por parte de Radio."/>
+
+                <aspert:Hyperlink Grid.Row="23" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-45300/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Ben X-->
+                <Label Grid.Row="24" 
+                       Text="Ben X (Nic Balthazar, 2007)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="25"
+             
+               Source="Benx_movie.jpg"/>
+                <Label Grid.Row="26" 
+                       Text="Un adolescente autista penetra más profundamente en el mundo de los juegos en línea después de ser humillado por sus crueles compañeros."/>
+
+                <aspert:Hyperlink Grid.Row="27" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-132087/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Crazy in Love-->
+                <Label Grid.Row="27" 
+                       Text="Mozart y la ballena (Petter Næss, 2005)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="28"
+             
+               Source="Mozart_movie.jpg"/>
+                <Label Grid.Row="29" 
+                       Text="Una historia de amor entre dos sabios con síndrome de Asperger, una especie de autismo, cuyas condiciones sabotean su incipiente relación."/>
+
+                <aspert:Hyperlink Grid.Row="30" 
+                       Link="https://www.imdb.com/title/tt0392465/?ref_=fn_al_tt_1"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- El contador-->
+                <Label Grid.Row="31" 
+                       Text="El contador (Gavin O'Connor, 2016)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="32"
+             
+               Source="Contador_movie.jpg"/>
+                <Label Grid.Row="33" 
+                       Text="Christian Wolff (Ben Affleck) es un contador que tiene Autismo de Alto Funcionamiento, gracias a eso se desenvuelve mejor en matemáticas que con las personas. Tiene una oficina contable en una pequeña ciudad como tapadera, pues se gana la vida como contable para organizaciones criminales."/>
+
+                <aspert:Hyperlink Grid.Row="34" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-232013/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Mary and Max-->
+                <Label Grid.Row="35" 
+                       Text="Mary and Max (Adam Elliot, 2009)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="36"
+             
+               Source="Mary_movie.jpg"/>
+                <Label Grid.Row="37" 
+                       Text="Una historia de amistad entre dos insólitos amigos por correspondencia: Mary, una niña solitaria de ocho años que vive en los suburbios de Melbourne, y Max, un hombre de cuarenta y cuatro años muy obeso que padece síndrome de Asperguer y que vive en Nueva York."/>
+
+                <aspert:Hyperlink Grid.Row="38" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-139621/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Extremely Loud-->
+                <Label Grid.Row="39" 
+                       Text="Tan fuerte y tan cerca (Adam Elliot, 2009)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="40"
+             
+               Source="Extremely_movie.jpg"/>
+                <Label Grid.Row="41" 
+                       Text="Un inventor aficionado, francófilo y pacifista de nueve años que padece Asperger busca en la ciudad de Nueva York la cerradura que coincide con una llave misteriosa que dejó su padre, quien murió en el World Trade Center el 11 de septiembre de 2001."/>
+
+                <aspert:Hyperlink Grid.Row="42" 
+                       Link="https://www.sensacine.com/peliculas/pelicula-179838/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- Mercury Resing-->
+                <Label Grid.Row="43" 
+                       Text="Misión: máxima seguridad (Harold Becker, 1998)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="44"
+             
+               Source="Mercury_movie.jpg"/>
+                <Label Grid.Row="45" 
+                       Text="Art Jeffries es un agente del FBI bastante insolente con sus superiores, razón por la cual le asignan las escuchas telefónicas. Por fin, un día, le encargan la investigación del caso de un niño desaparecido, cuyos padres han sido asesinados. Cuando lo encuentra, resulta ser un autista de nueve años que tiene una prodigiosa capacidad para interpretar códigos del gobierno teóricamente indescifrables."/>
+
+                <aspert:Hyperlink Grid.Row="46" 
+                       Link="https://www.imdb.com/title/tt0120749/?ref_=nv_sr_srsg_0"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- SERIES-->
+                <Label Grid.Row="47" 
+                       Text="SERIES"
+                       TextColor="{StaticResource Red}"
+                       FontAttributes="Bold"
+                       FontSize="Title"/>
+                <!-- Atypical-->
+                <Label Grid.Row="48" 
+                       Text="Atypical (Robia Rashid, Netflix 2017)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="49"
+             
+               Source="Atypical_movie.jpg"/>
+                <Label Grid.Row="50" 
+                       Text="Sam, un joven de 18 años en el espectro autista, decide que es hora de encontrar una novia, un viaje que coloca a la madre de Sam en su propio camino que le cambiará la vida mientras su hijo busca más independencia."/>
+
+                <aspert:Hyperlink Grid.Row="51" 
+                       Link="https://www.sensacine.com/series/serie-21143/"
+                       TextColor="{StaticResource Gray}"/>
+
+                <!-- The good doctor -->
+                <Label Grid.Row="52" 
+                       Text="The Good Doctor (David Shore, PrimeVideo 2017)"
+                       TextColor="{StaticResource Red}"/>
+                <Image Grid.Row="53"
+             
+               Source="Doctor_movie.jpg"/>
+                <Label Grid.Row="54" 
+                       Text="Shaun Murphy, un joven cirujano con autismo y síndrome de Savant, es reclutado en la unidad quirúrgica de un prestigioso hospital."/>
+
+                <aspert:Hyperlink Grid.Row="55" 
+                       Link="https://www.sensacine.com/series/serie-18045/"
                        TextColor="{StaticResource Gray}"/>
 
             </Grid>

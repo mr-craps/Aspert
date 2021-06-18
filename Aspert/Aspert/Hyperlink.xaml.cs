@@ -9,7 +9,7 @@ namespace Aspert
     public partial class Hyperlink : ContentView
     {
         public static readonly BindableProperty LinkProperty = BindableProperty.Create(nameof(Link), typeof(string), typeof(Hyperlink), default(string), BindingMode.OneWay);
-        public static readonly BindableProperty FontAttributesProperty = BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Hyperlink), default(FontAttributes), BindingMode.OneTime);
+        public static readonly BindableProperty FontAttributesProperty = BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(Hyperlink), default(FontAttributes), BindingMode.OneWay);
         public static readonly BindableProperty FontFamilyProperty = BindableProperty.Create(nameof(FontFamily), typeof(string), typeof(Hyperlink), default(string), BindingMode.OneWay);
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(nameof(FontSize), typeof(double), typeof(Hyperlink), default(double), BindingMode.OneWay);
         public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(Hyperlink), default(string), BindingMode.OneWay);

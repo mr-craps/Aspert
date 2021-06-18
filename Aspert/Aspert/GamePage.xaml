@@ -1,12 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aspert.GamePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
+             x:Class="Aspert.GamePage"
+             x:DataType="{x:Type vm:ViewModel}">
+    <Grid BackgroundColor="{StaticResource Orange}"
+          RowDefinitions="*,12*,*">
+        <Grid.BindingContext>
+            <vm:ViewModel/>
+        </Grid.BindingContext>
+        <!-- Menú -->
+        <ImageButton Grid.Row="0"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:MenuPage}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="menub_aspert.png"/>
+        <ImageButton Grid.Row="2"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Back}"
+                     HorizontalOptions="Start"
+                     Padding="10"
+                     Source="back_aspert.png"/>
+        <!-- Fondo -->
+        <Image Grid.Row="1"
+               Aspect="Fill"
+               Source="bg4_aspert.png"/>
+        <!-- Contenido -->
+        <Grid Grid.Row="1" 
+              Padding="20">
+            <Frame BackgroundColor="Transparent"
+                   BorderColor="Black">
+                <Grid x:Name ="grid" 
+                      ColumnDefinitions="*,*,*,*"
+                      ColumnSpacing="5"
+                      RowDefinitions="*,*,*,*"
+                      RowSpacing="5"
+                      VerticalOptions="Center">
+                    <Grid.Resources>
+                        <Style TargetType="{Type ImageButton}">
+                            <Setter Property="Aspect" 
+                                    Value="Fill"/>
+                            <Setter Property="Padding"
+                                    Value="10"/>
+                        </Style>
+                    </Grid.Resources>
+                    <ImageButton
+                        x:Name="ib1"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                    <ImageButton 
+                        x:Name="ib2"
+                        Grid.Column="0"
+                        Grid.Row="1"/>
+                    <ImageButton 
+                        x:Name="ib3"
+                        Grid.Column="0"
+                        Grid.Row="2"/>
+                    <ImageButton 
+                        x:Name="ib4"
+                        Grid.Column="0"
+                        Grid.Row="3"/>
+                    <ImageButton 
+                        x:Name="ib5"
+                        Grid.Column="1"
+                        Grid.Row="0"/>
+                    <ImageButton 
+                        x:Name="ib6"
+                        Grid.Column="1"
+                        Grid.Row="1"/>
+                    <ImageButton 
+                        x:Name="ib7"
+                        Grid.Column="1"
+                        Grid.Row="2"/>
+                    <ImageButton 
+                        x:Name="ib8"
+                        Grid.Column="1"
+                        Grid.Row="3"/>
+                    <ImageButton 
+                        x:Name="ib9"
+                        Grid.Column="2"
+                        Grid.Row="0"/>
+                    <ImageButton 
+                        x:Name="ib10"
+                        Grid.Column="2"
+                        Grid.Row="1"/>
+                    <ImageButton 
+                        x:Name="ib11"
+                        Grid.Column="2"
+                        Grid.Row="2"/>
+                    <ImageButton 
+                        x:Name="ib12"
+                        Grid.Column="2"
+                        Grid.Row="3"/>
+                    <ImageButton 
+                        x:Name="ib13"
+                        Grid.Column="3"
+                        Grid.Row="0"/>
+                    <ImageButton 
+                        x:Name="ib14"
+                        Grid.Column="3"
+                        Grid.Row="1"/>
+                    <ImageButton
+                        x:Name="ib15"
+                        Grid.Column="3"
+                        Grid.Row="2"/>
+                    <ImageButton 
+                        x:Name="ib16"
+                        Grid.Column="3"
+                        Grid.Row="3"/>
+                </Grid>
+            </Frame>
+        </Grid>
+        <!-- Configuración -->
+        <ImageButton Grid.Row="2"             
+                     BackgroundColor="Transparent"
+                     Command="{Binding Push}"
+                     CommandParameter="{Type aspert:ConfigurationPage}"
+                     HorizontalOptions="End"
+                     Margin="5,0,5,5"
+                     Source="user_aspert.png"/>
+    </Grid>
 </ContentPage>
