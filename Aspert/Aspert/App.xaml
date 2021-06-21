@@ -12,5 +12,17 @@
         <Color x:Key="Orange">#FAA42D</Color>
         <Color x:Key="Cyan">#3790DE</Color>
         <Color x:Key="Blue">#3D51A9</Color>
+        <ImageSource x:Key="BackIcon">back.png</ImageSource>
+        <ImageSource x:Key="DataIcon">data.png</ImageSource>
+        <ImageSource x:Key="DeleteIcon">delete.png</ImageSource>
+        <ImageSource x:Key="EditIcon">edit.png</ImageSource>
+        <ImageSource x:Key="LogoutIcon">logout.png</ImageSource>
+        <ImageSource x:Key="MenuIcon">menu.png</ImageSource>
+        <ImageSource x:Key="NotificationsIcon">notifications.png</ImageSource>
+        <ImageSource x:Key="SynchonizeIcon">sync.png</ImageSource>
+        <ImageSource x:Key="UserIcon">user.png</ImageSource>
+        <ImageSource x:Key="Background">background.png</ImageSource>
+        <ImageSource x:Key="TransparentBackground">background_transparent.png</ImageSource>
+        <ImageSource x:Key="LogoBackground">background_logo.png</ImageSource>
     </Application.Resources>
 </Application>

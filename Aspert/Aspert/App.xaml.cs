@@ -8,7 +8,6 @@ namespace Aspert
         {
             InitializeComponent();
             MainPage = new InitPage();
-
         }
 
         protected override void OnStart()
