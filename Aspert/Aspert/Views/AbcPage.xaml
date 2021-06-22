@@ -6,7 +6,6 @@
              x:Class="Aspert.AbcPage"
              x:DataType="{x:Type vm:ViewModel}">
     <aspert:PageTemplate BackgroundColor="{StaticResource Yellow}">
-        <aspert:PageTemplate.Body>
         <ScrollView>
             <Grid Padding="20" 
                       RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
@@ -66,6 +65,5 @@
 √  Busque un programa de tratamiento o de intervención específico para los problemas o las áreas en las que el niño presenta más 'deficiencias' . La Sociedad Americana de Autismo (ASA, por sus siglas en inglés) recomienda hablar con el director del programa para asegurarse de que pueda satisfacer las necesidades de su hijo."/>
             </Grid>
         </ScrollView>
-            </aspert:PageTemplate.Body>
     </aspert:PageTemplate>
 </ContentPage>

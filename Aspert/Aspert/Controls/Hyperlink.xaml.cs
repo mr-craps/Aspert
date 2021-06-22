@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+﻿using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -65,12 +65,13 @@ namespace Aspert
             set => SetValue(TextTransformProperty, value);
         }
 
-        public ICommand OpenLink { get; } = new Command<string>(async url => await Launcher.OpenAsync(url));
-
         public Hyperlink()
         {
             InitializeComponent();
             BindingContext = this;
         }
+
+        public async void OnTapped(object sender, EventArgs e)
+            => await Launcher.OpenAsync(Link);
     }
 }

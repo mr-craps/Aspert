@@ -2,3 +2,9 @@
 
 # IDE0058: El valor de la expresión no se utiliza nunca.
 csharp_style_unused_value_expression_statement_preference = unused_local_variable
+
+# IDE0021: Usar cuerpo del bloque para los constructores
+csharp_style_expression_bodied_constructors = true
+
+# IDE0021: Usar cuerpo del bloque para los constructores
+dotnet_diagnostic.IDE0021.severity = silent

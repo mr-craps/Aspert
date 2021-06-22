@@ -24,5 +24,6 @@
         <ImageSource x:Key="Background">background.png</ImageSource>
         <ImageSource x:Key="TransparentBackground">background_transparent.png</ImageSource>
         <ImageSource x:Key="LogoBackground">background_logo.png</ImageSource>
+        <ImageSource x:Key="Logo">nuevologo_aspert.png</ImageSource>
     </Application.Resources>
 </Application>

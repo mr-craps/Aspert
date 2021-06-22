@@ -1,84 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Aspert.ViewModels"
              xmlns:aspert="clr-namespace:Aspert"
-             x:Class="Aspert.AboutPage"
-             x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource Cyan}"
-          RowDefinitions="*,12*,*">
-        <Grid.BindingContext>
-            <vm:ViewModel/>
-        </Grid.BindingContext>
-        <!-- Menú -->
-        <ImageButton Grid.Row="0"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:MainPage}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="menub_aspert.png"/>
-        <ImageButton Grid.Row="2"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Back}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="back_aspert.png"/>
-        <!-- Fondo -->
-        <Image Grid.Row="1"
-               Aspect="Fill"
-               Source="bg4_aspert.png"/>
-        <!-- Contenido -->
-        <!-- Hay que jugar con los grids para hacer ese cuadrito de mierda -->
+             x:Class="Aspert.AboutPage">
+    <aspert:PageTemplate BackgroundColor="{StaticResource Cyan}">
         <ScrollView Grid.Row="1">
             <Grid Padding="20" 
                   RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
-                <Grid ColumnDefinitions="120">
-                    <Frame BackgroundColor="{StaticResource Cyan}">
-                        <Label FontAttributes="Bold" 
-                               FontSize="14"
-                               HorizontalOptions="Center"
-                               HorizontalTextAlignment="Center"
-                               Text="ACERCA DE"
-                               TextColor="White"
-                               VerticalOptions="Center"
-                               VerticalTextAlignment="Center"/>
-                    </Frame>
-                </Grid>
-                <Label Grid.Row="2" 
-                       Text="¿QUIÉNES SOMOS?"
-                       TextColor="{StaticResource Cyan}"
-                       FontAttributes="Bold"
-                       FontSize="Title"/>
-                <Label Grid.Row="3" 
-                       Text=" text here "
-                       TextColor="#8492A6"/>
-                <Label Grid.Row="5" 
-                       Text="¿POR QUÉ SE CREO ASPERT?"
-                       TextColor="{StaticResource Cyan}"
-                       FontAttributes="Bold"
-                       FontSize="Title"/>
-                <Label Grid.Row="6" 
-                       Text="TEXT HERE "
-                       TextColor="#8492A6"/>
-                <Label Grid.Row="8" 
-                       Text="ALGO AQUI 3"
-                       TextColor="{StaticResource Cyan}"
-                       FontAttributes="Bold"
-                       FontSize="Title"/>
-                <Label Grid.Row="9" 
-                       Text="TEXT HERE "
-                       TextColor="#8492A6"/>
-
+            <Grid ColumnDefinitions="120">
+                <Frame BackgroundColor="{StaticResource Cyan}">
+                    <Label FontAttributes="Bold" 
+                           FontSize="14"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="ACERCA DE"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"/>
+                </Frame>
             </Grid>
-        </ScrollView>
-        <!-- Footer -->
-        <ImageButton Grid.Row="2"             
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:ConfigurationPage}"
-                     HorizontalOptions="End"
-                     Margin="5,0,5,5"
-                     Source="user_aspert.png"/>
-    </Grid>
+            <Label Grid.Row="2" 
+                   Text="¿QUIÉNES SOMOS?"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+            <Label Grid.Row="3" 
+                   Text=" text here "
+                   TextColor="#8492A6"/>
+            <Label Grid.Row="5" 
+                   Text="¿POR QUÉ SE CREO ASPERT?"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+            <Label Grid.Row="6" 
+                   Text="TEXT HERE "
+                   TextColor="#8492A6"/>
+            <Label Grid.Row="8" 
+                   Text="ALGO AQUI 3"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+            <Label Grid.Row="9" 
+                   Text="TEXT HERE "
+                   TextColor="#8492A6"/>
+
+        </Grid>
+    </ScrollView>
+    </aspert:PageTemplate>
 </ContentPage>

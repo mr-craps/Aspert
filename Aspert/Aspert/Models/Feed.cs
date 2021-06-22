@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel.Syndication;
 
-namespace Aspert.ViewModels
+namespace Aspert
 {
     public class Feed
     {

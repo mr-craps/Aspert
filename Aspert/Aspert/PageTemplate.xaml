@@ -2,13 +2,14 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Aspert.PageTemplate">
-    <Grid RowDefinitions="*,12*,*">
-        <ImageButton x:Name="btnMenu" 
-                     BackgroundColor="Transparent"
-                     Clicked="OnClicked"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="{StaticResource MenuIcon}"/>
+    <ContentView.Content>
+        <Grid RowDefinitions="*,12*,*">
+            <ImageButton x:Name="btnMenu" 
+                         BackgroundColor="Transparent"
+                         Clicked="OnClicked"
+                         HorizontalOptions="Start"
+                         Padding="10"
+                         Source="{StaticResource MenuIcon}"/>
         <Image Grid.Row="1" 
                Aspect="Fill" 
                Source="{StaticResource Background}"/>
@@ -29,4 +30,5 @@
                      Margin="5,0,5,5"
                      Source="{StaticResource UserIcon}"/>
     </Grid>
+    </ContentView.Content>
 </ContentView>

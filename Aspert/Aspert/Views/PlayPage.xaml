@@ -1,39 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              xmlns:aspert="clr-namespace:Aspert"
-             x:Class="Aspert.PlayPage"
-             x:DataType="{x:Type vm:ViewModel}">
-    <Grid BackgroundColor="{StaticResource Orange}"
-          RowDefinitions="*,12*,*">
-        <Grid.BindingContext>
+             x:Class="Aspert.PlayPage">
+    <aspert:PageTemplate BackgroundColor="{StaticResource Orange}">
+        <aspert:PageTemplate.BindingContext>
             <vm:ViewModel/>
-        </Grid.BindingContext>
-        <!-- Menú -->
-        <ImageButton Grid.Row="0"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:MenuPage}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="menub_aspert.png"/>
-        <ImageButton Grid.Row="2"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Back}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="back_aspert.png"/>
-        <!-- Fondo -->
-        <Image Grid.Row="1"
-               Aspect="Fill"
-               Source="bg4_aspert.png"/>
-        <!-- Contenido -->
+        </aspert:PageTemplate.BindingContext>
         <ScrollView Grid.Row="1">
             <StackLayout Margin="20">
                 <!-- Cuadro de juega-->
-                <Frame BackgroundColor="{StaticResource Orange}"
-                       WidthRequest="100">
+                <Frame BackgroundColor="{StaticResource Orange}" WidthRequest="100">
                     <Label FontAttributes="Bold"
                            HorizontalTextAlignment="Center"
                            Text="JUEGA"
@@ -65,13 +43,5 @@ esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las
                 </Grid>
             </StackLayout>
         </ScrollView>
-        <!-- Configuración -->
-        <ImageButton Grid.Row="2"             
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:ConfigurationPage}"
-                     HorizontalOptions="End"
-                     Margin="5,0,5,5"
-                     Source="user_aspert.png"/>
-    </Grid>
+    </aspert:PageTemplate>
 </ContentPage>

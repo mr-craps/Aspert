@@ -23,8 +23,7 @@
                         </MultiBinding>
                     </Span.Text>
                     <Span.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenLink}"
-                                              CommandParameter="{Binding Link}"/>
+                        <TapGestureRecognizer Tapped="OnTapped"/>
                     </Span.GestureRecognizers>
                 </Span>
             </FormattedString>

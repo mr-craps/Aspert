@@ -46,6 +46,6 @@
                 TextColor="#47525E"/>
         <Image Grid.Column="1" 
                Grid.Row="5" 
-               Source="nuevologo_aspert.png"/>
+               Source="{StaticResource Logo}"/>
     </Grid>
 </ContentPage>

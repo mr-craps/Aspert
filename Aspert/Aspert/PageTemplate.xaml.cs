@@ -5,9 +5,11 @@ using Xamarin.Forms.Xaml;
 namespace Aspert
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [ContentProperty(nameof(Body))]
     public partial class PageTemplate : ContentView
     {
         private volatile bool _clicked;
+
         public View Body
         {
             get => BodyContent.Content;

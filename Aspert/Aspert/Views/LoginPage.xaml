@@ -12,7 +12,7 @@
         </Grid.BindingContext>
         <Image Grid.Column="1" 
                Grid.Row="1" 
-               Source="nuevologo_aspert.png"/>
+               Source="{StaticResource Logo}"/>
         <Label Grid.Column="1" 
                Grid.Row="2" 
                HorizontalTextAlignment="Center"
@@ -22,7 +22,7 @@
                TextColor="{StaticResource Blue}"/>
         <Image Grid.Column="1"
                Grid.Row="3"
-               Source="user_aspert.png"/>
+               Source="{StaticResource UserIcon}"/>
         <Entry Grid.Column="1"
                Grid.Row="4" 
                Placeholder="Usuario"

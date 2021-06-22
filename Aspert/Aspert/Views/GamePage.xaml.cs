@@ -14,6 +14,7 @@ namespace Aspert
         private readonly int[] _indexes;
         private readonly Dictionary<int, string> _matches;
         private readonly Random _random;
+        private readonly bool[] _shown;
         private int _revealed;
         private int _previous;
         private bool _gameFinished;
@@ -21,7 +22,9 @@ namespace Aspert
         public GamePage()
         {
             InitializeComponent();
+
             _imageButtons = new ImageButton[16];
+
             _imageButtons[0] = ib1;
             _imageButtons[1] = ib2;
             _imageButtons[2] = ib3;
@@ -56,6 +59,7 @@ namespace Aspert
             _random = new Random();
             _indexes = Enumerable.Range(0, 16).ToArray();
             _matches = new Dictionary<int, string>();
+            _shown = new bool[16];
 
             var count = 16;
             while (count > 1)
@@ -90,41 +94,40 @@ namespace Aspert
                 return;
 
             var imageButton = (ImageButton)sender;
-            var index = GetIndex(imageButton);
+            var index = Array.IndexOf(_imageButtons, imageButton);
 
-            if (_revealed == 15)
+            if (_shown[index])
+                return;
+
+            _revealed++;
+            imageButton.Source = _matches[index];
+
+            if (_revealed == 16)
             {
-                // victoria
-                imageButton.Source = _matches[index];
                 _gameFinished = true;
                 await DisplayAlert("Felicidades!", "Has ganado!", "Yupi!");
                 return;
             }
-            else if (_revealed % 2 == 0 && _revealed != 0)
+            else if (_revealed % 2 == 0)
             {
                 var path = _matches[index];
 
-                imageButton.Source = path;
-
                 if (path == _matches[_previous])
-                    _revealed++;
+                {
+                    _shown[index] = true;
+                    _shown[_previous] = true;
+                }
                 else
                 {
-                    _revealed--;
                     await DisplayAlert("Incorrecto!", "El par elegido no coincide, sigue intentando!", "Ok");
+
                     imageButton.Source = null;
                     _imageButtons[_previous].Source = null;
+                    _revealed -= 2;
                 }
             }
             else
-            {
                 _previous = index;
-                imageButton.Source = _matches[index];
-                _revealed = 2;
-            }
         }
-
-        int GetIndex(ImageButton imageButton)
-            => Array.IndexOf(_imageButtons, imageButton);
     }
 }

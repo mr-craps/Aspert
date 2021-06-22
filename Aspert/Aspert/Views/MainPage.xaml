@@ -16,16 +16,16 @@
                      CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
                      Padding="10"
-                     Source="menug_aspert.png"/>
+                     Source="{StaticResource MenuIcon}"/>
         <Image Grid.Row="1"
                Aspect="Fill"
-               Source="bg3newicon_aspert.png"/>
+               Source="{StaticResource LogoBackground}"/>
         <ImageButton Grid.Row="2"
                      BackgroundColor="Transparent"
                      Command="{Binding Push}"
                      CommandParameter="{Type aspert:ConfigurationPage}"
                      HorizontalOptions="End"
                      Margin="5,0,5,5"
-                     Source="user_aspert.png" />
+                     Source="{StaticResource UserIcon}"/>
     </Grid>
 </ContentPage>

@@ -3,76 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Aspert.ViewModels"
              xmlns:aspert="clr-namespace:Aspert"
-             x:Class="Aspert.NewsPage"
-             x:DataType="{x:Type vm:NewsPageViewModel}">
-    <Grid BackgroundColor="{StaticResource Lime}"
-          RowDefinitions="*,12*,*">
-        <Grid.BindingContext>
-            <vm:NewsPageViewModel/>
-        </Grid.BindingContext>
-        <!-- Menú -->
-        <ImageButton Grid.Row="0"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:MenuPage}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="menub_aspert.png"/>
-        <ImageButton Grid.Row="2"
-                     BackgroundColor="Transparent"
-                     Command="{Binding Back}"
-                     HorizontalOptions="Start"
-                     Padding="10"
-                     Source="back_aspert.png"/>
-        <!-- Fondo -->
-        <Image Grid.Row="1"
-               Aspect="Fill"
-               Source="bg4_aspert.png"/>
-        <!-- Contenido -->
-        <ScrollView Grid.Row="1"
-                    Padding="20">
-            <Grid ColumnDefinitions="120,*"
-                  RowDefinitions="120,50,*">
-                <Frame BackgroundColor="{StaticResource Lime}">
-                    <Label FontAttributes="Bold" 
-                           FontSize="14"
-                           HorizontalOptions="Center"
-                           HorizontalTextAlignment="Center"
-                           Text="ÚLTIMAS NOTICIAS"
-                           TextColor="White"
-                           VerticalOptions="Center"
-                           VerticalTextAlignment="Center"/>
-                </Frame>
-                <CollectionView Grid.ColumnSpan="2"
-                                Grid.Row="2"
-                                ItemsSource="{Binding Feeds, Source={Static vm:NewsPageViewModel.Instance}}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="{x:Type vm:Feed}">
-                            <StackLayout>
-                                <Label FontAttributes="Bold"
+             x:Class="Aspert.NewsPage">
+    <aspert:PageTemplate BackgroundColor="{StaticResource Lime}">
+        <Grid Padding="20">
+            <CollectionView ItemsSource="{Binding Feeds, Source={Static vm:NewsPageViewModel.Instance}}">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="120" RowDefinitions="120,50">
+                        <Frame BackgroundColor="{StaticResource Lime}">
+                            <Label FontAttributes="Bold" 
+                                   FontSize="14"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   Text="ÚLTIMAS NOTICIAS"
+                                   TextColor="White"      
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Frame>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type aspert:Feed}">
+                        <StackLayout>
+                            <Label FontAttributes="Bold"
                                        FontSize="Title"
                                        Text="{Binding Title}"
                                        TextColor="{StaticResource Lime}"
                                        TextTransform="Uppercase"/>
-                                <aspert:HtmlLabel
+                            <aspert:HtmlLabel
                                     Text="{Binding Summary}"
                                     TextColor="Black"
                                     TextType="Html"/>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
-        </ScrollView>
-        <!-- Configuración -->
-        <ImageButton Grid.Row="2"             
-                     BackgroundColor="Transparent"
-                     Command="{Binding Push}"
-                     CommandParameter="{Type aspert:ConfigurationPage}"
-                     HorizontalOptions="End"
-                     Margin="5,0,5,5"
-                     Source="user_aspert.png"/>
-
-
-    </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </aspert:PageTemplate>
 </ContentPage>
