@@ -81,7 +81,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.Footer>
-                    <CollectionView ItemsSource="{Binding Series}">
+                    <Grid RowDefinitions="1080">
+                        <CollectionView ItemsSource="{Binding Series}">
                         <CollectionView.Header>
                             <Label Text="SERIES"
                                    TextColor="{StaticResource Red}"
@@ -110,6 +111,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    </Grid>
                 </CollectionView.Footer>
             </CollectionView>
         </Grid>
