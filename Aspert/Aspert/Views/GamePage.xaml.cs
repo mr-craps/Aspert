@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using Aspert.Database;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +17,7 @@ namespace Aspert
         private readonly Dictionary<int, string> _matches;
         private readonly Random _random;
         private readonly bool[] _shown;
+        private readonly Stopwatch _stopwatch;
         private int _revealed;
         private int _previous;
         private bool _gameFinished;
@@ -60,6 +63,7 @@ namespace Aspert
             _indexes = Enumerable.Range(0, 16).ToArray();
             _matches = new Dictionary<int, string>();
             _shown = new bool[16];
+            _stopwatch = new Stopwatch();
 
             var count = 16;
             while (count > 1)
@@ -99,13 +103,33 @@ namespace Aspert
             if (_shown[index])
                 return;
 
+            if (!_stopwatch.IsRunning)
+                _stopwatch.Start();
+
             _revealed++;
             imageButton.Source = _matches[index];
 
             if (_revealed == 16)
             {
                 _gameFinished = true;
-                await DisplayAlert("Felicidades!", "Has ganado!", "Yupi!");
+                _stopwatch.Stop();
+
+                var elapsed = _stopwatch.Elapsed.TotalSeconds;
+                var isNewRecord = false;
+
+                _stopwatch.Reset();
+
+                if (SQLiteDB.Usuario.RecordMemoria == 0.0 ||
+                    SQLiteDB.Usuario.RecordMemoria > elapsed)
+                {
+                    SQLiteDB.Usuario.RecordMemoria = elapsed;
+                    isNewRecord = true;
+                }
+
+                await DisplayAlert(
+                    "Felicidades!",
+                    $"¡Has ganado! Tiempo: {elapsed}s {(isNewRecord ? "¡Nuevo récord!" : $"Record actual: {SQLiteDB.Usuario.RecordMemoria}s")}", 
+                    "Yupi!");
                 return;
             }
             else if (_revealed % 2 == 0)

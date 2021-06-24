@@ -26,7 +26,7 @@
                         FontSize="Small"
                         Padding="25"
                         Text="Los juegos de construcción son divertidísimos ¿verdad? &#10; &#10;En 
-esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!. "/>
+esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!."/>
                 </Frame>
                 <!-- Botones y columnas -->
                 <Grid Grid.Row="3"

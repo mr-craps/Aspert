@@ -8,20 +8,16 @@
     <aspert:PageTemplate BackgroundColor="{StaticResource Yellow}">
         <ScrollView>
             <Grid Padding="20" 
-                      RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
+                  RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
                 <Grid.Resources>
-                    <Style TargetType="{Type Label}"
-                           ApplyToDerivedTypes="False">
-                        <Setter Property="FontAttributes"
-                                Value="Bold"/>
-                        <Setter Property="FontSize"
-                                Value="Title"/>
-                        <Setter Property="TextColor" 
-                                Value="{StaticResource Yellow}"/>
+                    <Style TargetType="{Type Label}" ApplyToDerivedTypes="False">
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                        <Setter Property="FontSize" Value="Title"/>
+                        <Setter Property="TextColor" Value="{StaticResource Yellow}"/>
                     </Style>
-                    <Style TargetType="aspert:JustifiedLabel">
-                        <Setter Property="TextColor"
-                                Value="{StaticResource Gray}"/>
+                    <Style TargetType="{Type aspert:JustifiedLabel}">
+                        <Setter Property="FontFamily" Value="Roboto"/>
+                        <Setter Property="TextColor" Value="{StaticResource Gray}"/>
                     </Style>
                 </Grid.Resources>
                 <Grid ColumnDefinitions="120">

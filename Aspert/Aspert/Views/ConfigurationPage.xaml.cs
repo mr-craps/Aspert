@@ -54,8 +54,7 @@ namespace Aspert
                 context.DeleteAccount.Execute(null);
             else if (button == btnEdit)
             {
-                var nombre = await DisplayPromptAsync("Introduzca su nombre", "Introduzca su nombre", cancel: "Cancelar");
-                
+                var nombre = await DisplayPromptAsync("Introduzca su nombre", string.Empty, cancel: "Cancelar");
                 SQLiteDB.Usuario.Nombre = nombre;
                 await SQLiteDB.UpdateCurrentUser();
                 lbName.Text = SQLiteDB.Usuario.Nombre;

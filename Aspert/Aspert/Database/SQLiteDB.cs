@@ -20,9 +20,7 @@ namespace Aspert.Database
         public static User Usuario { get; set; }
 
         static SQLiteDB()
-        {
-            _creationTask = Connection.CreateTableAsync<User>();
-        }
+            => _creationTask = Connection.CreateTableAsync<User>();
 
         public static Task UpdateCurrentUser()
             => Connection.UpdateAsync(Usuario);
@@ -67,7 +65,7 @@ namespace Aspert.Database
             return user;
         }
 
-        internal static async Task DeleteAccountAsync()
-            => await Connection.DeleteAsync<User>(Usuario.Id);
+        internal static Task DeleteAccountAsync()
+            => Connection.DeleteAsync<User>(Usuario.Id);
     }
 }
