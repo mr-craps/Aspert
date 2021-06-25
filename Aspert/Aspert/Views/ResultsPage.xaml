@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
+             xmlns:aspert="clr-namespace:Aspert"
+             x:Class="Aspert.ResultsPage"
+             x:DataType="{x:Type vm:ResultPageViewModel}">
+    <aspert:PageTemplate BackgroundColor="{StaticResource Purple}">
+        <aspert:PageTemplate.BindingContext>
+            <vm:ResultPageViewModel/>
+        </aspert:PageTemplate.BindingContext>
+        <ScrollView Grid.Row="1">
+            <Grid Margin="20" RowDefinitions="*,5,Auto,*,*">
+                <Frame BackgroundColor="{StaticResource Purple}">
+                    <Label FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           Text="RESULTADOS"
+                           TextColor="White"
+                           VerticalTextAlignment="Center">
+                    </Label>
+                </Frame>
+                <Frame Grid.Row="2" 
+                       BorderColor="{StaticResource Purple}" 
+                       BackgroundColor="#EFEDED"
+                       CornerRadius="5">
+                    <aspert:JustifiedLabel 
+                        x:Name="lblpp" 
+                        Padding="25"
+                        FontSize="90"
+                        Text="{Binding Result, StringFormat='El resultado es: {0}'}"/>
+
+                </Frame>
+                <Button Grid.Row="4"  
+                        BackgroundColor="{StaticResource Purple}"
+                        Command="{Binding Push}"
+                        CommandParameter="{Type aspert:MenuPage}"
+                        FontAttributes="Bold"
+                        Text="CONTINUAR"
+                        TextColor="White"/>
+            </Grid>
+        </ScrollView>
+    </aspert:PageTemplate>
+</ContentPage>

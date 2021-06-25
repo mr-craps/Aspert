@@ -25,14 +25,14 @@
                     <DataTemplate x:DataType="{x:Type aspert:Feed}">
                         <StackLayout>
                             <Label FontAttributes="Bold"
-                                       FontSize="Title"
-                                       Text="{Binding Title}"
-                                       TextColor="{StaticResource Lime}"
-                                       TextTransform="Uppercase"/>
+                                   FontSize="Title"
+                                   Text="{Binding Title}"
+                                   TextColor="{StaticResource Lime}"
+                                   TextTransform="Uppercase"/>
                             <aspert:HtmlLabel
-                                    Text="{Binding Summary}"
-                                    TextColor="Black"
-                                    TextType="Html"/>
+                                Text="{Binding Summary}"
+                                TextColor="Black"
+                                TextType="Html"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
