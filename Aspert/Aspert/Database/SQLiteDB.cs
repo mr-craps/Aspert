@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using SQLite;
 
@@ -9,6 +10,7 @@ namespace Aspert.Database
     public static class SQLiteDB
     {
         private static readonly Task _creationTask;
+        private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
         private static readonly SQLiteAsyncConnection Connection
             = new SQLiteAsyncConnection(
                 Path.Combine(
@@ -22,8 +24,18 @@ namespace Aspert.Database
         static SQLiteDB()
             => _creationTask = Connection.CreateTableAsync<User>();
 
-        public static Task UpdateCurrentUser()
-            => Connection.UpdateAsync(Usuario);
+        public static async void UpdateCurrentUser()
+        {
+            try
+            {
+                await _semaphore.WaitAsync();
+                await Connection.UpdateAsync(Usuario);
+            }
+            finally
+            {
+                _semaphore.Release();
+            }
+        }
 
         public static async Task<User> GetUserAsync(string usuario, string contraseña)
         {

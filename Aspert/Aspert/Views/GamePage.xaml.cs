@@ -106,6 +106,7 @@ namespace Aspert
             if (!_stopwatch.IsRunning)
                 _stopwatch.Start();
 
+            _shown[index] = true;
             _revealed++;
             imageButton.Source = _matches[index];
 
@@ -134,17 +135,12 @@ namespace Aspert
             }
             else if (_revealed % 2 == 0)
             {
-                var path = _matches[index];
-
-                if (path == _matches[_previous])
-                {
-                    _shown[index] = true;
-                    _shown[_previous] = true;
-                }
-                else
+                if (_matches[index] != _matches[_previous])
                 {
                     await DisplayAlert("Incorrecto!", "El par elegido no coincide, sigue intentando!", "Ok");
 
+                    _shown[index] = false;
+                    _shown[_previous] = false;
                     imageButton.Source = null;
                     _imageButtons[_previous].Source = null;
                     _revealed -= 2;

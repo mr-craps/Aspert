@@ -13,7 +13,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.UsarDatos = value;
-                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
+                SQLiteDB.UpdateCurrentUser();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Sincronizar = value;
-                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
+                SQLiteDB.UpdateCurrentUser();
             }
         }
 
@@ -35,12 +35,13 @@ namespace Aspert.ViewModels
             {
                 SetValue(ref value, value);
                 SQLiteDB.Usuario.Notificaciones = value;
-                SQLiteDB.UpdateCurrentUser().GetAwaiter().GetResult();
+                SQLiteDB.UpdateCurrentUser();
             }
         }
 
         public ICommand Logout { get; }
         public ICommand DeleteAccount { get; }
+        public ICommand Edit { get; }
 
         public ConfigurationPageViewModel()
         {
@@ -51,7 +52,7 @@ namespace Aspert.ViewModels
             });
             DeleteAccount = new Command(async () =>
             {
-                if (await AlertAsync("Borrar cuenta", "¿Deseas BORRAR PERMANENTEMENTE tu cuenta?", "SÍ", "NO!!!"))
+                if (await AlertAsync("Borrar cuenta", "¿Deseas BORRAR PERMANENTEMENTE tu cuenta?", "SÍ", "NO"))
                 {
                     await SQLiteDB.DeleteAccountAsync();
                     Push.Execute(typeof(LoginPage));

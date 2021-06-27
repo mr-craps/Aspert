@@ -6,45 +6,67 @@
     <aspert:PageTemplate BackgroundColor="{StaticResource Cyan}">
         <ScrollView Grid.Row="1">
             <Grid Padding="20" 
-                  RowDefinitions="120,50,30,Auto,50,30,Auto,50,30,Auto,50,30,Auto">
-            <Grid ColumnDefinitions="120">
-                <Frame BackgroundColor="{StaticResource Cyan}">
-                    <Label FontAttributes="Bold" 
-                           FontSize="14"
+                  RowDefinitions="85,20,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                <Grid Padding="12">
+                    <Frame  BackgroundColor="{StaticResource Cyan}">
+                        <Label FontAttributes="Bold" 
+                           FontSize="19"
                            HorizontalOptions="Center"
                            HorizontalTextAlignment="Center"
                            Text="ACERCA DE"
                            TextColor="White"
                            VerticalOptions="Center"
                            VerticalTextAlignment="Center"/>
+                    </Frame>
+                </Grid>
+                <Frame Grid.Row="2"
+                       HeightRequest="330"
+                       BackgroundColor="{StaticResource Cyan}">
+                    <aspert:JustifiedLabel Padding="2"
+                           TextColor="White"                                  
+                           HorizontalTextAlignment="Center"
+                           FontSize="13"
+                           VerticalTextAlignment="Start"
+                           Text="ASPERT es una aplicación gratuita desarrollada con el objetivo de brindar apoyo a las familias relacionadas con el Síndrome de Asperger &#10; &#10; &#10;Esperamos
+que les sea de mucha ayuda. &#10; &#10;  &#10; &#10; &#10; &#9432; &#10;Desarrollado por: &#10;
+Flores Ramiro &#10;
+Larrazábal Virginia &#10;
+Pérez Orlando &#10; &#10; &#10; &#10; &#10;Maracaibo, Venezuela."/>
                 </Frame>
+                <Label Grid.Row="3" 
+                   Text="PREGUNTAS FRECUENTES"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+                <Label Grid.Row="4" 
+                   Text="¿Puede ASPERT determinar el Síndrome de Asperger?"
+                   TextColor="{StaticResource Cyan}"
+                   FontSize="13"
+                   FontAttributes="Bold"/>
+                <aspert:JustifiedLabel Grid.Row="5" 
+                   Text="Aspert no puede determinar el Asperger; su test señalará como resultado una puntuación con un límite de 31 puntos. Si la puntuación del test es 15 o más esta sería una indicativa de la presencia de comportamientos que justificarían la visita a un profesional de la salud"
+                   TextColor="#8492A6"/>
+                <Label Grid.Row="7" 
+                   Text="¿El materíal audiovisual es recomendado para los niños?"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="13"/>
+                <aspert:JustifiedLabel Grid.Row="8" 
+                   Text="Los libros, series y películas recomendados ayudan a los representantes a comprender los comportamientos de los niños con esta condición"
+                   TextColor="#8492A6"/>
+                <Label Grid.Row="9" 
+                   Text="Profesionales detrás de Asperger"
+                   TextColor="{StaticResource Cyan}"
+                   FontAttributes="Bold"
+                   FontSize="13"/>
+                <aspert:JustifiedLabel Grid.Row="10" 
+                   Text="ASPERT fue desarrollado por tres estudiantes de Ingeniería Informática detrás de investigaciones profesionales acerca del Asperger"
+                   TextColor="#8492A6"/>
+                <Label Grid.Row="13" 
+                   Text="V.1.0"
+                   HorizontalTextAlignment="End"
+                   TextColor="#8492A6"/>
             </Grid>
-            <Label Grid.Row="2" 
-                   Text="¿QUIÉNES SOMOS?"
-                   TextColor="{StaticResource Cyan}"
-                   FontAttributes="Bold"
-                   FontSize="Title"/>
-            <Label Grid.Row="3" 
-                   Text=" text here "
-                   TextColor="#8492A6"/>
-            <Label Grid.Row="5" 
-                   Text="¿POR QUÉ SE CREO ASPERT?"
-                   TextColor="{StaticResource Cyan}"
-                   FontAttributes="Bold"
-                   FontSize="Title"/>
-            <Label Grid.Row="6" 
-                   Text="TEXT HERE "
-                   TextColor="#8492A6"/>
-            <Label Grid.Row="8" 
-                   Text="ALGO AQUI 3"
-                   TextColor="{StaticResource Cyan}"
-                   FontAttributes="Bold"
-                   FontSize="Title"/>
-            <Label Grid.Row="9" 
-                   Text="TEXT HERE "
-                   TextColor="#8492A6"/>
-
-        </Grid>
-    </ScrollView>
+        </ScrollView>
     </aspert:PageTemplate>
 </ContentPage>

@@ -56,8 +56,8 @@ namespace Aspert
             {
                 var nombre = await DisplayPromptAsync("Introduzca su nombre", string.Empty, cancel: "Cancelar");
                 SQLiteDB.Usuario.Nombre = nombre;
-                await SQLiteDB.UpdateCurrentUser();
-                lbName.Text = SQLiteDB.Usuario.Nombre;
+                SQLiteDB.UpdateCurrentUser();
+                lbName.Text = nombre;
             }
         }
     }

@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Aspert.Database;
+using Aspert.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Aspert
@@ -9,6 +12,14 @@ namespace Aspert
         public TestPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            btnStart.Text = QuestionPageViewModel.Answers.All(x => x == null)
+                ? "Empezar Test"
+                : $"Reintentar Test (Puntaje anterior: {SQLiteDB.Usuario.ResultadoTest})";
+            base.OnAppearing();
         }
     }
 }
