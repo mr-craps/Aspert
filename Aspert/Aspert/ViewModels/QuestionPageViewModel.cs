@@ -66,9 +66,9 @@ namespace Aspert.ViewModels
                 var (question, value) = _questions[_index];
 
                 if (value != null)
-                    Answers[_index++] = value;
+                    Answers[_index] = value;
 
-                if (_index >= _questions.Count)
+                if (++_index >= _questions.Count)
                     return;
 
                 label.Text = $"{_index + 1}. {question}";
@@ -84,9 +84,9 @@ namespace Aspert.ViewModels
                 var (question, value) = _questions[_index];
 
                 if (value != null)
-                    Answers[_index++] = !value;
+                    Answers[_index] = !value;
 
-                if (_index >= _questions.Count)
+                if (++_index >= _questions.Count)
                     return;
 
                 label.Text = $"{_index + 1}. {question}";
