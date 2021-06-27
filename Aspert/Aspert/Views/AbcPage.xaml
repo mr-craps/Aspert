@@ -16,7 +16,7 @@
                         <Setter Property="TextColor" Value="{StaticResource Yellow}"/>
                     </Style>
                     <Style TargetType="{Type aspert:JustifiedLabel}">
-                        <Setter Property="FontFamily" Value="Roboto"/>
+                        <Setter Property="FontFamily" Value="Concert"/>
                         <Setter Property="TextColor" Value="{StaticResource Gray}"/>
                     </Style>
                 </Grid.Resources>

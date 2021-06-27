@@ -35,10 +35,14 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="{x:Type aspert:Book}">
                                 <StackLayout>
-                                    <Label Text="{Binding Title}" TextColor="{StaticResource Red}"/>
+                                    <Label FontAttributes="Bold"
+                                           FontSize="Medium"
+                                           Text="{Binding Title}" 
+                                           TextColor="{StaticResource Red}"/>
                                     <Label>
                                         <Label.FormattedText>
                                             <FormattedString>
+                                                <Span Text="Reseña: "/>
                                                 <Span Text="{Binding Link}"
                                                       TextColor="{StaticResource Gray}">
                                                     <Span.GestureRecognizers>
@@ -62,12 +66,16 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="{x:Type aspert:Movie}">
                         <StackLayout>
-                            <Label Text="{Binding Title}" TextColor="{StaticResource Red}"/>
+                            <Label FontAttributes="Bold"
+                                   FontSize="Medium" 
+                                   Text="{Binding Title}" 
+                                   TextColor="{StaticResource Red}"/>
                             <Image Source="{Binding Image}" WidthRequest="400" HeightRequest="400" Aspect="Fill"/>
                             <Label Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
+                                        <Span Text="Reseña: "/>
                                         <Span Text="{Binding Link}"
                                               TextColor="{StaticResource Gray}">
                                             <Span.GestureRecognizers>
@@ -84,22 +92,26 @@
                     <Grid RowDefinitions="1080">
                         <CollectionView ItemsSource="{Binding Series}">
                             <CollectionView.Header>
-                                <Label Text="SERIES"
-                                   TextColor="{StaticResource Red}"
-                                   FontAttributes="Bold"
-                                   FontSize="Title"/>
+                                <Label FontAttributes="Bold"
+                                       FontSize="Title"
+                                       Text="SERIES"
+                                       TextColor="{StaticResource Red}"/>
                             </CollectionView.Header>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="{x:Type aspert:Movie}">
                                     <StackLayout>
-                                        <Label Text="{Binding Title}" TextColor="{StaticResource Red}"/>
+                                        <Label FontAttributes="Bold"
+                                               FontSize="Medium"
+                                               Text="{Binding Title}" 
+                                               TextColor="{StaticResource Red}"/>
                                         <Image Source="{Binding Image}" WidthRequest="400" HeightRequest="400" Aspect="Fill"/>
                                         <Label Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
                                         <Label>
                                             <Label.FormattedText>
                                                 <FormattedString>
+                                                    <Span Text="Reseña: "/>
                                                     <Span Text="{Binding Link}"
-                                                      TextColor="{StaticResource Gray}">
+                                                          TextColor="{StaticResource Gray}">
                                                         <Span.GestureRecognizers>
                                                             <TapGestureRecognizer Tapped="OnTapped"/>
                                                         </Span.GestureRecognizers>

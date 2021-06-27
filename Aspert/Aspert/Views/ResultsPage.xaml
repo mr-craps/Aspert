@@ -24,11 +24,9 @@
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
                     <aspert:JustifiedLabel 
-                        x:Name="lblpp" 
                         Padding="25"
                         FontSize="90"
                         Text="{Binding Result, StringFormat='El resultado es: {0}'}"/>
-
                 </Frame>
                 <Button Grid.Row="4"  
                         BackgroundColor="{StaticResource Purple}"

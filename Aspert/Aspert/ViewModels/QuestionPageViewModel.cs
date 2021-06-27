@@ -62,13 +62,16 @@ namespace Aspert.ViewModels
                     Push.Execute(typeof(ResultsPage));
                     return;
                 }
+          
+                var (question, value) = _questions[_index];
 
-                Answers[_index++] = true;
+                if (value != null)
+                    Answers[_index++] = value;
 
                 if (_index >= _questions.Count)
                     return;
 
-                label.Text = $"{_index + 1}. {_questions[_index].Question}";
+                label.Text = $"{_index + 1}. {question}";
             });
             No = new Command<Label>(label =>
             {
@@ -78,12 +81,15 @@ namespace Aspert.ViewModels
                     return;
                 }
 
-                Answers[_index++] = false;
+                var (question, value) = _questions[_index];
+
+                if (value != null)
+                    Answers[_index++] = !value;
 
                 if (_index >= _questions.Count)
                     return;
 
-                label.Text = $"{_index + 1}. {_questions[_index].Question}";
+                label.Text = $"{_index + 1}. {question}";
             });
         }
     }
