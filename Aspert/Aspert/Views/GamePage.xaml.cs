@@ -12,10 +12,7 @@ namespace Aspert
     public partial class GamePage : ContentPage
     {
         private readonly ImageButton[] _imageButtons;
-        private readonly string[] _imagePaths;
-        private readonly int[] _indexes;
         private readonly Dictionary<int, string> _matches;
-        private readonly Random _random;
         private readonly bool[] _shown;
         private readonly Stopwatch _stopwatch;
         private int _revealed;
@@ -48,37 +45,31 @@ namespace Aspert
             foreach (var imageButton in _imageButtons)
                 imageButton.Clicked += OnImageButtonClicked;
 
-            _imagePaths = new string[8];
-
-            _imagePaths[0] = "close_aspert.png";
-            _imagePaths[1] = "data_aspert.png";
-            _imagePaths[2] = "edit_aspert.png";
-            _imagePaths[3] = "logo_aspert.png";
-            _imagePaths[4] = "notifications_aspert.png";
-            _imagePaths[5] = "sync_aspert.png";
-            _imagePaths[6] = "trashcan_aspert.png";
-            _imagePaths[7] = "user_aspert.png";
-
-            _random = new Random();
-            _indexes = Enumerable.Range(0, 16).ToArray();
             _matches = new Dictionary<int, string>();
             _shown = new bool[16];
             _stopwatch = new Stopwatch();
 
+            var imagePaths = Enumerable.Range(1, 12).Select(x => $"m{x}.png").ToArray();
+            var random = new Random();
+            var indexes = Enumerable.Range(0, 16).ToArray();
+
+
             var count = 16;
             while (count > 1)
             {
-                var index = _random.Next(count--);
-                var temp = _indexes[count];
+                var index = random.Next(count--);
+                var temp = indexes[count];
 
-                _indexes[count] = _indexes[index];
-                _indexes[index] = temp;
+                indexes[count] = indexes[index];
+                indexes[index] = temp;
             }
+
+            var pathIndexes = indexes.Where(x => x < 12).Take(8).ToArray();
 
             for (var index = 0; index < 8; index++)
             {
-                _matches.Add(_indexes[index * 2], _imagePaths[index]);
-                _matches.Add(_indexes[(index * 2) + 1], _imagePaths[index]);
+                _matches.Add(indexes[index * 2], imagePaths[pathIndexes[index]]);
+                _matches.Add(indexes[(index * 2) + 1], imagePaths[pathIndexes[index]]);
             }
         }
 

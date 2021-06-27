@@ -19,13 +19,22 @@ namespace Aspert.ViewModels
 
         public ViewModel()
         {
-            Push = new Command<Type>(async pageType => await _navigation.PushModalAsync((Page)Activator.CreateInstance(pageType)));
+            Push = new Command<Type>(async pageType => 
+            {
+#if DEBUG
+                try
+                {
+#endif
+                    await _navigation.PushModalAsync((Page)Activator.CreateInstance(pageType));
+#if DEBUG
+                }
+                catch (Exception e)
+                {
+                    await AlertAsync("Error", e.ToString(), "ok? :v");
+                }
+#endif
+                });
             Back = new Command(async () => await _navigation.PopModalAsync());
-            /*    
-            Back = new Command(async () => await _navigation.PushModalAsync(
-                (Page)Activator.CreateInstance(
-                    _navigation.ModalStack[_navigation.ModalStack.Count - 1].GetType())));
-            */
         }
 
         protected void SetValue<T>(ref T field, T value, [CallerMemberName]string propertyName = "")
