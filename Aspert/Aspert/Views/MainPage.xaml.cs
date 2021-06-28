@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Aspert
@@ -12,6 +13,14 @@ namespace Aspert
         }
 
         protected override bool OnBackButtonPressed()
-            => true;
+        {
+            Dispatcher.BeginInvokeOnMainThread(async () =>
+            {
+                if (await DisplayAlert("¿Deseas salir de la aplicación?", "Presiona \"OK\" para salir de la aplicación.", "OK", "CANCELAR"))
+                    Environment.Exit(0);
+            });
+
+            return true;
+        }
     }
 }

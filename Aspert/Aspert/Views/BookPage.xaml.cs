@@ -16,6 +16,11 @@ namespace Aspert
             => InitializeComponent();
 
         public async void OnTapped(object sender, EventArgs e)
-            => await Launcher.OpenAsync(((Label)sender).FormattedText.ToString()); 
+        {
+            var label = (Label)sender;
+            var text = label.FormattedText.ToString();
+            var url = text.Substring(text.IndexOf("http"));
+            await Launcher.OpenAsync(url);
+        }
     }
 }

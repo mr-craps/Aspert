@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.App">
     <Application.Resources>
         <Color x:Key="LightGray">#C0CCDA</Color>
@@ -12,18 +13,35 @@
         <Color x:Key="Orange">#FAA42D</Color>
         <Color x:Key="Cyan">#3790DE</Color>
         <Color x:Key="Blue">#3D51A9</Color>
-        <ImageSource x:Key="BackIcon">back.png</ImageSource>
-        <ImageSource x:Key="DataIcon">data.png</ImageSource>
-        <ImageSource x:Key="DeleteIcon">delete.png</ImageSource>
-        <ImageSource x:Key="EditIcon">edit.png</ImageSource>
-        <ImageSource x:Key="LogoutIcon">logout.png</ImageSource>
-        <ImageSource x:Key="MenuIcon">menu.png</ImageSource>
-        <ImageSource x:Key="NotificationsIcon">notifications.png</ImageSource>
-        <ImageSource x:Key="SynchonizeIcon">sync.png</ImageSource>
-        <ImageSource x:Key="UserIcon">user.png</ImageSource>
+        <ImageSource x:Key="BlackBackIcon">back.png</ImageSource>
+        <ImageSource x:Key="BackIcon">back_aspert.png</ImageSource>
+        <ImageSource x:Key="DataIcon">data_aspert.png</ImageSource>
+        <ImageSource x:Key="DeleteIcon">delete_aspert.png</ImageSource>
+        <ImageSource x:Key="EditIcon">edit_aspert.png</ImageSource>
+        <ImageSource x:Key="LogoutIcon">logout_aspert.png</ImageSource>
+        <ImageSource x:Key="BlackMenuIcon">menu.png</ImageSource>
+        <ImageSource x:Key="BlueMenuIcon">blue_menu_aspert.png</ImageSource>
+        <ImageSource x:Key="GrayMenuIcon">gray_menu_aspert.png</ImageSource>
+        <ImageSource x:Key="NotificationsIcon">notifications_aspert.png</ImageSource>
+        <ImageSource x:Key="SynchonizeIcon">sync_aspert.png</ImageSource>
+        <ImageSource x:Key="BlackUserIcon">user_aspert.png</ImageSource>
+        <ImageSource x:Key="UserIcon">user_aspert.png</ImageSource>
         <ImageSource x:Key="Background">background.png</ImageSource>
         <ImageSource x:Key="TransparentBackground">background_transparent.png</ImageSource>
         <ImageSource x:Key="LogoBackground">background_logo.png</ImageSource>
         <ImageSource x:Key="Logo">nuevologo_aspert.png</ImageSource>
+        <!-- Estilos globales -->
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Concert"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Concert"/>
+        </Style>
+        <Style TargetType="{x:Type aspert:JustifiedLabel}">
+            <Setter Property="FontFamily" Value="Roboto"/>
+        </Style>
+        <Style TargetType="{x:Type aspert:HtmlLabel}">
+            <Setter Property="FontFamily" Value="Concert"/>
+        </Style>
     </Application.Resources>
 </Application>

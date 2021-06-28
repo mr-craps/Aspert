@@ -5,36 +5,37 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.ResultsPage"
              x:DataType="{x:Type vm:ResultPageViewModel}">
-    <aspert:PageTemplate BackgroundColor="{StaticResource Purple}">
+    <aspert:PageTemplate x:Name="template" BackgroundColor="{StaticResource Purple}">
         <aspert:PageTemplate.BindingContext>
             <vm:ResultPageViewModel/>
         </aspert:PageTemplate.BindingContext>
         <ScrollView Grid.Row="1">
-            <Grid Margin="20" RowDefinitions="*,5,Auto,*,*">
+            <Grid Padding="20"
+                  RowDefinitions="Auto,5,Auto,*,Auto">
                 <Frame BackgroundColor="{StaticResource Purple}">
                     <Label FontAttributes="Bold"
+                           FontFamily="Concert"
                            HorizontalTextAlignment="Center"
                            Text="RESULTADOS"
                            TextColor="White"
-                           VerticalTextAlignment="Center">
-                    </Label>
+                           VerticalTextAlignment="Center" />
                 </Frame>
-                <Frame Grid.Row="2" 
-                       BorderColor="{StaticResource Purple}" 
+                <Frame Grid.Row="2"
+                       BorderColor="{StaticResource Purple}"
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
-                    <aspert:JustifiedLabel 
-                        Padding="25"
-                        FontSize="90"
-                        Text="{Binding Result, StringFormat='El resultado es: {0}'}"/>
+                    <aspert:JustifiedLabel Padding="25"
+                                           FontFamily="Roboto"
+                                           Text="{Binding Result, StringFormat='El resultado es: {0}'}" />
                 </Frame>
-                <Button Grid.Row="4"  
+                <Button Grid.Row="4"
                         BackgroundColor="{StaticResource Purple}"
                         Command="{Binding Push}"
                         CommandParameter="{Type aspert:MenuPage}"
                         FontAttributes="Bold"
+                        FontFamily="Concert"
                         Text="CONTINUAR"
-                        TextColor="White"/>
+                        TextColor="White" />
             </Grid>
         </ScrollView>
     </aspert:PageTemplate>

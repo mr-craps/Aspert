@@ -10,6 +10,14 @@
             <vm:BookPageViewModel/>
         </aspert:PageTemplate.BindingContext>
         <Grid Padding="20">
+            <Grid.Resources>
+                <Style TargetType="{Type Label}" ApplyToDerivedTypes="False">
+                    <Setter Property="FontFamily" Value="Concert" />
+                </Style>
+                <Style TargetType="{Type aspert:JustifiedLabel}">
+                    <Setter Property="FontFamily" Value="Roboto" />
+                </Style>
+            </Grid.Resources>
             <CollectionView ItemsSource="{Binding Movies}">
                 <CollectionView.Header>
                     <CollectionView ItemsSource="{Binding Books}">
@@ -39,10 +47,10 @@
                                            FontSize="Medium"
                                            Text="{Binding Title}" 
                                            TextColor="{StaticResource Red}"/>
-                                    <Label>
+                                    <aspert:JustifiedLabel>
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Reseña: "/>
+                                                <Span Text="Descargar: "/>
                                                 <Span Text="{Binding Link}"
                                                       TextColor="{StaticResource Gray}">
                                                     <Span.GestureRecognizers>
@@ -51,7 +59,7 @@
                                                 </Span>
                                             </FormattedString>
                                         </Label.FormattedText>
-                                    </Label>
+                                    </aspert:JustifiedLabel>
                                 </StackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -71,8 +79,8 @@
                                    Text="{Binding Title}" 
                                    TextColor="{StaticResource Red}"/>
                             <Image Source="{Binding Image}" WidthRequest="400" HeightRequest="400" Aspect="Fill"/>
-                            <Label Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
-                            <Label>
+                            <aspert:JustifiedLabel Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
+                            <aspert:JustifiedLabel>
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Reseña: "/>
@@ -84,12 +92,12 @@
                                         </Span>
                                     </FormattedString>
                                 </Label.FormattedText>
-                            </Label>
+                            </aspert:JustifiedLabel>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.Footer>
-                    <Grid RowDefinitions="1080">
+                    <Grid RowDefinitions="1120">
                         <CollectionView ItemsSource="{Binding Series}">
                             <CollectionView.Header>
                                 <Label FontAttributes="Bold"
@@ -105,8 +113,8 @@
                                                Text="{Binding Title}" 
                                                TextColor="{StaticResource Red}"/>
                                         <Image Source="{Binding Image}" WidthRequest="400" HeightRequest="400" Aspect="Fill"/>
-                                        <Label Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
-                                        <Label>
+                                        <aspert:JustifiedLabel Text="{Binding Description}" TextColor="{StaticResource Gray}"/>
+                                        <aspert:JustifiedLabel>
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <Span Text="Reseña: "/>
@@ -118,7 +126,7 @@
                                                     </Span>
                                                 </FormattedString>
                                             </Label.FormattedText>
-                                        </Label>
+                                        </aspert:JustifiedLabel>
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

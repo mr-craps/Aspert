@@ -19,6 +19,7 @@ namespace Aspert
             btnStart.Text = QuestionPageViewModel.Answers.All(x => x == null)
                 ? "Empezar Test"
                 : $"Reintentar Test (Puntaje anterior: {SQLiteDB.Usuario.ResultadoTest})";
+            template.SetDarkIcons();
             base.OnAppearing();
         }
     }

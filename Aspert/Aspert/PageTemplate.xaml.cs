@@ -21,6 +21,13 @@ namespace Aspert
             InitializeComponent();
         }
 
+        public void SetDarkIcons()
+        {
+            btnBack.Source = "back.png";
+            btnMenu.Source = "menu.png";
+            btnConfiguration.Source = "user.png";
+        }
+
         private async void OnClicked(object sender, EventArgs e)
         {
             if (_clicked)

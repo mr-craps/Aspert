@@ -121,14 +121,14 @@ namespace Aspert
                 await DisplayAlert(
                     "Felicidades!",
                     $"¡Has ganado! Tiempo: {elapsed}s {(isNewRecord ? "¡Nuevo récord!" : $"Record actual: {SQLiteDB.Usuario.RecordMemoria}s")}", 
-                    "Yupi!");
+                    "SÍ");
                 return;
             }
             else if (_revealed % 2 == 0)
             {
                 if (_matches[index] != _matches[_previous])
                 {
-                    await DisplayAlert("Incorrecto!", "El par elegido no coincide, sigue intentando!", "Ok");
+                    await DisplayAlert("¡Incorrecto!", "El par elegido no coincide. ¡Sigue intentando!", "Ok");
 
                     _shown[index] = false;
                     _shown[_previous] = false;

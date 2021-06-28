@@ -16,5 +16,11 @@ namespace Aspert
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            template.SetDarkIcons();
+            base.OnAppearing();
+        }
     }
 }

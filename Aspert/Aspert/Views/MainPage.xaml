@@ -16,7 +16,7 @@
                      CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
                      Padding="10"
-                     Source="{StaticResource MenuIcon}"/>
+                     Source="{StaticResource BlueMenuIcon}"/>
         <Image Grid.Row="1"
                Aspect="Fill"
                Source="{StaticResource LogoBackground}"/>

@@ -144,10 +144,10 @@
     <AndroidResource Include="Resources\drawable\logo_aspert.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\menub_aspert.png" />
+    <AndroidResource Include="Resources\drawable\gray_menu_aspert.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\menug_aspert.png" />
+    <AndroidResource Include="Resources\drawable\blue_menu_aspert.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\notifications_aspert.png" />
@@ -159,7 +159,7 @@
     <AndroidResource Include="Resources\drawable\sync_aspert.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\trashcan_aspert.png" />
+    <AndroidResource Include="Resources\drawable\delete_aspert.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\user_aspert.png" />

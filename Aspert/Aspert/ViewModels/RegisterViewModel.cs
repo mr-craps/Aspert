@@ -31,7 +31,7 @@ namespace Aspert.ViewModels
                     }
 
                     SQLiteDB.Usuario = await SQLiteDB.RegisterAsync(Usuario, Contraseña);
-                    await AlertAsync("¡Registro exitoso!", "¡Tu usuario ha sido registrado exitosamente!", "Ok");
+                    await AlertAsync("¡Registro exitoso!", "Su usuario ha sido registrado exitosamente.", "Ok");
                     Push.Execute(typeof(WelcomePage));
                 }
             });

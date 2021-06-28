@@ -6,6 +6,14 @@
              x:Class="Aspert.NewsPage">
     <aspert:PageTemplate BackgroundColor="{StaticResource Lime}">
         <Grid Padding="20">
+            <Grid.Resources>
+                <Style TargetType="{Type Label}" ApplyToDerivedTypes="False">
+                    <Setter Property="FontFamily" Value="Concert" />
+                </Style>
+                <Style TargetType="{Type aspert:HtmlLabel}">
+                    <Setter Property="FontFamily" Value="Roboto" />
+                </Style>
+            </Grid.Resources>
             <CollectionView ItemsSource="{Binding Feeds, Source={Static vm:NewsPageViewModel.Instance}}">
                 <CollectionView.Header>
                     <Grid ColumnDefinitions="120" RowDefinitions="120,50">

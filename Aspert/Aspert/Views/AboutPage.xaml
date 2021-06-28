@@ -1,13 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Aspert.ViewModels"
              xmlns:aspert="clr-namespace:Aspert"
-             x:Class="Aspert.AboutPage">
+             x:Class="Aspert.AboutPage"
+             x:DataType="{x:Type vm:AboutPageViewModel}">
     <aspert:PageTemplate BackgroundColor="{StaticResource Cyan}">
-        <ScrollView Grid.Row="1">
+        <ScrollView>
             <Grid Padding="20" 
                   RowDefinitions="85,20,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                <Grid.BindingContext>
+                    <vm:AboutPageViewModel/>
+                </Grid.BindingContext>
                 <Grid Padding="12">
+                    <Grid.Resources>
+                        <Style TargetType="{Type Label}" ApplyToDerivedTypes="False">
+                            <Setter Property="FontFamily" Value="Concert" />
+                        </Style>
+                        <Style TargetType="{Type aspert:JustifiedLabel}">
+                            <Setter Property="FontFamily" Value="Roboto" />
+                        </Style>
+                    </Grid.Resources>
                     <Frame  BackgroundColor="{StaticResource Cyan}">
                         <Label FontAttributes="Bold" 
                            FontSize="19"
@@ -63,7 +76,7 @@ Pérez Orlando &#10; &#10; &#10; &#10; &#10;Maracaibo, Venezuela."/>
                    Text="ASPERT fue desarrollado por tres estudiantes de Ingeniería Informática detrás de investigaciones profesionales acerca del Asperger"
                    TextColor="#8492A6"/>
                 <Label Grid.Row="13" 
-                   Text="V.1.0"
+                   Text="{Binding Version}"
                    HorizontalTextAlignment="End"
                    TextColor="#8492A6"/>
             </Grid>

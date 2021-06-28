@@ -16,7 +16,7 @@
                      Command="{Binding Push}"
                      CommandParameter="{Type aspert:MenuPage}"
                      HorizontalOptions="Start"
-                     Source="{StaticResource MenuIcon}"
+                     Source="{StaticResource BlueMenuIcon}"
                      Padding="10"/>
         <ImageButton Grid.Row="2" 
                      BackgroundColor="Transparent"

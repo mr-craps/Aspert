@@ -5,7 +5,7 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.TestPage"
              x:DataType="{x:Type vm:ViewModel}">
-    <aspert:PageTemplate BackgroundColor="{StaticResource Purple}">
+    <aspert:PageTemplate x:Name="template" BackgroundColor="{StaticResource Purple}">
         <aspert:PageTemplate.BindingContext>
             <vm:ViewModel/>
         </aspert:PageTemplate.BindingContext>
@@ -13,6 +13,7 @@
             <Grid Margin="20" RowDefinitions="*,5,Auto,*,*">
                 <Frame BackgroundColor="{StaticResource Purple}">
                     <Label FontAttributes="Bold"
+                           FontFamily="Concert"
                            HorizontalTextAlignment="Center"
                            Text="INFO"
                            TextColor="White"
@@ -27,6 +28,7 @@
                         x:Name="lbl" 
                         Padding="25"
                         FontSize="Small"
+                        FontFamily="Roboto"
                         Text="El Test Infantil del Síndrome de Asperger ha demostrado ser útil en la identificación temprana de niños, entre edades comprendidas entre los cuatro y los once años, cuyos comportamientos sugieren un alto riesgo de presencia de un síndrome de Asperger. Cada pregunta puede proporcionar 0 o 1 puntos, pero hay seis preguntas que no puntuan. Por tanto, la puntuación máxima posible es de 31 puntos. Una puntuación total de 15 o superior sería indicativa de la presencia de comportamientos que justificarían realizar una valoración diagnóstica por parte de un profesional de la salud."/>
                 </Frame>
                 <Button x:Name="btnStart" 

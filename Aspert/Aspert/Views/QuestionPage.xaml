@@ -5,7 +5,7 @@
              xmlns:aspert="clr-namespace:Aspert"
              x:Class="Aspert.QuestionPage"
              x:DataType="{x:Type vm:QuestionPageViewModel}">
-    <aspert:PageTemplate BackgroundColor="{StaticResource Purple}">
+    <aspert:PageTemplate x:Name="template" BackgroundColor="{StaticResource Purple}">
         <aspert:PageTemplate.BindingContext>
             <vm:QuestionPageViewModel/>
         </aspert:PageTemplate.BindingContext>
@@ -13,6 +13,7 @@
             <Grid Margin="20" RowDefinitions="Auto,5,Auto,*,150">
                 <Frame BackgroundColor="{StaticResource Purple}">
                     <Label FontAttributes="Bold"
+                           FontFamily="Concert"
                            HorizontalTextAlignment="Center"
                            Text="TEST"
                            TextColor="White"
@@ -26,6 +27,7 @@
                     <aspert:JustifiedLabel
                         x:Name="label"
                         FontSize="Small"
+                        FontFamily="Roboto"
                         Padding="25"
                         Text="1. ¿Le resulta fácil participar en los juegos con otros niños?"/>
                 </Frame>
@@ -33,6 +35,7 @@
                     <Grid.Resources>
                         <Style TargetType="{Type Button}">
                             <Setter Property="FontAttributes" Value="Bold"/>
+                            <Setter Property="FontFamily" Value="Concert"/>
                             <Setter Property="TextColor" Value="White"/>
                             <Setter Property="WidthRequest" Value="150"/>
                             <Setter Property="HorizontalOptions" Value="Center"/>

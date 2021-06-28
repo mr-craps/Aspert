@@ -6,6 +6,7 @@
              x:DataType="{x:Type vm:LoginPageViewModel}">
     <Grid BackgroundColor="White"
           ColumnDefinitions="*,18*,*"
+          Padding="0,20"
           RowDefinitions="*,2*,*,2*,*,*,0.75*,0.25*,0.75*">
         <Grid.BindingContext>
             <vm:LoginPageViewModel/>
@@ -17,8 +18,9 @@
                Grid.Row="2" 
                HorizontalTextAlignment="Center"
                FontAttributes="Bold"
+               FontFamily="Concert"
                FontSize="Title"
-               Text="aspert"
+               Text="ASPERT"
                TextColor="{StaticResource Blue}"/>
         <Image Grid.Column="1"
                Grid.Row="3"
@@ -26,6 +28,7 @@
         <Entry Grid.Column="1"
                Grid.Row="4" 
                Placeholder="Usuario"
+               FontFamily="Roboto"
                TextColor="Black"
                Text="{Binding Usuario}"/>
         <Entry Grid.Column="1" 
@@ -39,6 +42,7 @@
                 BackgroundColor="{StaticResource Blue}"
                 Command="{Binding Login}"
                 FontAttributes="Bold"
+                FontFamily="Concert"
                 FontSize="Large"
                 Text="ENTRA"
                 TextColor="White"/>
@@ -53,6 +57,7 @@
                 Command="{Binding Register}"
                 FontAttributes="Bold"
                 FontSize="Large"
+                FontFamily="Concert"
                 Text="REGÍSTRATE AQUÍ"
                 TextColor="White"/>
     </Grid>

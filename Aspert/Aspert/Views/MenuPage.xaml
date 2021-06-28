@@ -16,7 +16,7 @@
                      Command="{Binding Push}"
                      CommandParameter="{Type aspert:MainPage}"
                      HorizontalOptions="Start"
-                     Source="{StaticResource MenuIcon}"
+                     Source="{StaticResource GrayMenuIcon}"
                      Padding="10"/>
         <Image Grid.Row="1"
                Aspect="Fill"
@@ -34,14 +34,11 @@
               RowDefinitions="*,Auto,20,Auto,20,Auto,*">
             <Grid.Resources>
                 <Style TargetType="{Type Button}">
-                    <Setter Property="FontAttributes"
-                            Value="Bold"/>
-                    <Setter Property="TextColor"
-                            Value="White"/>
-                    <Setter Property="HeightRequest"
-                            Value="120"/>
-                    <Setter Property="WidthRequest"
-                            Value="120"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                    <Setter Property="FontFamily" Value="Concert"/>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="HeightRequest" Value="120"/>
+                    <Setter Property="WidthRequest" Value="120"/>
                 </Style>
             </Grid.Resources>
             <Button Grid.Column="1"

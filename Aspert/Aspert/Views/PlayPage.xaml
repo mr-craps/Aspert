@@ -9,39 +9,33 @@
             <vm:ViewModel/>
         </aspert:PageTemplate.BindingContext>
         <ScrollView Grid.Row="1">
-            <StackLayout Margin="20">
-                <!-- Cuadro de juega-->
-                <Frame BackgroundColor="{StaticResource Orange}" WidthRequest="100">
+            <Grid Margin="20" RowDefinitions="Auto,5,Auto,10,Auto">
+                <Frame BackgroundColor="{StaticResource Orange}"
+                       WidthRequest="100">
                     <Label FontAttributes="Bold"
+                           FontFamily="Concert"
                            HorizontalTextAlignment="Center"
                            Text="JUEGA"
-                           TextColor="White">
-                    </Label>
+                           TextColor="White"/>
                 </Frame>
-                <!-- Cuadro de texto -->
-                <Frame BorderColor="{StaticResource Orange}" 
+                <Frame Grid.Row="2" 
+                       BorderColor="{StaticResource Orange}"
                        BackgroundColor="#EFEDED"
                        CornerRadius="5">
-                    <aspert:JustifiedLabel 
-                        FontSize="Small"
-                        Padding="25"
-                        Text="Los juegos de construcción son divertidísimos ¿verdad? &#10; &#10;En 
-esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!."/>
+                    <aspert:JustifiedLabel FontFamily="Roboto" 
+                                           FontSize="Small"
+                                           Padding="25"
+                                           Text="Los juegos de construcción son divertidísimos ¿verdad?&#10;&#10;En esta ocasión te presentamos el clásico juego de memoria. ¡Encuentra todas las parejas!." />
                 </Frame>
-                <!-- Botones y columnas -->
-                <Grid Grid.Row="3"
-                      ColumnDefinitions="*,Auto,50,Auto,*"
-                      RowDefinitions="*,Auto,5,Auto,*">
-                    <Button Grid.Column="3"
-                            Grid.Row="4"
-                            BackgroundColor="{StaticResource Orange}"
-                            Command="{Binding Push}"
-                            CommandParameter="{Type aspert:GamePage}"
-                            FontAttributes="Bold"
-                            Text="JUGAR"
-                            TextColor="White"/>
-                </Grid>
-            </StackLayout>
+                <Button Grid.Row="4" 
+                        BackgroundColor="{StaticResource Orange}"
+                        Command="{Binding Push}"
+                        CommandParameter="{Type aspert:GamePage}"
+                        FontAttributes="Bold"
+                        FontFamily="Concert"
+                        Text="JUGAR"
+                        TextColor="White"/>
+            </Grid>
         </ScrollView>
     </aspert:PageTemplate>
 </ContentPage>

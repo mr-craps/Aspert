@@ -17,8 +17,9 @@
                Grid.Row="2" 
                HorizontalTextAlignment="Center"
                FontAttributes="Bold"
+               FontFamily="Concert"
                FontSize="Title"
-               Text="aspert"
+               Text="ASPERT"
                TextColor="#3D51A9"/>
         <Image Grid.Column="1"
                Grid.Row="3"
@@ -27,6 +28,7 @@
                Grid.Row="4" 
                Placeholder="Usuario"
                TextColor="Black"
+               FontFamily="Roboto"
                Text="{Binding Usuario}"/>
         <Entry Grid.Column="1" 
                Grid.Row="5" 
@@ -39,6 +41,7 @@
                 BackgroundColor="#3D51A9"
                 Command="{Binding Login}"
                 FontAttributes="Bold"
+                FontFamily="Concert"
                 FontSize="Large"
                 Text="ACEPTAR E INGRESAR"
                 TextColor="White"/>
