@@ -16,7 +16,7 @@ namespace Aspert
 
         protected override void OnAppearing()
         {
-            btnStart.Text = QuestionPageViewModel.Answers.All(x => x == null)
+            btnStart.Text = SQLiteDB.Usuario.ResultadoTest is null
                 ? "Empezar Test"
                 : $"Reintentar Test (Puntaje anterior: {SQLiteDB.Usuario.ResultadoTest})";
             template.SetDarkIcons();

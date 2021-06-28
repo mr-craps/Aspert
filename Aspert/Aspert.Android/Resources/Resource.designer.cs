@@ -11710,76 +11710,76 @@ namespace Aspert.Droid
 			public const int btn_radio_on_to_off_mtrl_animation = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int close_aspert = 2131165302;
+			public const int Contador_movie = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int Contador_movie = 2131165303;
+			public const int data = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int data = 2131165304;
+			public const int data_aspert = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int data_aspert = 2131165305;
+			public const int delete = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int delete = 2131165306;
+			public const int delete_aspert = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int delete_aspert = 2131165307;
+			public const int design_bottom_navigation_item_background = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int design_bottom_navigation_item_background = 2131165308;
+			public const int design_fab_background = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int design_fab_background = 2131165309;
+			public const int design_ic_visibility = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int design_ic_visibility = 2131165310;
+			public const int design_ic_visibility_off = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int design_ic_visibility_off = 2131165311;
+			public const int design_password_eye = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int design_password_eye = 2131165312;
+			public const int design_snackbar_background = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int design_snackbar_background = 2131165313;
+			public const int Doctor_movie = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int Doctor_movie = 2131165314;
+			public const int edit = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int edit = 2131165315;
+			public const int edit_aspert = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int edit_aspert = 2131165316;
+			public const int Extremely_movie = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int Extremely_movie = 2131165317;
+			public const int gray_menu_aspert = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int gray_menu_aspert = 2131165318;
+			public const int ic_mtrl_checked_circle = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int ic_mtrl_checked_circle = 2131165319;
+			public const int ic_mtrl_chip_checked_black = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int ic_mtrl_chip_checked_black = 2131165320;
+			public const int ic_mtrl_chip_checked_circle = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int ic_mtrl_chip_checked_circle = 2131165321;
+			public const int ic_mtrl_chip_close_circle = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int ic_mtrl_chip_close_circle = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int Khan_movie = 2131165323;
-			
-			// aapt resource value: 0x7F07008D
-			public const int logout = 2131165325;
+			public const int Khan_movie = 2131165322;
 			
 			// aapt resource value: 0x7F07008C
-			public const int logo_aspert = 2131165324;
+			public const int logout = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int logout_aspert = 2131165325;
+			
+			// aapt resource value: 0x7F07008B
+			public const int logo_aspert = 2131165323;
 			
 			// aapt resource value: 0x7F07008E
 			public const int m1 = 2131165326;

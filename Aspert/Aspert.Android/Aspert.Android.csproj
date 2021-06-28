@@ -132,7 +132,7 @@
     <AndroidResource Include="Resources\drawable\bg4_aspert.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\close_aspert.png" />
+    <AndroidResource Include="Resources\drawable\logout_aspert.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\data_aspert.png" />

@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Aspert.Database;
+﻿using Aspert.Database;
 
 namespace Aspert.ViewModels
 {
@@ -9,9 +8,9 @@ namespace Aspert.ViewModels
         {
             get
             {
-                SQLiteDB.Usuario.ResultadoTest = QuestionPageViewModel.Answers.Sum(x => x.GetValueOrDefault() ? 1 : 0);
+                SQLiteDB.Usuario.ResultadoTest = QuestionPageViewModel.Points;
                 SQLiteDB.UpdateCurrentUser();
-                return SQLiteDB.Usuario.ResultadoTest;
+                return QuestionPageViewModel.Points;
             }
         }
     }

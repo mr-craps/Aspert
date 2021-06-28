@@ -6,21 +6,21 @@ namespace Aspert.ViewModels
 {
     public class QuestionPageViewModel : ViewModel
     {
-        private static readonly List<(string Question, bool? Value)> _questions = new List<(string, bool?)>()
+        private readonly Queue<(string Question, bool? Value)> _questions = new Queue<(string, bool?)>(new (string, bool?)[]
         {
             ("¿Le resulta fácil participar en los juegos con otros niños?", false),
             ("¿Se acerca de una forma espontánea a usted para conversar?", false),
             ("¿Comenzó el niño a hablar antes de cumplir los dos años?", null),
             ("¿Le gustan los deportes?", null),
             ("¿Da el niño importancia al hecho de llevarse bien con otros niños de la misma edad y parecer como ellos?", false),
-            ("¿Tiene a entender las cosas que se dicen literalmente?", true),
-            ("¿A la edad de tres años, pasaba mucho tiempo jugando imaginativamente juegos de ficción? Por ejemplo, imaginando que era un superhéroe), u organizando una merienda para sus muñecos de peluche?", true),
-            ("¿Tiende a entender las cosas que se dicen literalmente?", false),
+            ("¿Se da cuenta de detalles inusiales que otros niños no observan?", true),
+            ("¿Tiende a entender las cosas que se dicen literalmente?", true),
+            ("¿A la edad de tres años, pasaba mucho tiempo jugando imaginativamente juegos de ficción? Por ejemplo, imaginando que era un superhéroe), u organizando una merienda para sus muñecos de peluche?", false),
             ("¿Le gusta hacer las cosas de manera repetida y de la misma forma todo el tiempo?", true),
             ("¿Le resulta fácil interactuar con otros niños?", false),
             ("¿Es capaz de mantener una conversación recíproca?", false),
             ("¿Lee de una forma apropiada para su edad?", null),
-            ("¿Tiene los mismos intereses, en general), que los otros niños de su misma edad?", false),
+            ("¿Tiene los mismos intereses, en general, que los otros niños de su misma edad?", false),
             ("¿Tiene algún interés que le mantenga ocupado durante tanto tiempo que el niño no hace otra cosa?", true),
             ("¿Tiene amigos y no sólo \"conocidos\"?", false),
             ("¿Le trae a menudo cosas en las que está interesado con la intención de mostrárselas?", false),
@@ -45,51 +45,46 @@ namespace Aspert.ViewModels
             ("¿Le importa al niño la opinión que el resto del grupo tenga de él?", false),
             ("¿Dirige a menudo la conversación hacia sus temas de interés en lugar de continuar con lo que la otra persona desea hablar?", true),
             ("¿Utiliza frases inusuales o extrañas?", true)
-        };
-        private static int _index;
-        public static bool?[] Answers = new bool?[37];
+        });
+        public static int Points { get; set; }
+        private int _index;
 
         public ICommand Yes { get; }
         public ICommand No { get; }
 
         public QuestionPageViewModel()
         {
-            _index = 0;
+            Points = 0;
+            _index = 1;
             Yes = new Command<Label>(label =>
             {
-                if (_index >= _questions.Count)
+                if (_questions.Count == 0)
                 {
                     Push.Execute(typeof(ResultsPage));
                     return;
                 }
-          
-                var (question, value) = _questions[_index];
 
-                if (value != null)
-                    Answers[_index] = value;
+                var (question, value) = _questions.Dequeue();
 
-                if (++_index >= _questions.Count)
-                    return;
+                if (value.GetValueOrDefault())
+                    Points++;
 
-                label.Text = $"{_index + 1}. {question}";
+                label.Text = $"{_index++}. {question}";
             });
             No = new Command<Label>(label =>
             {
-                if (_index >= _questions.Count)
+                if (_questions.Count == 0)
                 {
                     Push.Execute(typeof(ResultsPage));
                     return;
                 }
 
-                var (question, value) = _questions[_index];
+                var (question, value) = _questions.Dequeue();
 
-                if (value != null)
-                    Answers[_index] = !value;
+                if (value.HasValue && !value.Value)
+                    Points++;
 
-                if (++_index >= _questions.Count)
-                    return;
-
-                label.Text = $"{_index + 1}. {question}";
+                label.Text = $"{_index++}. {question}";
             });
         }
     }

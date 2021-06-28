@@ -20,7 +20,7 @@ namespace Aspert.Database
         public bool Sincronizar { get; set; } = true;
         public bool Notificaciones { get; set; } = true;
         public double RecordMemoria { get; set; }
-        public int ResultadoTest { get; set; }
+        public int? ResultadoTest { get; set; }
 
         public override string ToString()
             => Nombre;
