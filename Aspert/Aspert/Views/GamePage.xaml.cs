@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Aspert.Database;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +20,7 @@ namespace Aspert
         private int _revealed;
         private int _previous;
         private bool _gameFinished;
+        private volatile bool _gamePaused;
 
         public GamePage()
         {
@@ -85,7 +88,7 @@ namespace Aspert
 
         private async void OnImageButtonClicked(object sender, EventArgs e)
         {
-            if (_gameFinished)
+            if (_gamePaused || _gameFinished)
                 return;
 
             var imageButton = (ImageButton)sender;
@@ -128,7 +131,7 @@ namespace Aspert
             {
                 if (_matches[index] != _matches[_previous])
                 {
-                    await DisplayAlert("¡Incorrecto!", "El par elegido no coincide. ¡Sigue intentando!", "Ok");
+                    await VibrateAsync();
 
                     _shown[index] = false;
                     _shown[_previous] = false;
@@ -139,6 +142,24 @@ namespace Aspert
             }
             else
                 _previous = index;
+        }
+
+        public async Task VibrateAsync()
+        {
+            _gamePaused = true;
+            try
+            {
+                Vibration.Vibrate();
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
+            catch
+            {
+                await DisplayAlert("¡Incorrecto!", "El par elegido no coincide. ¡Sigue intentando!", "Ok");
+            }
+            finally
+            {
+                _gamePaused = false;
+            }
         }
     }
 }
