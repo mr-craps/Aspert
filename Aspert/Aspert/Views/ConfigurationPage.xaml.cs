@@ -55,6 +55,13 @@ namespace Aspert
             else if (button == btnEdit)
             {
                 var nombre = await DisplayPromptAsync("Introduzca su nombre", string.Empty, cancel: "Cancelar");
+
+                if (string.IsNullOrWhiteSpace(nombre))
+                {
+                    await DisplayAlert("Error", "Debe colocar un nombre para su perfil.", "Ok");
+                    return;
+                }
+
                 SQLiteDB.Usuario.Nombre = nombre;
                 SQLiteDB.UpdateCurrentUser();
                 lbName.Text = nombre;

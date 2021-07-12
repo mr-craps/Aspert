@@ -47,12 +47,12 @@ namespace Aspert.ViewModels
         {
             Logout = new Command(async () =>
             {
-                if (await AlertAsync("Cerrar sesión", "¿Deseas cerrar sesión?", "Aceptar", "Cancelar"))
+                if (await AlertAsync("Cerrar sesión", "¿Desea cerrar sesión?", "Aceptar", "Cancelar"))
                     Push.Execute(typeof(LoginPage));
             });
             DeleteAccount = new Command(async () =>
             {
-                if (await AlertAsync("Borrar cuenta", "¿Deseas BORRAR PERMANENTEMENTE tu cuenta?", "SÍ", "NO"))
+                if (await AlertAsync("Borrar cuenta", "¿Desea BORRAR PERMANENTEMENTE su cuenta?", "SÍ", "NO"))
                 {
                     await SQLiteDB.DeleteAccountAsync();
                     Push.Execute(typeof(LoginPage));
